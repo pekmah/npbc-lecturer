@@ -1,4 +1,4 @@
 import Navbar from "./Navbar";
-import Carousel from "./Carousel";
+import Carousel from "./carousel/index";
 
 export { Navbar, Carousel }
