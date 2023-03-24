@@ -6,13 +6,13 @@ import { MdPersonOutline } from 'react-icons/md'
 
 const Header = () => {
     return (
-        <div className='bg-white px-10 h-20 flex items-center text-black'>
+        <div className='bg-white px-10 h-24 flex items-center text-black'>
             <div className="flex gap-4 items-center flex-1">
                 {/* Image */}
-                <Image height={80} width={70} src="/images/layout/logo.png" alt="logo" />
+                <Image height={90} width={80} src="/images/layout/logo.png" alt="logo" />
 
                 {/* title */}
-                <h4 className="c-xl font-bold text-c-blue">Nairobi Pentecostal Bible College</h4>
+                <h4 className="c-h7 font-bold text-c-blue">Nairobi Pentecostal Bible College</h4>
             </div>
 
             {/* buttons */}
