@@ -1,4 +1,4 @@
-import { Carousel, Navbar } from '@/components'
+import { AboutUs, Carousel, Navbar } from '@/components'
 import Layout from '@/layout'
 import Head from 'next/head'
 
@@ -18,6 +18,9 @@ export default function Home() {
 
         {/* Carousel */}
         <Carousel />
+
+        {/* About us */}
+        <AboutUs />
       </Layout>
     </>
   )
