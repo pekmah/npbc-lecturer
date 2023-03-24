@@ -14,7 +14,7 @@ const Footer = () => {
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                 }}>
-                <p>Become a student at <br /> NPBC</p>
+                <p className='leading-10'>Become a student at <br /> NPBC</p>
 
                 <Button className={"bg-white text-c-blue c-normal px-10 font-semibold"}>Apply Today</Button>
             </div>
@@ -45,19 +45,19 @@ const NPBC = () => (
         </div>
 
         {/* Hours */}
-        <div className="block leading-6 tex">
+        <div className="block leading-6">
             <p className="font-semibold">Hours:</p>
             <p>8.00am - 5:00pm</p>
         </div>
 
         {/* Telephone */}
-        <div className="block leading-6 tex">
+        <div className="block leading-6">
             <p className="font-semibold">Telephone:</p>
             <p>0754 569 687</p>
         </div>
 
         {/* Email */}
-        <div className="block leading-6 tex">
+        <div className="block leading-6">
             <p className="font-semibold">Email:</p>
             <p>admin@npbc.co.ke</p>
         </div>
@@ -69,32 +69,32 @@ const Explore = () => (
         <h6 className="c-large mb-4">Explore</h6>
         {/* Location */}
         <div className="block leading-6">
-            <p>History & Mission</p>
+            <a href=''>History & Mission</a>
         </div>
 
         {/* Hours */}
-        <div className="block leading-6 tex">
-            <p>Staff and Faculty</p>
+        <div className="block leading-6">
+            <a href=''>Staff and Faculty</a>
         </div>
 
         {/* Telephone */}
-        <div className="block leading-6 tex">
-            <p>Downloads</p>
+        <div className="block leading-6">
+            <a href=''>Downloads</a>
         </div>
 
         {/* Email */}
-        <div className="block leading-6 tex">
-            <p>Community</p>
+        <div className="block leading-6">
+            <a href=''>Community</a>
         </div>
 
         {/* Email */}
-        <div className="block leading-6 tex">
-            <p>Social Media</p>
+        <div className="block leading-6">
+            <a href=''>Social Media</a>
         </div>
 
         {/* Email */}
-        <div className="block leading-6 tex">
-            <p>Employment</p>
+        <div className="block leading-6">
+            <a href=''>Employment</a>
         </div>
     </div>
 )
@@ -104,22 +104,22 @@ const QuickLinks = () => (
         <h6 className="c-large mb-4">QUICK LINKS</h6>
         {/* Location */}
         <div className="block leading-6">
-            <p>Admissions</p>
+            <a>Admissions</a>
         </div>
 
         {/* Hours */}
-        <div className="block leading-6 tex">
-            <p>Student Life</p>
+        <div className="block leading-6">
+            <a>Student Life</a>
         </div>
 
         {/* Telephone */}
-        <div className="block leading-6 tex">
-            <p>Staff Mail</p>
+        <div className="block leading-6">
+            <a>Staff Mail</a>
         </div>
 
         {/* Email */}
-        <div className="block leading-6 tex">
-            <p>NPBC Online</p>
+        <div className="block leading-6">
+            <a>NPBC Online</a>
         </div>
     </div>
 )
@@ -129,27 +129,27 @@ const Research = () => (
         <h6 className="c-large mb-4">RESEARCH</h6>
         {/* Location */}
         <div className="block leading-6">
-            <p>NPBC Online</p>
+            <a>NPBC Online</a>
         </div>
 
         {/* Hours */}
-        <div className="block leading-6 tex">
-            <p>Reflection Blog</p>
+        <div className="block leading-6">
+            <a>Reflection Blog</a>
         </div>
 
         {/* Telephone */}
-        <div className="block leading-6 tex">
-            <p>Community Engagement</p>
+        <div className="block leading-6">
+            <a>Community Engagement</a>
         </div>
 
         {/* Email */}
-        <div className="block leading-6 tex">
-            <p>News and Events</p>
+        <div className="block leading-6">
+            <a>News and Events</a>
         </div>
 
         {/* Email */}
-        <div className="block leading-6 tex">
-            <p>Research Projects</p>
+        <div className="block leading-6">
+            <a>Research Projects</a>
         </div>
     </div>
 )

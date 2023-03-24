@@ -1,3 +1,4 @@
+import { Navbar } from '@/components'
 import Layout from '@/layout'
 import Head from 'next/head'
 
@@ -12,7 +13,8 @@ export default function Home() {
       </Head>
 
       <Layout>
-     {/*  */}
+        {/* Navbar */}
+        <Navbar />
       </Layout>
     </>
   )
