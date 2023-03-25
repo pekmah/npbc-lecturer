@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Button = ({className,children, ...rest}) => {
+const Button = ({ className, children, text, ...rest }) => {
   return (
-    <button className={`rounded-lg p-2 ${className}`} {...rest}>{children}</button>
+    <button className={`rounded-lg p-2 ${className}`} {...rest}>{children || text}</button>
   )
 }
 
