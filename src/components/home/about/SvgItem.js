@@ -6,7 +6,7 @@ const SvgItem = ({ title, children }) => {
             <div className="w-[90px] h-[90px] rounded-full bg-white flex items-center justify-center">
                 {children}
             </div>
-            <p className="my-3 text-center">{title}</p>
+            <p className="my-3 text-center text-white">{title}</p>
         </div>
     )
 }

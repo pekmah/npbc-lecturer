@@ -14,12 +14,12 @@ const Footer = () => {
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                 }}>
-                <p className='leading-10'>Become a student at <br /> NPBC</p>
+                <p className='leading-10 text-white'>Become a student at <br /> NPBC</p>
 
                 <Button className={"bg-white text-c-blue c-normal px-10 font-semibold"}>Apply Today</Button>
             </div>
             {/* links */}
-            <div className="flex bg-c-blue text-xs justify-evenly py-14">
+            <div className="flex bg-c-blue text-xs justify-evenly py-14 text-white" >
 
                 <NPBC />
 

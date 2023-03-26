@@ -13,7 +13,7 @@ const Admission = () => {
                 </div>
 
                 {/* desc */}
-                <div className="bg-c-red flex-1 py-12 flex flex-col items-center">
+                <div className="bg-c-red flex-1 py-12 flex flex-col items-center text-white">
                     <h2 className="c-h4 font-semibold ">Apply for Admission</h2>
 
                     <p className="c-large mt-4 font-normal">{new Date().getFullYear()} Applications are now open</p>

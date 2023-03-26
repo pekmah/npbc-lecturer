@@ -4,14 +4,14 @@ import SvgItem from './SvgItem'
 
 const About = () => {
     return (
-        <div className='bg-c-blue p-14 flex flex-col items-center '>
+        <div className='bg-c-blue p-14 flex flex-col items-center text-white'>
             <div className="mx-auto w-11/12 flex">
 
                 {/* Logo */}
                 <div className="flex flex-col items-center gap-6 flex-[0.7] ">
                     <img src="/images/home/about-logo.png" alt='logo' className='h-56 ' />
 
-                    <h4 className="c-h5 text-center">
+                    <h4 className="c-h5 text-center text-white">
                         Nairobi Pentecostal <br /> Bible College
                     </h4>
                 </div>
@@ -22,7 +22,7 @@ const About = () => {
                     <div className="flex flex-col gap-3">
                         <h5 className="c-xl font-semibold text-white capitalize">We are more than a bible college</h5>
 
-                        <p>We exist to bring maturity to church and transformation to society through equipped leadership based on Christian values and principles by training people in their area of calling</p>
+                        <p className='text-white'>We exist to bring maturity to church and transformation to society through equipped leadership based on Christian values and principles by training people in their area of calling</p>
                     </div>
 
                     <div className="flex flex-col gap-6">
