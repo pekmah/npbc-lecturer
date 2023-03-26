@@ -13,7 +13,7 @@ const NewsItem = ({ image, date, desc }) => {
 
             <p className='text-black c-normal leading-6'>{desc}</p>
 
-            <div className="">
+            <div className="text-white">
                 <Button className={"bg-c-blue py-3 px-4 text c-normal"} text={"Read More"} />
             </div>
         </div >
