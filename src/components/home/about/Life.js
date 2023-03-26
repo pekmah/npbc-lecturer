@@ -3,7 +3,7 @@ import LifeItem from './LifeItem'
 
 const Life = () => {
     return (
-        <div className="bg-white w-11/12 my-20">
+        <div className="bg-white w-full my-20">
             <div className="p-12 flex items-center justify-center flex-col text-center">
                 <h4 className="c-h4 text-black mb-2">Life at NPBC</h4>
 
