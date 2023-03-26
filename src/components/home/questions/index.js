@@ -1,4 +1,5 @@
 import { MdOutlineAdd } from 'react-icons/md'
+import ReadMoreBtn from './ReadMoreBtn'
 
 const Questions = () => {
     return (
@@ -10,7 +11,7 @@ const Questions = () => {
                 {/* Questions */}
                 <div className="flex my-6">
                     {/* new students */}
-                    <div className="flex-[0.3]">
+                    <div className="flex-[0.3] mt-3">
                         <div className="flex">
                             <div>
                                 <span className="c-medium font-semibold">
@@ -35,43 +36,43 @@ const Questions = () => {
                         <li className='flex justify-between py-3 border-b border-gray-200'>
                             <span className="c-xl">Question 1</span>
 
-                            <MdOutlineAdd className='text-c-red text-2xl' />
+                            <ReadMoreBtn />
                         </li><li className='flex justify-between py-3 border-b border-gray-200'>
                             <span className="c-xl">Question 1</span>
 
-                            <MdOutlineAdd className='text-c-red text-2xl' />
+                            <ReadMoreBtn />
                         </li><li className='flex justify-between py-3 border-b border-gray-200'>
                             <span className="c-xl">Question 1</span>
 
-                            <MdOutlineAdd className='text-c-red text-2xl' />
+                            <ReadMoreBtn />
                         </li><li className='flex justify-between py-3 border-b border-gray-200'>
                             <span className="c-xl">Question 1</span>
 
-                            <MdOutlineAdd className='text-c-red text-2xl' />
+                            <ReadMoreBtn />
                         </li><li className='flex justify-between py-3 border-b border-gray-200'>
                             <span className="c-xl">Question 1</span>
 
-                            <MdOutlineAdd className='text-c-red text-2xl' />
+                            <ReadMoreBtn />
                         </li><li className='flex justify-between py-3 border-b border-gray-200'>
                             <span className="c-xl">Question 1</span>
 
-                            <MdOutlineAdd className='text-c-red text-2xl' />
+                            <ReadMoreBtn />
                         </li><li className='flex justify-between py-3 border-b border-gray-200'>
                             <span className="c-xl">Question 1</span>
 
-                            <MdOutlineAdd className='text-c-red text-2xl' />
+                            <ReadMoreBtn />
                         </li><li className='flex justify-between py-3 border-b border-gray-200'>
                             <span className="c-xl">Question 1</span>
 
-                            <MdOutlineAdd className='text-c-red text-2xl' />
+                            <ReadMoreBtn />
                         </li><li className='flex justify-between py-3 border-b border-gray-200'>
                             <span className="c-xl">Question 1</span>
 
-                            <MdOutlineAdd className='text-c-red text-2xl' />
+                            <ReadMoreBtn />
                         </li><li className='flex justify-between py-3 border-b border-gray-200'>
                             <span className="c-xl">Question 1</span>
 
-                            <MdOutlineAdd className='text-c-red text-2xl' />
+                            <ReadMoreBtn />
                         </li>
 
                         <div className="h-10" />
