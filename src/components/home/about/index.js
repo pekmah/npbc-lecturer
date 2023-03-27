@@ -9,7 +9,7 @@ const About = () => {
 
                 {/* Logo */}
                 <div className="flex flex-col items-center gap-6 flex-[0.7] ">
-                    <img src="/images/home/about-logo.png" alt='logo' className='h-56 ' />
+                    <img src="/images/layout/logo-2.png" alt='logo' className='h-56 ' />
 
                     <h4 className="c-h5 text-center text-white">
                         Nairobi Pentecostal <br /> Bible College

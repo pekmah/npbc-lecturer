@@ -9,7 +9,7 @@ const Header = () => {
         <div className='bg-white px-10 h-24 flex items-center text-black'>
             <div className="flex gap-4 items-center flex-1">
                 {/* Image */}
-                <Image height={90} width={80} src="/images/layout/logo.png" alt="logo" />
+                <img className='h-[90px] w-[80px] object-contain' src="/images/layout/logo-1.png" alt="logo" />
 
                 {/* title */}
                 <h4 className="c-h7 font-bold text-c-blue">Nairobi Pentecostal Bible College</h4>
