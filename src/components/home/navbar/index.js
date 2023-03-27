@@ -3,12 +3,21 @@ import NavItem from './NavItem'
 
 const Navbar = () => {
     const [currentTab, setCurrentTab] = useState("home")
+    const [currentCollapsibleTab, setCurrentCollapsibleTab] = useState("")
 
     return (
         <div className='bg-c-blue-dark h-16 px-10 flex justify-between items-center '>
             {/* Nav Items */}
             {nav_list?.map((item) => (
-                <NavItem title={item?.name} isCurrent={currentTab?.toLocaleLowerCase() === item?.name?.toLocaleLowerCase()} key={item?.name?.toLocaleLowerCase()} handleClick={() => setCurrentTab(item?.name?.toLocaleLowerCase())} />
+                <NavItem
+                    key={item?.name?.toLocaleLowerCase()}
+                    title={item?.name}
+                    subMenu={item?.subnavs}
+                    isCurrent={currentTab?.toLocaleLowerCase() === item?.name?.toLocaleLowerCase()}
+                    isCurrentCollapsibleTab={currentCollapsibleTab?.toLocaleLowerCase() === item?.name?.toLocaleLowerCase()}
+                    setCurrentCollapsibleTab={setCurrentCollapsibleTab}
+                    handleClick={() => setCurrentTab(item?.name?.toLocaleLowerCase())}
+                />
             ))}
         </div>
     )
@@ -19,6 +28,9 @@ export default Navbar
 const nav_list = [
     {
         name: "Home",
+        path: "",
+    }, {
+        name: "Admissions",
         path: "",
         subnavs: [
             {
@@ -42,9 +54,6 @@ const nav_list = [
                 path: ""
             },
         ]
-    }, {
-        name: "Admissions",
-        path: "",
     }, {
         name: "Courses",
         path: "",
