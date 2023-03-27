@@ -20,6 +20,28 @@ const nav_list = [
     {
         name: "Home",
         path: "",
+        subnavs: [
+            {
+                name: "How to Apply",
+                path: ""
+            },
+            {
+                name: "Course Qualifications",
+                path: ""
+            },
+            {
+                name: "Our Intakes",
+                path: ""
+            },
+            {
+                name: "Application FAQs",
+                path: ""
+            },
+            {
+                name: "Resume Application",
+                path: ""
+            },
+        ]
     }, {
         name: "Admissions",
         path: "",
