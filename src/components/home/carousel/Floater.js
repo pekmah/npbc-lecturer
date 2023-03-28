@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Floater = ({ title, subtitle }) => {
+const Floater = ({ title, subTitle }) => {
     return (
         <div className="w-full absolute top-0 bottom-0 right-0 left-0 z-20 flex ">
             <div className="my-auto px-10">
@@ -10,9 +10,9 @@ const Floater = ({ title, subtitle }) => {
                     </span>
                 </div>
                 <div className="">
-                    <div className="bg-[#ffffffd0] p-7 w-auto">
+                    <div className="bg-[#ffffffd0] p-7 ">
                         <p className="c-h5 font-bold text-black">
-                            {subtitle}
+                            {subTitle}
                         </p>
                     </div>
                 </div>

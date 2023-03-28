@@ -1,4 +1,4 @@
-import { AboutUs, Admission, Carousel, News, Questions } from '@/components'
+import { AboutUs, Admission, Carousel, Courses, News, Questions } from '@/components'
 import Layout from '@/layout'
 
 export default function Home() {
@@ -10,7 +10,9 @@ export default function Home() {
         <Carousel
           title={"Our Philosophy"}
           subTitle={"Nurturing potential building character"}
-        />
+        >
+          <Courses />
+        </Carousel>
 
         {/* About us */}
         <AboutUs />
