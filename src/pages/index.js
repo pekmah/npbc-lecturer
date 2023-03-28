@@ -7,7 +7,10 @@ export default function Home() {
       <Layout>
 
         {/* Carousel */}
-        <Carousel />
+        <Carousel
+          title={"Our Philosophy"}
+          subTitle={"Nurturing potential building character"}
+        />
 
         {/* About us */}
         <AboutUs />

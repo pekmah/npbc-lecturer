@@ -6,7 +6,10 @@ import CourseItem from './CourseItem';
 import Line from './Line';
 import Floater from './Floater';
 
-const Carousel = () => {
+const Carousel = ({
+    title = "",
+    subTitle = ""
+}) => {
     return (
         <div className="block">
             <div className="h-[60vh] relative">
@@ -25,7 +28,11 @@ const Carousel = () => {
                         <img className='h-[60vh] object-cover' src="/images/home/carousel-3.jpg" alt='img-3' />
                     </div>
                 </Car>
-                <Floater />
+
+                <Floater
+                    title={title}
+                    subTitle={subTitle}
+                />
 
             </div>
 
