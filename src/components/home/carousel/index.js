@@ -10,7 +10,7 @@ const Carousel = ({
 }) => {
     return (
         <div className="block relative">
-            <div className="h-[60vh] relative">
+            <div className="h-[70vh] relative">
                 <Car autoPlay showArrows={false} showIndicators={false} showThumbs={false} showStatus={false} infiniteLoop dynamicHeight={"90vh"}>
                     <div className='relative h-[60vh]'>
                         <img className='h-[60vh] object-cover' src="/images/home/carousel-1.jpg" alt='img-1' />
