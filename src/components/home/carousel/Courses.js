@@ -8,7 +8,7 @@ const Courses = () => {
             {/* courses */}
             <CourseItem style={{
                 background:
-                    " linear-gradient(0deg, rgba(162, 37, 49, 0.91), rgba(162, 37, 49, 0.91)), url(/images/home/course-1.jpg)",
+                    " linear-gradient(0deg, rgba(162, 37, 49,0.50), rgba(162, 37, 49,0.50)), url(/images/home/course-1.jpg)",
                 backgroundSize: "cover",
                 backgroundPosition: "bottom",
             }}
@@ -20,7 +20,7 @@ const Courses = () => {
 
             <CourseItem style={{
                 background:
-                    " linear-gradient(0deg, rgba(162, 37, 49, 0.91), rgba(162, 37, 49, 0.91)), url(/images/home/course-2.jpg)",
+                    " linear-gradient(0deg, rgba(162, 37, 49,0.50), rgba(162, 37, 49,0.50)), url(/images/home/course-2.jpg)",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
             }}
@@ -33,7 +33,7 @@ const Courses = () => {
 
             <CourseItem style={{
                 background:
-                    " linear-gradient(0deg, rgba(162, 37, 49, 0.91), rgba(162, 37, 49, 0.91)), url(/images/home/course-3.jpg)",
+                    " linear-gradient(0deg, rgba(162, 37, 49,0.50), rgba(162, 37, 49,0.50)), url(/images/home/course-3.jpg)",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
             }}
@@ -46,7 +46,7 @@ const Courses = () => {
 
             <CourseItem style={{
                 background:
-                    " linear-gradient(0deg, rgba(162, 37, 49, 0.91), rgba(162, 37, 49, 0.91)), url(/images/home/course-4.jpg)",
+                    " linear-gradient(0deg, rgba(162, 37, 49,0.50), rgba(162, 37, 49,0.50)), url(/images/home/course-4.jpg)",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
             }}
