@@ -1,4 +1,4 @@
-import { Application, Carousel, HowToApply, Intakes, Qualifications } from '@/components'
+import { AdmissionQuestions, Application, Carousel, HowToApply, Intakes, Qualifications } from '@/components'
 import Layout from '@/layout'
 import React from 'react'
 
@@ -23,7 +23,10 @@ const admission = () => {
                 <Qualifications />
                 
                 {/**Intakes */}
-                <Intakes/>
+                <Intakes />
+                
+                {/**Questions */}
+                <AdmissionQuestions/>
             </Carousel>
 
         </Layout>
