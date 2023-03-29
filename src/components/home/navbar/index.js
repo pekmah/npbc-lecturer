@@ -6,7 +6,7 @@ const Navbar = () => {
     const [currentCollapsibleTab, setCurrentCollapsibleTab] = useState("")
 
     return (
-        <div className='bg-c-blue-dark h-16 px-10 flex justify-between items-center '>
+        <div className='bg-c-blue-dark h-14 px-10 flex justify-between items-center '>
             {/* Nav Items */}
             {nav_list?.map((item) => (
                 <NavItem
