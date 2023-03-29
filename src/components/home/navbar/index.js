@@ -58,7 +58,7 @@ const nav_list = [
         ]
     }, {
         name: "Courses",
-        path: "",
+        path: "/courses",
     }, {
         name: "E-Learning",
         path: "",
