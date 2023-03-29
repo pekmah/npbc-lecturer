@@ -3,7 +3,7 @@ import QualificationItem from './QualificationItem'
 
 const Qualifications = () => {
   return (
-    <div className='py-16 bg-[#092A5914] flex'>
+    <div className='py-16 bg-[#092A5920] flex'>
           <div className="flex-[0.6] flex justify-center">
               <h3 className='c-h6 font-semibold text-c-blue'>Course Qualifications</h3>
           </div>
