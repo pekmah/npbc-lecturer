@@ -14,7 +14,7 @@ const Qualifications = () => {
                   In order to ensure that our students are well-prepared for their future ministry work.
               </p>
 
-              <div className="my-6 grid grid-cols-2 relative gap-x-16 gap-y-8 px-6">
+              <div className="my-6 grid grid-cols-2 relative gap-x-16 gap-y-8 pr-10">
                   <QualificationItem
                       title={"Undergraduate" }
                       desc={
