@@ -14,6 +14,7 @@ const Navbar = () => {
                     title={item?.name}
                     path={item?.path}
                     subMenu={item?.subnavs}
+                    hasSubmenu={item?.subnavs&&item?.subnavs?.length > 0}
                     isCurrent={currentTab?.toLocaleLowerCase() === item?.name?.toLocaleLowerCase()}
                     isCurrentCollapsibleTab={currentCollapsibleTab?.toLocaleLowerCase() === item?.name?.toLocaleLowerCase()}
                     setCurrentCollapsibleTab={setCurrentCollapsibleTab}
