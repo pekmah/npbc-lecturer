@@ -59,6 +59,24 @@ const nav_list = [
     }, {
         name: "Courses",
         path: "/courses",
+        subnavs: [
+            {
+                name: "Undergraduate Programs",
+                path: ""
+            },
+            {
+                name: "Diploma Programs",
+                path: ""
+            },
+            {
+                name: "Certificate Programs",
+                path: ""
+            },
+            {
+                name: "Study Modes",
+                path: ""
+            },
+        ]
     }, {
         name: "E-Learning",
         path: "",
