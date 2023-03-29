@@ -1,4 +1,4 @@
-import { Carousel, HowToApply } from '@/components'
+import { Application, Carousel, HowToApply } from '@/components'
 import Layout from '@/layout'
 import React from 'react'
 
@@ -13,7 +13,11 @@ const admission = () => {
                     applications and admission process in the industry
                 </>}
             >
-                    <HowToApply/>
+                {/**How to apply */}
+                <HowToApply />
+                
+                {/**Application procedure */}
+                <Application/>
             </Carousel>
 
         </Layout>
