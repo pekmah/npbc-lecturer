@@ -32,6 +32,8 @@ const Statistics = () => {
                     </div>
                 </div>
             </div>
+
+            <div className="h-32" />
         </div>
     )
 }
