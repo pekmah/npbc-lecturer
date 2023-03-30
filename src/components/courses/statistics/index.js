@@ -19,7 +19,7 @@ const Statistics = () => {
                     </div>
 
                     <div className='flex-1'>
-                        <h3 className='c-h7 text-3xl leading-10 font-semibold'>
+                        <h3 className='c-h7 text-3xl leading-10 font-semibold text-c-blue'>
                             We offer <span className={"text-c-red"}>industry leading </span> and <span className={"text-c-red"}> accredited </span>  programs to
                             undergraduate, diploma and certificate students
                         </h3>
