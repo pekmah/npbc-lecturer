@@ -3,7 +3,7 @@ import StatisticsItem from './StatisticsItem'
 
 const Floater = () => {
     return (
-        <div className='absolute flex flex-col items-center justify-center gap-3 z-40 shadow-md -top-[55%] left-[15%] right-[15%] bg-slate-500 h-40'
+        <div className='absolute flex flex-col items-center justify-center gap-3 z-40 shadow-md -top-[45%] left-[15%] right-[15%] bg-slate-500 h-40'
             style={{
                 background: "rgba(255, 255, 255, 0.23)",
                 boxShadow: "0px 2px 20px rgba(0, 0, 0, 0.2)",
