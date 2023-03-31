@@ -1,9 +1,9 @@
 import React from 'react'
-import { Button } from '@/components/general'
+import {Button} from '@/components/general'
 
-import { HiOutlineArrowSmallRight } from 'react-icons/hi2'
+import {HiOutlineArrowSmallRight} from 'react-icons/hi2'
 
-const CourseItem = ({ title, desc, isComingSoon }) => {
+const CourseItem = ({title, desc, isComingSoon}) => {
     return (
         <div className="w-[32%] bg-white px-1.5 py-3 flex gap-3 relative">
             {isComingSoon &&
@@ -12,6 +12,7 @@ const CourseItem = ({ title, desc, isComingSoon }) => {
                 </div>
             }
 
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
                 src="/images/courses/programs-1.jpg"
                 alt="programs-1"
@@ -27,7 +28,7 @@ const CourseItem = ({ title, desc, isComingSoon }) => {
 
                 <div className="flex justify-end pr-8">
                     <Button className={"bg-c-red text-white text-xs flex items-center gap-2"}>
-                        Couse Details <HiOutlineArrowSmallRight className='text-lg' />
+                        Couse Details <HiOutlineArrowSmallRight className='text-lg'/>
                     </Button>
                 </div>
             </div>

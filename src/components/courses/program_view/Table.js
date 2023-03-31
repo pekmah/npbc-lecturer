@@ -5,8 +5,8 @@ import React from 'react';
  */
 
 /**
- * @param {Props}
  * @return {JSX.Element}
+ * @param {Props} props
  */
 function Table(props) {
     const {headerList, data} = props
@@ -25,8 +25,8 @@ function Table(props) {
             </thead>
             <tbody>
             {
-                data?.map(item => (
-                    <tr className={"border-b border-line-gray font-medium"}>
+                data?.map((item, key) => (
+                    <tr key={key} className={"border-b border-line-gray font-medium"}>
                         {
                             Object.keys(item).map((cKey, key) => (
                                 <td key={key}

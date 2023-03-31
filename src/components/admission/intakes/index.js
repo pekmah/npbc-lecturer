@@ -1,11 +1,12 @@
-import { Button } from '@/components/general'
+import {Button} from '@/components/general'
 import React from 'react'
 
 const Intakes = () => {
     return (
         <section className='flex bg-[#fff]'>
             <div className="flex-1 h-[550px]">
-                <img className='h-full object-cover' src="/images/admission/intakes-1.jpg" alt="intakes-1" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img className='h-full object-cover' src="/images/admission/intakes-1.jpg" alt="intakes-1"/>
             </div>
 
             <div className="flex-1 text-black flex bg-white py-16">
@@ -15,7 +16,7 @@ const Intakes = () => {
                     <span className="text-sm">
                         The February intake is now open
                     </span>
-                    <br />
+                    <br/>
 
                     <p className="text-sm mt-3">
                         We conduct intakes twice an year in the months of February and September for all our courses
@@ -56,7 +57,8 @@ const Intakes = () => {
                             Apply Now
                         </Button>
 
-                        <Button className={"bg-none h-8 text-xs text-[#909090] flex items-center gap-2 font-semibold px-5  justify-center"}>
+                        <Button
+                            className={"bg-none h-8 text-xs text-[#909090] flex items-center gap-2 font-semibold px-5  justify-center"}>
                             View Courses first
                         </Button>
                     </div>
