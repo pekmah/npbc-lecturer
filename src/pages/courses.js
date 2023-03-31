@@ -1,4 +1,4 @@
-import { Carousel, Programs, Statistics } from '@/components'
+import {Carousel, Programs, ProgramView, Statistics} from '@/components'
 import Layout from '@/layout'
 import React from 'react'
 
@@ -10,17 +10,21 @@ const Courses = () => {
                 title='Our Assurance'
                 subTitle={
                     <>
-                        Your search for a  wholesome approach <br />
+                        Your search for a wholesome approach <br/>
                         to theological teachings ends here
                     </>
                 }
             />
 
             {/* Statistics */}
-            <Statistics />
+            <Statistics/>
 
             {/** Programs */}
             <Programs/>
+
+            {/* Program View*/}
+            <ProgramView/>
+
         </Layout>
     )
 }
