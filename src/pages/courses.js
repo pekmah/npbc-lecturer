@@ -1,4 +1,4 @@
-import {Carousel, Programs, ProgramView, Statistics} from '@/components'
+import {Carousel, Programs, ProgramView, Statistics, StudyModes} from '@/components'
 import Layout from '@/layout'
 import React from 'react'
 
@@ -24,6 +24,9 @@ const Courses = () => {
 
             {/* Program View*/}
             <ProgramView/>
+
+            {/*Study Modes*/}
+            <StudyModes/>
 
         </Layout>
     )
