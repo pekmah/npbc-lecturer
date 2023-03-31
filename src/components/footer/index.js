@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '../general'
+import {Button} from '../general'
 
 const Footer = () => {
     return (
@@ -7,27 +7,27 @@ const Footer = () => {
 
         >
             {/* image */}
-            <div className="text-center h-40 c-h3 p-3 flex flex-col gap-5 items-center justify-center"
-                style={{
-                    background:
-                        " linear-gradient(0deg, rgba(9, 42, 89, 0.66), rgba(9, 42, 89, 0.66)), url(/images/footer/npbc-footer.jpg)",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}>
-                <p className='leading-10 text-white'>Become a student at <br /> NPBC</p>
+            <div className="text-center h-48 c-h3 p-3 flex flex-col gap-5 items-center justify-center"
+                 style={{
+                     background:
+                         " linear-gradient(0deg, rgba(9, 42, 89, 0.66), rgba(9, 42, 89, 0.66)), url(/images/footer/npbc-footer.jpg)",
+                     backgroundSize: "cover",
+                     backgroundPosition: "center",
+                 }}>
+                <p className='leading-10 text-white'>Become a student at <br/> NPBC</p>
 
-                <Button className={"bg-white text-c-blue c-normal px-10 font-semibold"}>Apply Today</Button>
+                <Button className={"bg-white text-c-blue c-normal w-44 h-10 font-semibold"}>Apply Today</Button>
             </div>
             {/* links */}
-            <div className="flex bg-c-blue text-xs justify-evenly py-14 text-white" >
+            <div className="flex bg-c-blue text-xs justify-evenly py-14 text-white">
 
-                <NPBC />
+                <NPBC/>
 
-                <Explore />
+                <Explore/>
 
-                <QuickLinks />
+                <QuickLinks/>
 
-                <Research />
+                <Research/>
             </div>
         </div>
     )
