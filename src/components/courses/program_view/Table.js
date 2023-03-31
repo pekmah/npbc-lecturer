@@ -14,7 +14,7 @@ function Table(props) {
     return (
         <table className=" text-c-blue">
             <thead>
-            <tr className={"bg-[#092A5914] "}>
+            <tr className={"bg-bg-blue "}>
                 {
                     headerList?.map((item, key) => (
                         <th key={key} className={`text-left w-1/6 py-2 px-1`}>{item}</th>
