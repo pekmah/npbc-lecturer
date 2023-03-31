@@ -3,11 +3,7 @@ import {IoLocationOutline} from "react-icons/io5"
 import {Button} from "@/components";
 import Theme from "@/constants/Theme";
 
-/**
- * @param props
- * @return {JSX.Element}
- */
-function StudyModes(props) {
+function StudyModes() {
     return (
         <div className={"bg-bg-blue py-24 flex justify-center"}>
             <div className={"w-5/6 bg-white "}>
