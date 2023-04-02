@@ -85,6 +85,6 @@ const nav_list = [
         path: "/downloads",
     }, {
         name: "Contact Us",
-        path: "",
+        path: "/contacts",
     },
 ]
