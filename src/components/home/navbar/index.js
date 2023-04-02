@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import NavItem from './NavItem'
 
 const Navbar = () => {
@@ -14,7 +14,7 @@ const Navbar = () => {
                     title={item?.name}
                     path={item?.path}
                     subMenu={item?.subnavs}
-                    hasSubmenu={item?.subnavs&&item?.subnavs?.length > 0}
+                    hasSubmenu={item?.subnavs && item?.subnavs?.length > 0}
                     isCurrent={currentTab?.toLocaleLowerCase() === item?.name?.toLocaleLowerCase()}
                     isCurrentCollapsibleTab={currentCollapsibleTab?.toLocaleLowerCase() === item?.name?.toLocaleLowerCase()}
                     setCurrentCollapsibleTab={setCurrentCollapsibleTab}
@@ -82,7 +82,7 @@ const nav_list = [
         path: "",
     }, {
         name: "Downloads",
-        path: "",
+        path: "/downloads",
     }, {
         name: "Contact Us",
         path: "",
