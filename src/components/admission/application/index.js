@@ -1,12 +1,12 @@
-import { Button } from '@/components/general'
+import {Button} from '@/components/general'
 import React from 'react'
-import { MdOutlinePhone } from 'react-icons/md'
-import { HiOutlineDownload } from 'react-icons/hi'
+import {MdOutlinePhone} from 'react-icons/md'
+import {HiOutlineDownload} from 'react-icons/hi'
 import RequirementItem from './RequirementItem'
 
 const Application = () => {
     return (
-        <section className='flex'>
+        <section className='flex text-white'>
             {/**Online Application */}
             <div className="flex-1 bg-c-red p-8 flex flex-col">
                 <h4 className='c-h7 font-semibold text-center'>Online Application</h4>
@@ -18,7 +18,7 @@ const Application = () => {
 
                 {/**Requirements */}
                 <div className="flex my-8 flex-1">
-                    <div className='w-[3.5px] bg-white h-auto' />
+                    <div className='w-[3.5px] bg-white h-auto'/>
 
                     <div className="flex flex-col gap-5">
                         {/**Requirement Item */}
@@ -52,10 +52,11 @@ const Application = () => {
                 {/**Buttons */}
                 <div className="flex justify-end gap-4">
                     <Button className={"bg-none text-white font-semibold text-xs "}>
-                       Contact us
+                        Contact us
                     </Button>
-                    
-                    <Button className={"bg-white h-8 text-xs text-c-red flex items-center gap-2 font-semibold px-5 w-32 justify-center"}>
+
+                    <Button
+                        className={"bg-white h-8 text-xs text-c-red flex items-center gap-2 font-semibold px-5 w-32 justify-center"}>
                         Apply Now
                     </Button>
                 </div>
@@ -80,14 +81,15 @@ const Application = () => {
                                 <Button className={"bg-none text-[#7D7C7C] font-medium text-[13px] "}>
                                     View Locations
                                 </Button>
-                                
-                                <Button className={"bg-white h-8 font-medium text-xs text-c-blue flex items-center gap-2"}>
-                                   <MdOutlinePhone className='text-lg'/> Call for directions
+
+                                <Button
+                                    className={"bg-white h-8 font-medium text-xs text-c-blue flex items-center gap-2"}>
+                                    <MdOutlinePhone className='text-lg'/> Call for directions
                                 </Button>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div className="px-4 py-2 bg-[#FFFFFF14]">
                         <h6 className="text-sm font-medium">Fill form and submit in-person</h6>
 
@@ -98,14 +100,15 @@ const Application = () => {
                                 <Button className={"bg-none text-[#7D7C7C] font-medium text-[13px] "}>
                                     View Locations
                                 </Button>
-                                
-                                <Button className={"bg-white h-8 font-medium text-xs text-c-blue flex items-center gap-2"}>
-                                   <HiOutlineDownload className='text-lg'/> Download Form
+
+                                <Button
+                                    className={"bg-white h-8 font-medium text-xs text-c-blue flex items-center gap-2"}>
+                                    <HiOutlineDownload className='text-lg'/> Download Form
                                 </Button>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div className="px-4 py-2 bg-[#FFFFFF14]">
                         <h6 className="text-sm font-medium">Fill form and submit via email</h6>
 
@@ -116,9 +119,10 @@ const Application = () => {
                                 <Button className={"bg-none text-[#7D7C7C] font-medium text-[13px] "}>
                                     Submit form
                                 </Button>
-                                
-                                <Button className={"bg-white h-8 font-medium text-xs text-c-blue flex items-center gap-2"}>
-                                   <HiOutlineDownload className='text-lg'/> Download Form
+
+                                <Button
+                                    className={"bg-white h-8 font-medium text-xs text-c-blue flex items-center gap-2"}>
+                                    <HiOutlineDownload className='text-lg'/> Download Form
                                 </Button>
                             </div>
                         </div>
@@ -129,7 +133,7 @@ const Application = () => {
                     <Button className={"bg-none text-white font-semibold text-xs "}>
                         View Courses
                     </Button>
-                    
+
                     <Button className={"bg-white h-8 text-xs text-c-red flex items-center gap-2 font-semibold px-5"}>
                         Submit filled form
                     </Button>
