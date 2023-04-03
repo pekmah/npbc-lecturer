@@ -86,5 +86,34 @@ const nav_list = [
     }, {
         name: "Contact Us",
         path: "/contacts",
+    }, {
+        name: "About Us",
+        path: "/about",
+        subnavs: [
+            {
+                name: "Our History",
+                path: ""
+            },
+            {
+                name: "News and Articles",
+                path: ""
+            },
+            {
+                name: "Mission, Vision and Core values",
+                path: ""
+            },
+            {
+                name: "Strategic Goals",
+                path: ""
+            },
+            {
+                name: "NPBC Leadership",
+                path: ""
+            },
+            {
+                name: "Partners",
+                path: ""
+            },
+        ],
     },
 ]
