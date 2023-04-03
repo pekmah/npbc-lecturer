@@ -10,7 +10,7 @@ const History = () => {
             <SideMenu/>
 
             {/*    Main Body    */}
-            <div className={"text-white py-2 w-2/3"}>
+            <div className={"text-white py-2 w-3/4"}>
                 <h6 className={"c-large font-semibold "}>History</h6>
 
                 {/*    Paragraph       */}
@@ -23,7 +23,7 @@ const History = () => {
 
                 {/*    Our Statistics*/}
                 <Statistics/>
-                
+
                 {/*    milestones   */}
                 <MileStones/>
             </div>

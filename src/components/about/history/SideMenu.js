@@ -3,9 +3,9 @@ import MenuItem from "@/components/about/history/MenuItem";
 
 const SideMenu = () => {
     return (
-        <div className={"w-2/6 bg-none flex flex-col items-start"}>
+        <div className={"w-1/4 bg-none flex flex-col"}>
 
-            <ul>
+            <ul className={"w-9/12"}>
                 {/*Menu items*/}
                 <MenuItem isCurrent name={"History"}/>
                 <MenuItem name={"Accredition"}/>
