@@ -1,0 +1,45 @@
+import React from 'react';
+
+const Statistics = () => {
+    return (
+        <div className={"my-6 bg-[#FFFFFF14] p-8 "}>
+            <h6 className={"c-large font-semibold text-center mb-2"}>Our Statistics</h6>
+
+            <div className={"flex justify-between p-2"}>
+                <div className={"text-center"}>
+                    <h5 className={"font-medium c-h7 text-center"}>
+                        3750
+                    </h5>
+
+                    <span className={"text-sm font-medium my-2"}>Graduated Students</span>
+                </div>
+
+                <div className={"text-center"}>
+                    <h5 className={"font-medium c-h7 text-center"}>
+                        17
+                    </h5>
+
+                    <span className={"text-sm font-medium my-2"}>Intake Rounds</span>
+                </div>
+
+                <div className={"text-center"}>
+                    <h5 className={"font-medium c-h7 text-center"}>
+                        10
+                    </h5>
+
+                    <span className={"text-sm font-medium my-2"}>Course Programs</span>
+                </div>
+
+                <div className={"text-center"}>
+                    <h5 className={"font-medium c-h7 text-center"}>
+                        3
+                    </h5>
+
+                    <span className={"text-sm font-semibold my-2"}>Campus Locations</span>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Statistics;

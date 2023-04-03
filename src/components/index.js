@@ -5,3 +5,4 @@ export * from "./admission/index";
 export * from "./courses/index";
 export * from "./downloads/index"
 export * from "./contacts/index"
+export * from "./about"
