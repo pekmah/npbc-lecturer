@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "@/layout";
-import {Carousel, Mission, Philosophy} from "@/components";
+import {Carousel, Goals, Mission, Philosophy} from "@/components";
 import History from "@/components/about/history";
 
 const About = () => {
@@ -19,6 +19,9 @@ const About = () => {
 
             {/*    Philosophy*/}
             <Philosophy/>
+
+            {/*    Goals    */}
+            <Goals/>
         </Layout>
     );
 };
