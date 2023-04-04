@@ -3,6 +3,7 @@ import Layout from "@/layout";
 import {Carousel, Goals, Mission, Philosophy} from "@/components";
 import History from "@/components/about/history";
 import Leadership from "@/components/about/leadership";
+import Partners from "@/components/about/partners";
 
 const About = () => {
     return (
@@ -26,6 +27,9 @@ const About = () => {
 
             {/*    Leadership     */}
             <Leadership/>
+
+            {/*    Partners     */}
+            <Partners/>
         </Layout>
     );
 };
