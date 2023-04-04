@@ -11,6 +11,7 @@ function OtherMaterialItem({title}) {
     return (
         <div className={"text-c-blue flex w-[45%]"}>
             {/*    image    */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img className={"h-24 w-24"} src={"/images/downloads/download-1.jpg"}/>
 
             {/*    Details    */}

@@ -21,8 +21,8 @@ const Index = () => {
                 {/*    HStack     */}
                 <div className={" grid grid-cols-3 gap-12 py-6"}>
                     {
-                        goal_data?.map(item => (
-                            <div className={" flex flex-col gap-6 p-3 items-center text-center"}>
+                        goal_data?.map((item, index) => (
+                            <div key={index} className={" flex flex-col gap-6 p-3 items-center text-center"}>
                                 {/*    icon     */}
                                 <div>
                                     {item?.icon}
