@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from "@/layout";
 import {Carousel, Goals, Mission, Philosophy} from "@/components";
 import History from "@/components/about/history";
+import Leadership from "@/components/about/leadership";
 
 const About = () => {
     return (
@@ -22,6 +23,9 @@ const About = () => {
 
             {/*    Goals    */}
             <Goals/>
+
+            {/*    Leadership     */}
+            <Leadership/>
         </Layout>
     );
 };
