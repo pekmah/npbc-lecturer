@@ -4,12 +4,12 @@ import QualificationItem from './QualificationItem'
 const Qualifications = () => {
     return (
         <div className='py-16 bg-bg-blue flex'>
-            <div className="flex-[0.6] flex justify-center">
+            <div className="flex-[0.6] flex justify-center" data-aos="fade-right">
                 <h3 className='c-h6 font-semibold text-c-blue'>Course Qualifications</h3>
             </div>
 
             <div className="flex-1">
-                <p className='c-medium font-medium text-c-blue px-3'>
+                <p className='c-medium font-medium text-c-blue px-3' data-aos="fade-left">
                     We have courses for everyone with any level of qualification and educational background At NPBC, we
                     are committed to providing a high-quality education in biblical studies and ministry training.
                     In order to ensure that our students are well-prepared for their future ministry work.
