@@ -13,7 +13,7 @@ const LeftBranchItem = ({title, date, desc}) => {
         <div className="flex gap-4 h-28">
 
 
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1" data-aos="fade-right">
                 <div className={"flex gap-3 items-center justify-end"}>
                     <h6 className={"font-semibold text-base text-gray-500"}>{date}</h6>
                     <h6 className={"c-medium font-semibold"}>{title}</h6>

@@ -14,9 +14,9 @@ const Footer = () => {
                      backgroundSize: "cover",
                      backgroundPosition: "center",
                  }}>
-                <p className='leading-10 text-white'>Become a student at <br/> NPBC</p>
+                <p className='leading-10 text-white' data-aos="fade-up">Become a student at <br/> NPBC</p>
 
-                <Button className={"bg-white text-c-blue c-normal w-44 h-10 font-semibold"}>Apply Today</Button>
+                <Button className={"bg-white text-c-blue c-normal w-44 h-10 font-semibold"} data-aos="fade-left">Apply Today</Button>
             </div>
             {/* links */}
             <div className="flex bg-c-blue text-xs justify-evenly py-14 text-white">
@@ -36,7 +36,7 @@ const Footer = () => {
 export default Footer
 
 const NPBC = () => (
-    <div>
+    <div data-aos="fade-up">
         <h6 className="c-large mb-4">NPBC</h6>
         {/* Location */}
         <div className="block leading-6">
@@ -65,7 +65,7 @@ const NPBC = () => (
 )
 
 const Explore = () => (
-    <div>
+    <div data-aos="fade-up">
         <h6 className="c-large mb-4">Explore</h6>
         {/* Location */}
         <div className="block leading-6">
@@ -100,7 +100,7 @@ const Explore = () => (
 )
 
 const QuickLinks = () => (
-    <div>
+    <div data-aos="fade-up">
         <h6 className="c-large mb-4">QUICK LINKS</h6>
         {/* Location */}
         <div className="block leading-6">
@@ -125,7 +125,7 @@ const QuickLinks = () => (
 )
 
 const Research = () => (
-    <div>
+    <div data-aos="fade-up">
         <h6 className="c-large mb-4">RESEARCH</h6>
         {/* Location */}
         <div className="block leading-6">

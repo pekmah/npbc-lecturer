@@ -16,13 +16,13 @@ const Index = () => {
 
             {/*    Main Body    */}
             <div className={" py-2 w-3/4"}>
-                <h3 className={"c-h7 font-semibold font-bold"}>Our 9 Strategic Goals 2023 - 2027</h3>
+                <h3 className={"c-h7 font-bold"} data-aos="fade-up">Our 9 Strategic Goals 2023 - 2027</h3>
 
                 {/*    HStack     */}
                 <div className={" grid grid-cols-3 gap-12 py-6"}>
                     {
                         goal_data?.map((item, index) => (
-                            <div key={index} className={" flex flex-col gap-6 p-3 items-center text-center"}>
+                            <div key={index} className={" flex flex-col gap-6 p-3 items-center text-center"} data-aos="fade-up">
                                 {/*    icon     */}
                                 <div>
                                     {item?.icon}

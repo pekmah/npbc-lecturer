@@ -4,7 +4,7 @@ import NewsItem from './NewsItem'
 const News = () => {
     return (
         <div className='py-12 px-8'>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-6" data-aos="fade-up">
                 <p className="c-xl text-black font-bold ">News & Updates</p>
 
                 <hr className='bg-gray-100 h-0.5 rounded-full flex-1' />

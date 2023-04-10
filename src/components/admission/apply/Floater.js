@@ -3,7 +3,7 @@ import ProcessItem from './ProcessItem'
 
 const Floater = () => {
     return (
-        <div className='absolute flex flex-col items-center justify-center gap-3 z-40 shadow-md -top-[55%] left-[15%] right-[15%] bg-slate-500 h-32'
+        <div className='absolute flex flex-col items-center justify-center gap-3 z-40 shadow-md -top-[55%] left-[15%] right-[15%] bg-slate-500 h-32' data-aos="fade-up"
             style={{
                 background: "rgba(255, 255, 255, 0.23)",
                 boxShadow: "0px 2px 20px rgba(0, 0, 0, 0.2)",

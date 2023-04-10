@@ -10,12 +10,12 @@ const Philosophy = () => {
 
             {/*    Main Body    */}
             <div className={" py-2 w-3/4"}>
-                <h3 className={"c-h7 font-semibold font-bold"}>Philosophy & Core Values</h3>
+                <h3 className={"c-h7 font-bold"} data-aos="fade-up">Philosophy & Core Values</h3>
 
                 {/*    HStack     */}
                 <div className={"flex justify-between gap-10 my-20"}>
                     {/*    Mission      */}
-                    <div className={"flex-1 flex flex-col gap-5 items-center"}>
+                    <div className={"flex-1 flex flex-col gap-5 items-center"} data-aos="fade-up">
                         {/*Icon*/}
                         <PhilosophyIcon/>
 
@@ -26,7 +26,7 @@ const Philosophy = () => {
                         </p>
                     </div>
                     {/*    Vision   */}
-                    <div className={"flex-1 flex flex-col items-center gap-5"}>
+                    <div className={"flex-1 flex flex-col items-center gap-5"} data-aos="fade-up">
                         {/*Icon*/}
                         <Values/>
 

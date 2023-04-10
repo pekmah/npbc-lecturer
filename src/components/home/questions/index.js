@@ -4,7 +4,7 @@ import ReadMoreBtn from './ReadMoreBtn'
 const Questions = () => {
     return (
         <div className='px-14 py-10 bg-gray-100'>
-            <div className="p-10 bg-white text-black">
+            <div className="p-10 bg-white text-black" data-aos="fade-up">
                 {/* title */}
                 <h2 className="c-h4 font-semibold ">Questions other <span className='text-c-red'>students</span> are asking</h2>
 

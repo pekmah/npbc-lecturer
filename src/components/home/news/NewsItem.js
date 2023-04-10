@@ -4,7 +4,7 @@ import React from 'react'
 
 const NewsItem = ({ image, date, desc }) => {
     return (
-        <div className='w-[24%] flex flex-col gap-4'>
+        <div className='w-[24%] flex flex-col gap-4' data-aos="fade-right">
             <img className='h-44' src={image} alt="news" />
 
             <span className="text-gray-400 font-medium c-medium">
@@ -13,7 +13,7 @@ const NewsItem = ({ image, date, desc }) => {
 
             <p className='text-black c-normal leading-6'>{desc}</p>
 
-            <div className="text-white">
+            <div className="text-white" data-aos="fade-up">
                 <Button className={"bg-c-blue py-3 px-4 text c-normal"} text={"Read More"} />
             </div>
         </div >
