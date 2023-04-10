@@ -5,7 +5,7 @@ import {MdOutlineFacebook} from "react-icons/md";
 
 const LeadershipItem = () => {
     return (
-        <div className={"w-[47%] px-2 flex gap-4 items-center"}>
+        <div className={"w-[47%] px-2 flex gap-4 items-center"} data-aos="fade-up">
             {/*Image*/}
             <div className={"w-32 flex-shrink-0"}>
                 <img className={" w-full object-contain"} src="/images/about/about-1.jpg" alt="about-1"/>
@@ -27,7 +27,7 @@ const LeadershipItem = () => {
                     matters of theology.
                 </p>
                 {/*    Icons    */}
-                <div className={"flex w-full gap-4 text-c-blue my-3"}>
+                <div className={"flex w-full gap-4 text-c-blue my-3"}  data-aos="fade-left">
                     {/*    Linked In    */}
                     <GrLinkedin className={"text-xl"}/>
                     {/*    Twitter    */}

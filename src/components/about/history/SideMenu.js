@@ -3,7 +3,7 @@ import MenuItem from "@/components/about/history/MenuItem";
 
 const SideMenu = () => {
     return (
-        <div className={"w-1/4 bg-none flex flex-col"}>
+        <div className={"w-1/4 bg-none flex flex-col"} data-aos="fade-right">
 
             <ul className={"w-9/12"}>
                 {/*Menu items*/}
