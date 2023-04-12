@@ -3,7 +3,7 @@ import React from 'react'
 const Floater = ({title, subTitle}) => {
     return (
         <div className="w-full absolute top-0 bottom-0 right-0 left-0 z-20 flex ">
-            <div className="mt-[25vh] px-10">
+            <div className="mt-[20vh] px-10">
                 <div className="w-52 bg-c-red py-3 font-bold text-center">
                     <span className="font-bold text-white">
                         {title}
