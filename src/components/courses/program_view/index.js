@@ -23,7 +23,6 @@ function ProgramView(props) {
                 headerList={table_columns}
                 data={table_data}
             />
-            HELLO
         </div>
     );
 }
