@@ -4,7 +4,7 @@ import LifeItem from './LifeItem'
 const Life = () => {
     return (
         <div className="bg-white w-full my-20">
-            <div className="p-12 flex items-center justify-center flex-col text-center">
+            <div className="p-12 flex items-center justify-center flex-col text-center" data-aos="fade-up">
                 <h4 className="c-h4 text-black mb-2">Life at NPBC</h4>
 
                 <p className='text-gray-500'>Your time at NPBC is a great opportunity to discover, develop and <br /> deploy your Christian Ministry</p>

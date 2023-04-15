@@ -8,7 +8,7 @@ const About = () => {
             <div className="mx-auto w-11/12 flex">
 
                 {/* Logo */}
-                <div className="flex flex-col items-center gap-6 flex-[0.7] ">
+                <div className="flex flex-col items-center gap-6 flex-[0.7]" data-aos="fade-right">
                     <img src="/images/layout/logo-2.png" alt='logo' className='h-56 ' />
 
                     <h4 className="c-h5 text-center text-white">
@@ -17,18 +17,18 @@ const About = () => {
                 </div>
                 {/* Description */}
                 <div className="flex flex-col gap-16 flex-1">
-                    <p className="c-xl text-[22px] text-[#FFFFFFB2] leading-8">We desire to be the training centre of choice among our target denominations and churches by providing the best training skills that are relevant to society.</p>
+                    <p className="c-xl text-[22px] text-[#FFFFFFB2] leading-8" data-aos="fade-left">We desire to be the training centre of choice among our target denominations and churches by providing the best training skills that are relevant to society.</p>
 
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-3" data-aos="fade-left">
                         <h5 className="c-xl font-semibold text-white capitalize">We are more than a bible college</h5>
 
                         <p className='text-white'>We exist to bring maturity to church and transformation to society through equipped leadership based on Christian values and principles by training people in their area of calling</p>
                     </div>
 
                     <div className="flex flex-col gap-6">
-                        <h5 className="c-xl font-semibold text-white capitalize">4 Reasons you&apos;ll love NPBC</h5>
+                        <h5 className="c-xl font-semibold text-white capitalize" data-aos="fade-up">4 Reasons you&apos;ll love NPBC</h5>
 
-                        <div className="flex w-full justify-between">
+                        <div className="flex w-full justify-between" data-aos="fade-up">
 
 
                             <SvgItem title={"Affordable"}>

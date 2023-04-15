@@ -11,18 +11,18 @@ const Intakes = () => {
 
             <div className="flex-1 text-black flex bg-white py-16">
                 <div className="w-[80%] mx-auto text-c-blue ">
-                    <h3 className='c-h7 font-semibold mb-4'>Our Intakes</h3>
+                    <h3 className='c-h7 font-semibold mb-4' data-aos="fade-up-left">Our Intakes</h3>
 
-                    <span className="text-sm">
+                    <span className="text-sm" data-aos="fade-up-left">
                         The February intake is now open
                     </span>
                     <br/>
 
-                    <p className="text-sm mt-3">
+                    <p className="text-sm mt-3" data-aos="fade-up-left">
                         We conduct intakes twice an year in the months of February and September for all our courses
                     </p>
 
-                    <div className="my-8">
+                    <div className="my-8" data-aos="fade-up-left">
                         <h5 className="c-medium font-bold">Intake closes in</h5>
 
                         <div className="flex gap-5 text-center">
@@ -48,11 +48,11 @@ const Intakes = () => {
                         </div>
                     </div>
 
-                    <p className='text-sm'>
+                    <p className='text-sm' data-aos="fade-up-left">
                         Our application process is clear and simple so you can apply from anywhere.
                     </p>
 
-                    <div className="flex gap-4 mt-8">
+                    <div className="flex gap-4 mt-8" data-aos="fade-up">
                         <Button className={"bg-c-red text-white font-semibold text-xs w-32"}>
                             Apply Now
                         </Button>

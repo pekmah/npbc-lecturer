@@ -5,7 +5,7 @@ const Intake = () => {
     return (
         <div className={"bg-c-blue p-6 flex text-c-white"}>
             <div className={"flex-1 flex flex-col gap-8"}>
-                <div className={"flex flex-col gap-4"}>
+                <div className={"flex flex-col gap-4"}  data-aos="fade-up-right">
                     <h4 className={"c-h7 font-medium"}>Our Intake is ongoing</h4>
 
                     <h6 className={"c-medium font-light"}>The February intake is now open</h6>
@@ -16,7 +16,7 @@ const Intake = () => {
                 </div>
 
                 {/*    Intake     */}
-                <div>
+                <div  data-aos="fade-up-right">
                     <h5 className={"font-semibold"}>Intake closes in</h5>
 
                     <div className="flex gap-6 text-center my-4">
@@ -38,11 +38,11 @@ const Intake = () => {
                     </div>
                 </div>
 
-                <p className={"c-normal leading-6 font-light"}>
+                <p className={"c-normal leading-6 font-light"}  data-aos="fade-up-right">
                     Our application process is clear and simple so you can apply from anywhere.
                 </p>
 
-                <div className="flex gap-4 items-center">
+                <div className="flex gap-4 items-center" data-aos="fade-up">
                     <Button className={"bg-c-red text-white font-semibold text-xs w-40 h-10"}>
                         Apply Now
                     </Button>
@@ -55,7 +55,7 @@ const Intake = () => {
             </div>
 
             <div className={"flex-1"}>
-                <img className={"h-full object-contain"} src={"/images/about/about-2.png"}/>
+                <img className={"h-full object-contain"} src={"/images/about/about-2.png"} alt="about"/>
             </div>
         </div>
     );

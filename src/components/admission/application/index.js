@@ -9,9 +9,9 @@ const Application = () => {
         <section className='flex text-white'>
             {/**Online Application */}
             <div className="flex-1 bg-c-red p-8 flex flex-col">
-                <h4 className='c-h7 font-semibold text-center'>Online Application</h4>
+                <h4 className='c-h7 font-semibold text-center' data-aos="fade-up">Online Application</h4>
 
-                <p className="my-1 c-medium font-medium leading-6">
+                <p className="my-1 c-medium font-medium leading-6" data-aos="fade-up">
                     Our online application is simple and clear, having only 5 steps to complete your entire application.
                     Get help using the “Need Help” link at the bottom left at any point in the process.
                 </p>
@@ -50,7 +50,7 @@ const Application = () => {
                 </div>
 
                 {/**Buttons */}
-                <div className="flex justify-end gap-4">
+                <div className="flex justify-end gap-4" data-aos="fade-up">
                     <Button className={"bg-none text-white font-semibold text-xs "}>
                         Contact us
                     </Button>
@@ -63,15 +63,15 @@ const Application = () => {
             </div>
             {/**Offline Application */}
             <div className=" flex flex-col flex-1 bg-c-blue p-8">
-                <h4 className='c-h7 font-semibold'>Physical Application Application</h4>
+                <h4 className='c-h7 font-semibold' data-aos="fade-up">Physical Application Application</h4>
 
-                <p className="my-3 c-medium font-medium leading-6">
+                <p className="my-3 c-medium font-medium leading-6" data-aos="fade-up">
                     The physical application mode is customized to accommodate those who find it hard to apply online.
                     Our physical application process can happen in three ways.
                 </p>
 
                 <div className="flex my-6 flex-col gap-8 flex-1">
-                    <div className="px-4 py-2 bg-[#FFFFFF14]">
+                    <div className="px-4 py-2 bg-[#FFFFFF14]" data-aos="fade-left">
                         <h6 className="text-sm font-medium">Visit campus to apply</h6>
 
                         <div className="flex justify-between items-center">
@@ -90,7 +90,7 @@ const Application = () => {
                         </div>
                     </div>
 
-                    <div className="px-4 py-2 bg-[#FFFFFF14]">
+                    <div className="px-4 py-2 bg-[#FFFFFF14]" data-aos="fade-left">
                         <h6 className="text-sm font-medium">Fill form and submit in-person</h6>
 
                         <div className="flex justify-between items-center">
@@ -109,7 +109,7 @@ const Application = () => {
                         </div>
                     </div>
 
-                    <div className="px-4 py-2 bg-[#FFFFFF14]">
+                    <div className="px-4 py-2 bg-[#FFFFFF14]" data-aos="fade-left">
                         <h6 className="text-sm font-medium">Fill form and submit via email</h6>
 
                         <div className="flex justify-between items-center">
@@ -129,7 +129,7 @@ const Application = () => {
                     </div>
                 </div>
 
-                <div className="flex justify-end gap-4">
+                <div className="flex justify-end gap-4" data-aos="fade-up">
                     <Button className={"bg-none text-white font-semibold text-xs "}>
                         View Courses
                     </Button>
