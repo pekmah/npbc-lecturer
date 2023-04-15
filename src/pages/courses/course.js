@@ -2,6 +2,7 @@ import {
     Carousel,
     CourseAccreditation,
     CourseFeeStructure,
+    CourseIntake,
     CourseOutline,
     CourseQualifications,
     CourseStatistics
@@ -38,6 +39,8 @@ const course = () => {
             {/*    Course Accreditation     */}
             <CourseAccreditation/>
 
+            {/*   Intake    */}
+            <CourseIntake/>
         </Layout>
     )
 }
