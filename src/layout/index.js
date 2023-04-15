@@ -5,7 +5,7 @@ import React from 'react'
 
 const Layout = ({children}) => {
   return (
-      <main className='min-h-screen block bg-white relative'>
+    <main className='overflow-y-hidden bg-white relative'>
       <Head>
         <title>Nairobi Pentecostal Bible College</title>
         <meta name="description" content="Nurturing potential, building character" />
