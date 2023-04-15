@@ -1,3 +1,4 @@
 import CourseStatistics from "./statistics"
+import CourseQualifications from "./qualification"
 
-export { CourseStatistics }
+export { CourseStatistics, CourseQualifications }
