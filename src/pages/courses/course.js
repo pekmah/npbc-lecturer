@@ -1,4 +1,4 @@
-import { Carousel, CourseQualifications, CourseStatistics } from '@/components'
+import {Carousel, CourseOutline, CourseQualifications, CourseStatistics} from '@/components'
 import Layout from '@/layout'
 import React from 'react'
 
@@ -10,17 +10,20 @@ const course = () => {
                 title='Our Assurance'
                 subTitle={
                     <>
-                        Your search for a wholesome approach <br />
+                        Your search for a wholesome approach <br/>
                         to theological teachings ends here
                     </>
                 }
             />
 
             {/* // Statistics section */}
-            <CourseStatistics />
+            <CourseStatistics/>
 
             {/* Qualifications */}
-            <CourseQualifications />
+            <CourseQualifications/>
+
+            {/*    Course outline       */}
+            <CourseOutline/>
 
         </Layout>
     )

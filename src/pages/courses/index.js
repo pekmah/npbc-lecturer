@@ -9,10 +9,10 @@ const Courses = () => {
             <Carousel
                 title='Our Assurance'
                 subTitle={
-                    <>
+                    <p>
                         Your search for a wholesome approach <br/>
                         to theological teachings ends here
-                    </>
+                    </p>
                 }
             />
 
