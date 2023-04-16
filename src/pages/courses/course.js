@@ -5,7 +5,8 @@ import {
     CourseIntake,
     CourseOutline,
     CourseQualifications,
-    CourseStatistics
+    CourseStatistics,
+    CourseTestimonials
 } from '@/components'
 import Layout from '@/layout'
 import React from 'react'
@@ -41,6 +42,9 @@ const course = () => {
 
             {/*   Intake    */}
             <CourseIntake/>
+
+            {/*    Course Testimonials      */}
+            <CourseTestimonials/>
         </Layout>
     )
 }
