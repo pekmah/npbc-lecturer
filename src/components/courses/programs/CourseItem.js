@@ -1,9 +1,18 @@
 import React from 'react'
-import {Button} from '@/components/general'
 
 import {HiOutlineArrowSmallRight} from 'react-icons/hi2'
+import Link from "next/link";
 
-const CourseItem = ({title, desc, isComingSoon}) => {
+/**
+ *
+ * @param {string} title
+ * @param {string} desc
+ * @param {boolean} isComingSoon
+ * @param {string} link
+ * @return {JSX.Element}
+ * @constructor
+ */
+const CourseItem = ({title, desc, isComingSoon, link = ""}) => {
     return (
         <div className="w-[32%] bg-white px-1.5 py-3 flex gap-3 relative">
             {isComingSoon &&
@@ -27,9 +36,9 @@ const CourseItem = ({title, desc, isComingSoon}) => {
                 </p>
 
                 <div className="flex justify-end pr-8">
-                    <Button className={"bg-c-red text-white text-xs flex items-center gap-2"}>
+                    <Link href={link} className={"bg-c-red text-white text-xs flex items-center gap-2 rounded-lg p-2"}>
                         Couse Details <HiOutlineArrowSmallRight className='text-lg'/>
-                    </Button>
+                    </Link>
                 </div>
             </div>
         </div>

@@ -35,17 +35,17 @@ const CourseOutline = () => {
                             <ReadMoreBtn/>
                         </li>
                         <li className={"c-medium font-semibold border-b border-b-gray-300 py-2.5 px-1 flex justify-between ml-10"}>
-                            <span>Unit 1</span>
+                            <span>Unit 2</span>
 
                             <ReadMoreBtn/>
                         </li>
                         <li className={"c-medium font-semibold border-b border-b-gray-300 py-2.5 px-1 flex justify-between ml-10"}>
-                            <span>Unit 1</span>
+                            <span>Unit 3</span>
 
                             <ReadMoreBtn/>
                         </li>
                         <li className={"c-medium font-semibold border-b border-b-gray-300 py-2.5 px-1 flex justify-between ml-10"}>
-                            <span>Unit 1</span>
+                            <span>Unit 4</span>
 
                             <ReadMoreBtn/>
                         </li>
