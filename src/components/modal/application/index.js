@@ -58,7 +58,7 @@ const ApplicationModal = ({isOpen}) => {
 
     return (
         <Layout isOpen={isOpen} currentModal={currentModal} switchModal={handleSelectModal}>
-            <div className={"text-black p-10 h-full flex "}>
+            <div className={"text-black p-10 h-full flex  "}>
 
                 {
                     renderBody()
