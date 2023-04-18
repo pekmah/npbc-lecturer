@@ -7,3 +7,4 @@ export * from "./courses/course";
 export * from "./downloads/index"
 export * from "./contacts/index"
 export * from "./about"
+export * from "./modal"
