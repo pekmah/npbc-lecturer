@@ -33,6 +33,7 @@ const Payment = () => {
                 <Button className={"text-sm text-gray-500 font-bold"}>
                     Need Help?
                 </Button>
+
                 <div className={"flex gap-4 justify-end flex-1"}>
                     <Button className={"bg-c-red-pale text-c-red py-3 px-14 text-sm font-semibold"} text={"close"} />
                     <Button className={"bg-c-red outline-none text-white py-3 px-12 text-sm font-semibold"}

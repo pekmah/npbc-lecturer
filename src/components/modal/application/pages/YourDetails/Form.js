@@ -7,9 +7,9 @@ import ProgramForm from './ProgramForm';
 import OccupationForm from './OccupationForm';
 import UploadForm from './UploadForm';
 
-const Form = () => {
+const Form = ({ className }) => {
     return (
-        <div className={"flex-[3] text-c-blue flex flex-col gap-4"}>
+        <div className={`flex-[3] text-c-blue flex flex-col gap-4 ${className}`}>
             {/*    Personal Details */}
             <PersonalForm/>
 
