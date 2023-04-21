@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button} from '../general'
 
-const Footer = () => {
+const Footer = ({showModal}) => {
     return (
         <div className='text-white '
 
@@ -16,7 +16,8 @@ const Footer = () => {
                  }}>
                 <p className='leading-10 text-white' data-aos="fade-up">Become a student at <br/> NPBC</p>
 
-                <Button className={"bg-white text-c-blue c-normal w-44 h-10 font-semibold"} data-aos="fade-left">Apply Today</Button>
+                <Button onClick={showModal} className={"bg-white text-c-blue c-normal w-44 h-10 font-semibold"}
+                        data-aos="fade-left">Apply Today</Button>
             </div>
             {/* links */}
             <div className="flex bg-c-blue text-xs justify-evenly py-14 text-white">

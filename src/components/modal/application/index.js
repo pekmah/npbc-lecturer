@@ -15,11 +15,11 @@ import Finish from "@/components/modal/application/pages/7";
  * @return {JSX.Element}
  * @constructor
  */
-const ApplicationModal = ({isOpen}) => {
+const ApplicationModal = ({isOpen, handleCloseModal}) => {
     /**
      * @type {number} currentModal
      */
-    const [currentModal, setCurrentModal] = useState(2);
+    const [currentModal, setCurrentModal] = useState(0);
 
     /**
      * @param {number} current
@@ -31,26 +31,54 @@ const ApplicationModal = ({isOpen}) => {
     }
 
     /**
+     * @returns {void}
+     * @description Switches to previous modal
+     */
+    const switchToPreviousModal = () => {
+        if (currentModal > 0) {
+            setCurrentModal(currentModal - 1)
+        }
+    }
+
+    /**
+     * @returns {void}
+     * @description Switches to next modal
+     */
+    const switchToNextModal = () => {
+        if (currentModal < 7) {
+            setCurrentModal(currentModal + 1)
+        }
+    }
+
+    /**
      * @description returns modal element based on current modal nav item
      * @return {JSX.Element}
      */
     const renderBody = () => {
         switch (currentModal) {
             case 1:
-                return <AllYouNeed/>
+                return <AllYouNeed handleCloseModal={handleCloseModal} switchToNext={switchToNextModal}
+                                   switchToPrevious={switchToPreviousModal}/>
 
             case 2:
-                return <Courses/>
+                return <Courses handleCloseModal={handleCloseModal} switchToNext={switchToNextModal}
+                                switchToPrevious={switchToPreviousModal}/>
             case 3:
-                return <YourDetails/>
+                return <YourDetails handleCloseModal={handleCloseModal} switchToNext={switchToNextModal}
+                                    switchToPrevious={switchToPreviousModal}/>
             case 4:
-                return <Payment/>
+                return <Payment handleCloseModal={handleCloseModal} switchToNext={switchToNextModal}
+                                switchToPrevious={switchToPreviousModal}/>
             case 5:
-                return <PreviewApplication/>
+                return <PreviewApplication handleCloseModal={handleCloseModal} switchToNext={switchToNextModal}
+                                           switchToPrevious={switchToPreviousModal}/>
             case 6:
-                return <Finish/>
+                return <Finish handleCloseModal={handleCloseModal} switchToNext={switchToNextModal}
+                               switchToPrevious={switchToPreviousModal}/>
             default:
-                return <Welcome switchModal={handleSelectModal}/>
+                return <Welcome handleCloseModal={handleCloseModal} switchToNext={switchToNextModal}
+                                switchToPrevious={switchToPreviousModal}
+                                switchModal={handleSelectModal}/>
 
 
         }

@@ -5,12 +5,12 @@ import ProgramChoice from "@/components/modal/application/pages/select_course/Pr
 import AvailableCourses from "@/components/modal/application/pages/select_course/AvailableCourses";
 import CourseDetails from "@/components/modal/application/pages/select_course/CourseDetails";
 
-const Courses = () => {
+const Courses = ({handleCloseModal, switchToPrevious, switchToNext}) => {
     return (
         <div className={"text-c-blue w-full"}>
             {/*    Details      */}
             <div className={"flex"}>
-                <Button className={"p-3"}>
+                <Button className={"p-3"} onClick={switchToPrevious}>
                     <BsArrowLeft className={"text-2xl"}/>
                 </Button>
                 <div className={"flex items-center flex-col flex-1 text-center"}>
@@ -23,7 +23,7 @@ const Courses = () => {
                         <input type="text" className={"flex-1 h-full bg-inherit "} placeholder={"Search"}/>
                     </div>
                 </div>
-                <Button className={"p-3"}>
+                <Button className={"p-3"} onClick={switchToNext}>
                     <BsArrowLeft className={"text-2xl rotate-180"}/>
                 </Button>
             </div>
@@ -45,7 +45,8 @@ const Courses = () => {
                     Need Help?
                 </Button>
                 <div className={"flex gap-4 justify-end flex-1"}>
-                    <Button className={"bg-c-red-pale text-c-red py-3 px-14 text-sm font-semibold"} text={"close"}/>
+                    <Button onClick={handleCloseModal}
+                            className={"bg-c-red-pale text-c-red py-3 px-14 text-sm font-semibold"} text={"close"}/>
                     <Button className={"bg-c-red outline-none text-white py-3 px-12 text-sm font-semibold"}
                             text={"Continue"}/>
                 </div>

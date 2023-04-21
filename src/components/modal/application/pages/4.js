@@ -4,14 +4,14 @@ import {BsArrowLeft} from "react-icons/bs";
 import Details from "@/components/modal/application/pages/YourDetails/Details";
 import Form from "@/components/modal/application/pages/YourDetails/Form";
 
-const YourDetails = () => {
+const YourDetails = ({handleCloseModal, switchToPrevious, switchToNext}) => {
 
 
     return (
         <div className={"text-c-blue w-full"}>
             {/*    Details      */}
             <div className={"flex"}>
-                <Button className={"p-3"}>
+                <Button className={"p-3"} onClick={switchToPrevious}>
                     <BsArrowLeft className={"text-2xl"}/>
                 </Button>
 
@@ -20,7 +20,7 @@ const YourDetails = () => {
                         application</h4>
                 </div>
 
-                <Button className={"p-3"}>
+                <Button className={"p-3"} onClick={switchToNext}>
                     <BsArrowLeft className={"text-2xl rotate-180"}/>
                 </Button>
             </div>
@@ -40,7 +40,8 @@ const YourDetails = () => {
                     Need Help?
                 </Button>
                 <div className={"flex gap-4 justify-end flex-1"}>
-                    <Button className={"bg-c-red-pale text-c-red py-3 px-14 text-sm font-semibold"} text={"close"}/>
+                    <Button onClick={handleCloseModal}
+                            className={"bg-c-red-pale text-c-red py-3 px-14 text-sm font-semibold"} text={"close"}/>
                     <Button className={"bg-c-red outline-none text-white py-3 px-12 text-sm font-semibold"}
                             text={"Continue"}/>
                 </div>

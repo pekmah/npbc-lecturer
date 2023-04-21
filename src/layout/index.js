@@ -9,7 +9,11 @@ const Layout = ({children}) => {
      * @type {boolean}
      * @description handles the launch of the application(components/modal/application) modal
      */
-    const [show, setShow] = useState(true)
+    const [show, setShow] = useState(false)
+
+    const handleOpenModal = () => {
+        setShow(true)
+    }
 
     return (
         <main className='overflow-y-hidden bg-white relative'>
@@ -19,10 +23,10 @@ const Layout = ({children}) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/images/layout/logo.png"/>
             </Head>
-            <LayoutHeader/>\
+            <LayoutHeader/>
 
             {/*  Application Modal    */}
-            <ApplicationModal isOpen={show}/>
+            {show && <ApplicationModal isOpen={show} handleCloseModal={() => setShow(false)}/>}
 
             {/* Navbar */}
             <Navbar/>
@@ -31,7 +35,7 @@ const Layout = ({children}) => {
             {children}
 
             {/* Footer */}
-            <Footer/>
+            <Footer showModal={handleOpenModal}/>
         </main>
     )
 }
