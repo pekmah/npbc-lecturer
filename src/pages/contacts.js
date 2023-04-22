@@ -5,7 +5,6 @@ import {Carousel, MailBox} from "@/components";
 function Contacts(props) {
     return (
         <Layout>
-            Contacts
             {/*    Carousel     */}
             <Carousel
                 title={"Our Philosophy"}

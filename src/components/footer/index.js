@@ -20,7 +20,7 @@ const Footer = ({showModal}) => {
                         data-aos="fade-left">Apply Today</Button>
             </div>
             {/* links */}
-            <div className="flex bg-c-blue text-xs justify-evenly py-14 text-white">
+            <div className="flex bg-c-blue text-sm justify-evenly py-14 text-white">
 
                 <NPBC/>
 

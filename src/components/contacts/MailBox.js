@@ -17,11 +17,11 @@ function MailBox(props) {
                 <div className={"min-w-[50%]"}>
                     <h4 className={"c-xl font-bold mb-1"}>Easy Contact</h4>
                     <div className={"flex flex-col gap-4 py-2"}>
-                        <Button className={"text-c-red flex text-xs` items-center gap-2 bg-white font-medium"}>
+                        <Button className={"text-c-red flex text-sm items-center gap-2 bg-white font-medium"}>
                             <SlCallIn/> 0754 569 687
                         </Button>
 
-                        <Button className={"text-c-red flex text-xs items-center gap-2 bg-white font-medium"}>
+                        <Button className={"text-c-red flex text-sm items-center gap-2 bg-white font-medium"}>
                             <MdOutlineWhatsapp className={"text-lg"}/> 0754 569 687
                         </Button>
                     </div>
@@ -29,7 +29,7 @@ function MailBox(props) {
                     {/*    Email    */}
                     <h4 className={"c-xl font-bold mb-1 mt-3"}>Email</h4>
                     <div className={"flex flex-col gap-4 py-2"}>
-                        <Button className={"text-c-red flex text-xs items-center gap-2 bg-white font-medium"}>
+                        <Button className={"text-c-red flex text-sm items-center gap-2 bg-white font-medium"}>
                             <MdOutlineMailOutline/> admin@npbc.co.ke
                         </Button>
                     </div>
@@ -37,7 +37,7 @@ function MailBox(props) {
                     {/*    Find us    */}
                     <h4 className={"c-xl font-bold mb-1 mt-3"}>Find Us</h4>
                     <div className={"flex flex-col gap-4 py-2"}>
-                        <Button className={"text-c-red flex text-xs items-center gap-2 bg-white font-medium"}>
+                        <Button className={"text-c-red flex text-sm items-center gap-2 bg-white font-medium"}>
                             <FiMapPin/> Show in map
                         </Button>
                     </div>
