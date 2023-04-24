@@ -145,7 +145,7 @@ const Research = () => (
 
         {/* Email */}
         <div className="block leading-6">
-            <a>News and Events</a>
+            <a href={"/about/news"}>News and Events</a>
         </div>
 
         {/* Email */}
