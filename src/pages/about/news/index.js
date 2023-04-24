@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "@/layout";
-import {Carousel} from "@/components";
+import {Carousel, Latest, LatestNews} from "@/components";
 
 const News = () => {
     return (
@@ -13,10 +13,10 @@ const News = () => {
                 </>}
             />
             {/*    Latest   */}
+            <Latest/>
 
             {/*    Latest News      */}
-
-            {/*    Campus Events    */}
+            <LatestNews/>
 
             {/*    Articles and Blogs   */}
         </Layout>
