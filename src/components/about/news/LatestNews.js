@@ -36,8 +36,10 @@ const LatestNews = () => {
                         <p>3 days ago</p>
                     </div>
 
-                    <h4 className={"c-h7 font-semibold"}> The Nairobi Pentecostal Bible College officially becomes an
-                        accredited training institution</h4>
+                    <a href={"/about/news/news_1"} className={"c-h7 font-semibold"}> The Nairobi Pentecostal Bible
+                        College
+                        officially becomes an
+                        accredited training institution</a>
                 </div>
                 <div className={" row-span-1 "}>
                     {/*    image    */}
@@ -53,9 +55,9 @@ const LatestNews = () => {
                         <p> 15 Mar 2023 </p>
                     </div>
 
-                    <h4 className={"c-large leading-7 font-semibold"}>
+                    <a href={"/about/news/news_2"} className={"c-large leading-7 font-semibold"}>
                         Student portals have been activated. You can now login and set up your profile
-                    </h4>
+                    </a>
                 </div>
                 <div className={" row-span-1"}>
                     {/*    image    */}
@@ -71,9 +73,9 @@ const LatestNews = () => {
                         <p> 24 Jan 2023 </p>
                     </div>
 
-                    <h4 className={"c-large leading-7 font-semibold"}>
+                    <a href={"/about/news/news_3"} className={"c-large leading-7 font-semibold"}>
                         NPBC launches the new 5 floor building for active use as lecture hall and offices
-                    </h4>
+                    </a>
                 </div>
             </div>
         </div>
