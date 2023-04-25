@@ -24,8 +24,8 @@ const NewsList = () => {
                 {/*    list     */}
                 <ul className={"flex flex-col gap-3 py-2 border-b border-gray-300"}>
                     {
-                        news_list?.map((item) => (
-                            <li>
+                        news_list?.map((item, key) => (
+                            <li key={key}>
                                 <div className={"flex text-c-blue"}>
                                     <div className={"flex-[0.8] min-h-28"}>
                                         <img src={item?.img} alt={"img"}
@@ -66,8 +66,8 @@ const NewsList = () => {
                 {/*    list     */}
                 <ul className={"flex flex-col gap-3 py-2 border-b border-gray-300"}>
                     {
-                        news_list?.map((item) => (
-                            <li>
+                        news_list?.map((item, key) => (
+                            <li key={key}>
                                 <div className={"flex text-c-blue"}>
                                     <div className={"flex-[0.8] min-h-28"}>
                                         <img src={item?.img} alt={"img"}
@@ -108,8 +108,8 @@ const NewsList = () => {
                 {/*    list     */}
                 <ul className={"flex flex-col gap-3 py-2 border-b border-gray-300"}>
                     {
-                        news_list?.map((item) => (
-                            <li>
+                        news_list?.map((item, key) => (
+                            <li key={key}>
                                 <div className={"flex text-c-blue"}>
                                     <div className={"flex-[0.8] min-h-28"}>
                                         <img src={item?.img} alt={"img"}
