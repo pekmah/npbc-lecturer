@@ -29,7 +29,7 @@ const LatestNews = () => {
 
                     {/*    caption  */}
                     <div className={"flex text-sm text-[#7D7C7C] font-semibold gap-3 py-3 items-center"}>
-                        <p>Registrar's office</p>
+                        <p>Registrar&apos; office</p>
 
                         <div className={"w-1.5 h-1.5 rounded-full bg-gray-500"}/>
 
@@ -66,7 +66,7 @@ const LatestNews = () => {
 
                     {/*    caption  */}
                     <div className={"flex  text-sm text-[#7D7C7C] font-semibold gap-3 py-3 items-center"}>
-                        <p>Registrar's office</p>
+                        <p>Registrar&apos; office</p>
 
                         <div className={"w-1.5 h-1.5 rounded-full bg-gray-500"}/>
 
