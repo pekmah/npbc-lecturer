@@ -4,7 +4,7 @@ import Values from "@/components/about/philosophy/icons/values";
 
 const Philosophy = () => {
     return (
-        <div className={" p-12 flex bg-c-red text-white"}>
+        <section id={"philosophy"} className={" p-12 flex bg-c-red text-white"}>
             {/*Side Menu*/}
             <div className={"w-1/4"}/>
 
@@ -42,7 +42,7 @@ const Philosophy = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

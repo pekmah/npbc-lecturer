@@ -4,7 +4,7 @@ import Intake from "@/components/about/leadership/Intake";
 
 const Leadership = () => {
     return (
-        <div className={" p-8 flex bg-gray-50 text-c-blue"}>
+        <section id={"leadership"} className={" p-8 flex bg-gray-50 text-c-blue"}>
             {/*Side Menu*/}
             <div className={"w-1/4"}/>
 
@@ -23,7 +23,7 @@ const Leadership = () => {
                 <Intake/>
             </div>
 
-        </div>
+        </section>
     );
 };
 

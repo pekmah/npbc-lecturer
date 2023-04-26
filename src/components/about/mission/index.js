@@ -5,7 +5,7 @@ import Vision from "@/components/about/mission/icons/Vision";
 const Index = () => {
     return (
 
-        <div className={" p-12 flex bg-white text-c-blue"}>
+        <section id={"mission"} className={" p-12 flex bg-white text-c-blue"}>
             {/*Side Menu*/}
             <div className={"w-1/4"}/>
 
@@ -42,7 +42,7 @@ const Index = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
     );
 };

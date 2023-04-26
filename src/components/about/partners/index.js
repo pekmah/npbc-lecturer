@@ -2,7 +2,7 @@ import React from 'react';
 
 const Partners = () => {
     return (
-        <div className={"text-c-blue p-8 lg:w-11/12 mx-auto"}>
+        <section id={"partners"} className={"text-c-blue p-8 lg:w-11/12 mx-auto"}>
             <h6 className={"c-large text-center font-semibold"}  data-aos="fade-up">Our partners</h6>
 
             <div className={"flex py-5 justify-between"}>
@@ -30,7 +30,7 @@ const Partners = () => {
                     Campus Locations
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -126,27 +126,27 @@ const nav_list = [
         subnavs: [
             {
                 name: "Our History",
-                path: ""
+                path: "#history"
             },
             {
                 name: "News and Articles",
-                path: ""
+                path: "#"
             },
             {
                 name: "Mission, Vision and Core values",
-                path: ""
+                path: "#mission"
             },
             {
                 name: "Strategic Goals",
-                path: ""
+                path: "#goals"
             },
             {
                 name: "NPBC Leadership",
-                path: ""
+                path: "#leadership"
             },
             {
                 name: "Partners",
-                path: ""
+                path: "#partners"
             },
         ],
     },

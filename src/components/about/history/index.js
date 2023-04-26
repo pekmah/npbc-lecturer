@@ -5,7 +5,7 @@ import MileStones from "@/components/about/history/MileStones";
 
 const History = () => {
     return (
-        <div className={"bg-c-blue p-12 flex"}>
+        <section id={"history"} className={"bg-c-blue p-12 flex"}>
             {/*Side Menu*/}
             <SideMenu/>
 
@@ -27,7 +27,7 @@ const History = () => {
                 {/*    milestones   */}
                 <MileStones/>
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -10,7 +10,7 @@ import Learning from "@/components/about/goals/icons/learning";
 
 const Index = () => {
     return (
-        <div className={" p-12 flex bg-c-blue text-white"}>
+        <section id={"goals"} className={" p-12 flex bg-c-blue text-white"}>
             {/*Side Menu*/}
             <div className={"w-1/4"}/>
 
@@ -36,7 +36,7 @@ const Index = () => {
                     }
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
