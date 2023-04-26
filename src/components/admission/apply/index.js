@@ -6,9 +6,9 @@ const HowToApply = () => {
       <div className='bg-white p-10 relative'>
           {/*Floater */}
           <Floater/>
-          
-          <div className="h-5"/>
-          
+
+          <div className="h-14"/>
+
           {/*Title */}
           <h5 className="c-h6 text-c-blue text-center" data-aos="fade-up">
             How to Apply

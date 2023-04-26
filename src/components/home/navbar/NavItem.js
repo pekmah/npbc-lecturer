@@ -27,13 +27,13 @@ const NavItem = ({
                 }
             }}
         >
-            <Link className='h-full' href={path} onClick={handleClick}>
+            <button className='h-full' href={path} onClick={handleClick}>
                 <div className={`c-normal h-full flex items-center px-6 text-white ${isCurrent || isCurrentCollapsibleTab ? "bg-c-red " : "bg-none"} hover:bg-c-red ease-in duration-300`} >
                     {title}
                     {hasSubmenu && <FiChevronDown className='text-white text-xl mx-2' />}
                 </div>
 
-            </Link>
+            </button>
 
             <DropDown list={subMenu} isCurrent={isCurrentCollapsibleTab} />
         </div>
