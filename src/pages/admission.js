@@ -13,21 +13,21 @@ const admission = () => {
                     applications and admission process in the industry
                 </>}
             >
-                {/**How to apply */}
-                <HowToApply/>
-
-                {/**Application procedure */}
-                <Application/>
-
-                {/** Course Qualifications */}
-                <Qualifications/>
-
-                {/**Intakes */}
-                <Intakes/>
-
-                {/**Questions */}
-                <AdmissionQuestions/>
             </Carousel>
+            {/**How to apply */}
+            <HowToApply/>
+
+            {/**Application procedure */}
+            <Application/>
+
+            {/** Course Qualifications */}
+            <Qualifications/>
+
+            {/**Intakes */}
+            <Intakes/>
+
+            {/**Questions */}
+            <AdmissionQuestions/>
 
         </Layout>
     )
