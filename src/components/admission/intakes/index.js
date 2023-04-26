@@ -3,7 +3,7 @@ import React from 'react'
 
 const Intakes = () => {
     return (
-        <section className='flex bg-[#fff]'>
+        <section id={"intakes"} className='flex bg-[#fff]'>
             <div className="flex-1 h-[550px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img className='h-full object-cover' src="/images/admission/intakes-1.jpg" alt="intakes-1"/>

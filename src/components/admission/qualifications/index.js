@@ -3,7 +3,7 @@ import QualificationItem from './QualificationItem'
 
 const Qualifications = () => {
     return (
-        <div className='py-16 bg-bg-blue flex'>
+        <section id={"qualifications"} className='py-16 bg-bg-blue flex'>
             <div className="flex-[0.6] flex justify-center" data-aos="fade-right">
                 <h3 className='c-h6 font-semibold text-c-blue'>Course Qualifications</h3>
             </div>
@@ -59,7 +59,7 @@ const Qualifications = () => {
                     />
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

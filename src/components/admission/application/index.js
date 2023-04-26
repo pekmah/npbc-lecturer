@@ -6,7 +6,7 @@ import RequirementItem from './RequirementItem'
 
 const Application = () => {
     return (
-        <section className='flex text-white'>
+        <section id={"application"} className='flex text-white'>
             {/**Online Application */}
             <div className="flex-1 bg-c-red p-8 flex flex-col">
                 <h4 className='c-h7 font-semibold text-center' data-aos="fade-up">Online Application</h4>

@@ -3,7 +3,7 @@ import React from 'react'
 
 const Questions = () => {
     return (
-        <div className='px-14 py-10 bg-bg-blue'>
+        <section id={"faqs"} className='px-14 py-10 bg-bg-blue'>
             <div className="p-10 bg-white text-black" data-aos="fade-up">
                 {/* title */}
                 <h2 className="c-h6 font-semibold ">Questions asked about our admission</h2>
@@ -66,7 +66,7 @@ const Questions = () => {
                     </ul>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

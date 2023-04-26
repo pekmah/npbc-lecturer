@@ -13,7 +13,7 @@ ${isCurrent ? "h-auto" : "h-[0px] p-[0px]"} duration-500 ease-in-out
             `} />
             {
                 list?.map((item, key) => (
-                    <DropDownItem key={key} text={item?.name} isCurrent={isCurrent} />
+                    <DropDownItem path={item?.path} key={key} text={item?.name} isCurrent={isCurrent} />
                 ))
             }
         </div>
@@ -22,9 +22,9 @@ ${isCurrent ? "h-auto" : "h-[0px] p-[0px]"} duration-500 ease-in-out
 
 export default DropDown
 
-const DropDownItem = ({ text, isCurrent }) => (
+const DropDownItem = ({ text, isCurrent,path }) => (
     <div className={`text-white c-normal  font-semibold p-2 duration-150 ease-in-out ${isCurrent ? "text-xs" : "hidden text-[0px] "}`}>
-        <a href=''>
+        <a href={path}>
             {text}
         </a>
     </div>

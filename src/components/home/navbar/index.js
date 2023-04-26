@@ -66,23 +66,23 @@ const nav_list = [
                 subnavs: [
             {
                 name: "How to Apply",
-                path: ""
+                path: "#how-to-apply"
             },
             {
                 name: "Course Qualifications",
-                path: ""
+                path: "#qualifications"
             },
             {
                 name: "Our Intakes",
-                path: ""
+                path: "#intakes"
             },
             {
                 name: "Application FAQs",
-                path: ""
+                path: "#faqs"
             },
             {
                 name: "Resume Application",
-                path: ""
+                path: "#how-to-apply"
             },
         ]
     }, {
