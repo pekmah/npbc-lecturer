@@ -5,7 +5,7 @@ import Theme from "@/constants/Theme";
 
 function StudyModes() {
     return (
-        <div className={"bg-bg-blue py-24 flex justify-center"}>
+        <section id={"modes"} className={"bg-bg-blue py-24 flex justify-center"}>
             <div className={"w-5/6 bg-white "}>
                 <div className={"py-6 border-b border-line-gray"}>
                     <h3 className={"c-h7 text-c-blue my-2 text-center"}>
@@ -104,7 +104,7 @@ function StudyModes() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

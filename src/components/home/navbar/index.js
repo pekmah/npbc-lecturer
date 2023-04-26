@@ -92,19 +92,19 @@ const nav_list = [
         subnavs: [
             {
                 name: "Undergraduate Programs",
-                path: ""
+                path: "#undergraduate"
             },
             {
                 name: "Diploma Programs",
-                path: ""
+                path: "#diploma"
             },
             {
                 name: "Certificate Programs",
-                path: ""
+                path: "#certificate"
             },
             {
                 name: "Study Modes",
-                path: ""
+                path: "#modes"
             },
         ]
     }, {

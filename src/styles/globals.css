@@ -11,16 +11,16 @@
   }
   .c-h2 {
     @apply text-[36px] font-semibold leading-9;
-  } 
+  }
   .c-h3 {
     @apply text-[32px] font-bold leading-8;
   }
    .c-h4 {
     @apply text-[31px] font-bold leading-9;
-  } 
+  }
   .c-h5 {
     @apply text-[29px] font-semibold leading-9;
-  } 
+  }
   .c-h6 {
     @apply text-[28px] font-bold leading-7;
   }
@@ -54,6 +54,7 @@ body {
   overflow-x: hidden;
   height: 100vh;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 body {

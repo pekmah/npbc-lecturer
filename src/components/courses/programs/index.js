@@ -11,7 +11,7 @@ const Programs = () => {
             <Floater/>
 
             {/** Programs */}
-            <div className="px-6 py-6 bg-[#FFFFFF14] border border-[#FFFFFF14] my-2">
+            <div id={"undergraduate"} className="px-6 py-6 bg-[#FFFFFF14] border border-[#FFFFFF14] my-2">
                 {/**Title */}
                 <h6 className='text-xl font-semibold text-white mb-3'>Undergraduate Programs</h6>
 
@@ -37,7 +37,7 @@ const Programs = () => {
             </div>
 
             {/* Diploma courses */}
-            <div className="px-6 py-6 bg-[#FFFFFF14] border border-[#FFFFFF14] my-2">
+            <div id={"diploma"} className="px-6 py-6 bg-[#FFFFFF14] border border-[#FFFFFF14] my-2">
                 {/**Title */}
                 <h6 className='text-xl font-semibold text-white mb-3'>Diploma Programs</h6>
 
@@ -63,7 +63,7 @@ const Programs = () => {
             </div>
 
             {/** Certificate Programs */}
-            <div className="px-6 py-6 bg-[#FFFFFF14] border border-[#FFFFFF14] my-2">
+            <div id={"certificate"} className="px-6 py-6 bg-[#FFFFFF14] border border-[#FFFFFF14] my-2">
                 {/**Title */}
                 <h6 className='text-xl font-semibold text-white mb-3'>Certificate Programs</h6>
 
