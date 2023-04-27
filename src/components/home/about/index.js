@@ -26,7 +26,7 @@ const About = () => {
                     </div>
 
                     <div className="flex flex-col gap-6">
-                        <h5 className="c-xl font-semibold text-white capitalize" data-aos="fade-up">4 Reasons you&apos;ll love NPBC</h5>
+                        <h5 className="c-xl font-semibold text-white capitalize" data-aos="fade-up">Our Uniqueness</h5>
 
                         <div className="flex w-full justify-between" data-aos="fade-up">
 
