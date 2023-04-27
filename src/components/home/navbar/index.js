@@ -66,23 +66,23 @@ const nav_list = [
                 subnavs: [
             {
                 name: "How to Apply",
-                path: "#how-to-apply"
+                path: "/admission#how-to-apply"
             },
             {
                 name: "Course Qualifications",
-                path: "#qualifications"
+                path: "/admission#qualifications"
             },
             {
                 name: "Our Intakes",
-                path: "#intakes"
+                path: "/admission#intakes"
             },
             {
                 name: "Application FAQs",
-                path: "#faqs"
+                path: "/admission#faqs"
             },
             {
                 name: "Resume Application",
-                path: "#how-to-apply"
+                path: "/admission#how-to-apply"
             },
         ]
     }, {
@@ -92,19 +92,19 @@ const nav_list = [
         subnavs: [
             {
                 name: "Undergraduate Programs",
-                path: "#undergraduate"
+                path: "/courses#undergraduate"
             },
             {
                 name: "Diploma Programs",
-                path: "#diploma"
+                path: "/courses#diploma"
             },
             {
                 name: "Certificate Programs",
-                path: "#certificate"
+                path: "/courses#certificate"
             },
             {
                 name: "Study Modes",
-                path: "#modes"
+                path: "/courses#modes"
             },
         ]
     }, {
@@ -126,27 +126,27 @@ const nav_list = [
         subnavs: [
             {
                 name: "Our History",
-                path: "#history"
+                path: "/about#history"
             },
             {
                 name: "News and Articles",
-                path: "#"
+                path: "/about#"
             },
             {
                 name: "Mission, Vision and Core values",
-                path: "#mission"
+                path: "/about#mission"
             },
             {
                 name: "Strategic Goals",
-                path: "#goals"
+                path: "/about#goals"
             },
             {
                 name: "NPBC Leadership",
-                path: "#leadership"
+                path: "/about#leadership"
             },
             {
                 name: "Partners",
-                path: "#partners"
+                path: "/about#partners"
             },
         ],
     },
