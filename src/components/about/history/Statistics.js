@@ -8,34 +8,34 @@ const Statistics = () => {
             <div className={"flex justify-between p-2"}>
                 <div className={"text-center"}>
                     <h5 className={"font-medium c-h7 text-center"}>
-                        3750
+                        10000+
                     </h5>
 
-                    <span className={"text-sm font-medium my-2"}>Graduated Students</span>
+                    <span className={"text-sm font-medium my-2"}>Students taught</span>
                 </div>
 
                 <div className={"text-center"}>
                     <h5 className={"font-medium c-h7 text-center"}>
-                        17
+                        20000+
                     </h5>
 
-                    <span className={"text-sm font-medium my-2"}>Intake Rounds</span>
+                    <span className={"text-sm font-medium my-2"}>Hours Lectured</span>
                 </div>
 
                 <div className={"text-center"}>
                     <h5 className={"font-medium c-h7 text-center"}>
-                        10
+                        100+
                     </h5>
 
-                    <span className={"text-sm font-medium my-2"}>Course Programs</span>
+                    <span className={"text-sm font-medium my-2"}>Centers</span>
                 </div>
 
                 <div className={"text-center"}>
                     <h5 className={"font-medium c-h7 text-center"}>
-                        3
+                        500+
                     </h5>
 
-                    <span className={"text-sm font-semibold my-2"}>Campus Locations</span>
+                    <span className={"text-sm font-semibold my-2"}>Lecturers</span>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@ const Intakes = () => {
         <section id={"intakes"} className='flex bg-[#fff]'>
             <div className="flex-1 h-[550px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className='h-full object-cover' src="/images/admission/intakes-1.jpg" alt="intakes-1"/>
+                <img className='h-full object-cover' src="/images/admission/intakes-1.webp" alt="intakes-1"/>
             </div>
 
             <div className="flex-1 text-black flex bg-white py-16">

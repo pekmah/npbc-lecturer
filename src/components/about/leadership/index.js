@@ -10,7 +10,7 @@ const Leadership = () => {
 
             {/*    Main Body    */}
             <div className={" py-2 w-3/4"}>
-                <h3 className={"c-h7 font-bold"}>Our Leadership</h3>
+                <h3 className={"c-h7 font-bold"}>College Management</h3>
 
                 <div className={"my-12 flex flex-wrap gap-10"}>
                     {/*Leadership item*/}

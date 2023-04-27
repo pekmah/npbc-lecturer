@@ -15,16 +15,16 @@ const MileStones = () => {
                     <div className={"h-28"}/>
 
                     <LeftBranchItem
-                        title={"Chartering"}
-                        date={"April 15th 1980"}
+                        title={"Association with Global University"}
+                        date={"2005"}
                         desc={`We exist to bring maturity to church and transformation to society through equipped leadership based on Christian values and principles by training people in their area of calling`}
                     />
 
                     <div className={"h-28"}/>
 
                     <LeftBranchItem
-                        title={"1st Branch"}
-                        date={"Jan 2nd 2005"}
+                        title={"Accreditation with TVETA"}
+                        date={"2018"}
                         desc={`We exist to bring maturity to church and transformation to society through equipped leadership based on Christian values and principles by training people in their area of calling`}
                     />
                 </div>
@@ -33,24 +33,24 @@ const MileStones = () => {
                 {/*    Right Branches   */}
                 <div className={"flex flex-col flex-1"}>
                     <RightBranchItem
-                        title={"Founding"}
-                        date={"Nov 16th 1969"}
+                        title={"Founded"}
+                        date={"1967"}
                         desc={`We exist to bring maturity to church and transformation to society through equipped leadership based on Christian values and principles by training people in their area of calling`}
                     />
 
                     <div className={"h-28"}/>
 
                     <RightBranchItem
-                        title={"Accreditation"}
-                        date={"June 28th 1995"}
+                        title={"50TH Anniversary"}
+                        date={"2017"}
                         desc={`We exist to bring maturity to church and transformation to society through equipped leadership based on Christian values and principles by training people in their area of calling`}
                     />
 
                     <div className={"h-28"}/>
 
                     <RightBranchItem
-                        title={"5th Anniversary"}
-                        date={"Nov 16th 2019"}
+                        title={"Quality Assuarance with Tveta"}
+                        date={"2023"}
                         desc={`We exist to bring maturity to church and transformation to society through equipped leadership based on Christian values and principles by training people in their area of calling`}
                     />
                 </div>

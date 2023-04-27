@@ -10,9 +10,9 @@ const Footer = ({showModal}) => {
             <div className="text-center h-48 c-h3 p-3 flex flex-col gap-5 items-center justify-center"
                  style={{
                      background:
-                         " linear-gradient(0deg, rgba(9, 42, 89, 0.66), rgba(9, 42, 89, 0.66)), url(/images/footer/npbc-footer.jpg)",
-                     backgroundSize: "cover",
-                     backgroundPosition: "center",
+                         " linear-gradient(0deg, rgba(9, 42, 89, 0.66), rgba(9, 42, 89, 0.66)), url(/images/footer/npbc-footer.webp)",
+                     backgroundSize: "contain",
+                     backgroundPosition: "bottom",
                  }}>
                 <p className='leading-10 text-white' data-aos="fade-up">Become a student at <br/> NPBC</p>
 

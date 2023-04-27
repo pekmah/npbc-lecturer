@@ -31,7 +31,7 @@ const Carousel = ({
                     </div>
 
                     <div className='relative h-[70vh]'>
-                        <img className='h-[70vh] object-top object-cover' src="/images/home/carousel-2.webp" alt='img-2'/>
+                        <img className='h-[70vh] object-center object-cover' src="/images/home/carousel-2.webp" alt='img-2'/>
 
                         <Floater
                             title={'Mission'}

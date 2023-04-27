@@ -55,7 +55,7 @@ const Intake = () => {
             </div>
 
             <div className={"flex-1"}>
-                <img className={"h-full object-contain"} src={"/images/about/about-2.png"} alt="about"/>
+                <img className={"h-full object-cover ml-6 "} src={"/images/about/about-2.webp"} alt="about"/>
             </div>
         </div>
     );

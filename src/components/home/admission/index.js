@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { Button } from '@/components/general'
+import {Button} from '@/components/general'
 import React from 'react'
 
 const Admission = () => {
@@ -9,7 +9,7 @@ const Admission = () => {
             <div className="flex">
                 {/* image */}
                 <div className="flex-1">
-                    <img src="/images/home/admission-1.jpg" alt="admission" />
+                    <img src="/images/home/admission-1.webp" alt="admission" />
                 </div>
 
                 {/* desc */}
