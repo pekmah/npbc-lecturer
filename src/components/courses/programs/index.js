@@ -6,7 +6,7 @@ import CourseItem from './CourseItem'
 const Programs = () => {
     return (
         <section className='text-c-blue bg-c-blue p-5 relative py-8'>
-            <div className='h-48 mb-5'/>
+            <div className='h-40 mb-5'/>
 
             <Floater/>
 
@@ -23,13 +23,13 @@ const Programs = () => {
                     />
 
                     <CourseItem
-                        title={"Bachelor of Art in Bible & Theology"}
+                        title={"Bachelor of Arts in Christian Education"}
                         desc={"Admission into a degree program at Global University will be based on the following minimum requirements"}
                         link={"courses/babt"}
                     />
 
                     <CourseItem
-                        title={"Bachelor of Art in Bible & Theology"}
+                        title={"Bachelor of Arts in Intercultural studies."}
                         desc={"Admission into a degree program at Global University will be based on the following minimum requirements"}
                         link={"courses/babt"}
                     />
@@ -69,31 +69,23 @@ const Programs = () => {
 
                 <div className="flex justify-between flex-wrap gap-y-6">
                     <CourseItem
-                        title={"Certificate in Bible & Theology"}
+                        title={"Certificate in Christian ministry."}
                         desc={"Admission into a degree program at Global University will be based on the following minimum requirements"}
                         link={"courses/cbt"}
                     />
 
                     <CourseItem
-                        title={"Certificate in Marriage & Family Therapy"}
+                        title={"Certificate in Youth Ministry."}
                         desc={"Admission into a degree program at Global University will be based on the following minimum requirements"}
-                        isComingSoon
                         link={"courses"}
                     />
 
                     <CourseItem
-                        title={"Certificate in Church Administration & Management"}
+                        title={"Certificate in Women Ministry."}
                         desc={"Admission into a degree program at Global University will be based on the following minimum requirements"}
-                        isComingSoon
                         link={"courses"}
                     />
-
-                    <CourseItem
-                        title={"Certificate in Children Ministry"}
-                        desc={"Admission into a degree program at Global University will be based on the following minimum requirements"}
-                        isComingSoon
-                        link={"courses"}
-                    />
+                    
                 </div>
             </div>
         </section>

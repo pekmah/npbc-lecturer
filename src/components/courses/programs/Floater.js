@@ -12,25 +12,32 @@ const Floater = () => {
             <ProgramItem
                 icon={<Undergraduate />}
                 title={"Undergraduate Programs"}
-                desc={"Graduate with a Bachelor of Arts in the program your choose. This program is meant for those who have completed their secondary school studies and attained a minimum of C+ in KCSE"}
+                desc={"The college offers BA Degrees from Global University USA in Bible and Theology, Christian Education and Intercultural studies."}
             />
 
             <ProgramItem
                 icon={<Diploma />}
                 title={"Diploma Programs"}
-                desc={"Graduate with a Bachelor of Arts in the program your choose. This program is meant for those who have completed their secondary school studies and attained a minimum of C+ in KCSE"}
+                desc={"We offer Govt accredited diploma programs in christian ministry and theology, counseling  psychology and Theological Studies."}
             />
 
             <ProgramItem
                 icon={<Certificate />}
                 title={"Certificate Programs"}
-                desc={"Graduate with a Bachelor of Arts in the program your choose. This program is meant for those who have completed their secondary school studies and attained a minimum of C+ in KCSE"}
+                desc={"These are designed for leadership Development in the running ministry context."}
             />
 
             <ProgramItem
                 icon={<Upcoming />}
                 title={"Upcoming Programs"}
-                desc={"Graduate with a Bachelor of Arts in the program your choose. This program is meant for those who have completed their secondary school studies and attained a minimum of C+ in KCSE"}
+                desc={
+                <ul>
+                    <li>- Post graduate Diploma in Bible and theology.</li>
+                    <li>- Masters in Ministerial studies.</li>
+                    <li>- Church admin and management.</li>
+                    <li>- Marriage and family therapy.</li>
+                </ul>
+                }
             />
 
 

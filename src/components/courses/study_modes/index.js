@@ -72,11 +72,19 @@ function StudyModes() {
                         {/*    Platform 1    */}
                         <div className={"text-c-blue p-2"}>
                             <span className={"font-semibold c-medium "}>
-                                NPBC LMS
+                                E-Learning
                             </span>
 
                             <div className={"flex  justify-between items-center py-1"}>
                                 <span className={"text-sm"}>Notes and all learning materials are shared to all students by a lecturer on the college’s LMS at the start of the semester</span>
+                            </div>
+
+                            <div className={"flex justify-end"}>
+                                <a
+                                   href={"https://classroom.google.com/u/0/h"}
+                                    className={"rounded-lg px-5 py-2 flex justify-center text-c-blue items-center gap-1 text-sm bg-bg-blue font-semibold"}>
+                                    <span>Visit</span>
+                                </a>
                             </div>
                         </div>
 
@@ -89,6 +97,14 @@ function StudyModes() {
                             <div className={"flex  justify-between items-center py-1"}>
                                 <span className={"text-sm"}>Every unit has a unique session link shared by the lecturer early before the class starts</span>
                             </div>
+
+                            <div className={"flex justify-end"}>
+                                <a
+                                    href={"https://meet.google.com/"}
+                                    className={"rounded-lg px-5 py-2 flex justify-center text-c-blue items-center gap-1 text-sm bg-bg-blue font-semibold"}>
+                                    <span>Visit</span>
+                                </a>
+                            </div>
                         </div>
 
                         {/*    Platform 3     */}
@@ -99,6 +115,14 @@ function StudyModes() {
 
                             <div className={"flex  justify-between items-center py-1"}>
                                 <span className={"text-sm"}>Every unit has a unique session link shared by the lecturer early before the class starts</span>
+                            </div>
+
+                            <div className={"flex justify-end"}>
+                                <a
+                                    href={"https://zoom.us/"}
+                                    className={"rounded-lg px-5 py-2 flex justify-center text-c-blue items-center gap-1 text-sm bg-bg-blue font-semibold"}>
+                                    <span>Visit</span>
+                                </a>
                             </div>
                         </div>
                     </div>

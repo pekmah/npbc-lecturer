@@ -17,23 +17,23 @@ const Floater = () => {
 
                 <div className="text-center flex-1 flex justify-between">
                     <StatisticsItem
-                        superText={"4024+"}
-                        subText={"Hours Lectured"}
-                    />
-
-                    <StatisticsItem
-                        superText={"3750+"}
+                        superText={"10000+"}
                         subText={"Students taught"}
                     />
 
                     <StatisticsItem
-                        superText={"7"}
-                        subText={"Course Provided"}
+                        superText={"20000+"}
+                        subText={"Hours Lectured"}
                     />
 
                     <StatisticsItem
-                        superText={"3"}
-                        subText={"Course Provided"}
+                        superText={"100+"}
+                        subText={"Centers"}
+                    />
+
+                    <StatisticsItem
+                        superText={"500+"}
+                        subText={"Lecturers"}
                     />
 
                 </div>

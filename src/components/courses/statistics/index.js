@@ -20,17 +20,14 @@ const Statistics = () => {
 
                     <div className='flex-1'>
                         <h3 className='c-h7 text-3xl leading-10 font-semibold text-c-blue'>
-                            We offer <span className={"text-c-red"}>industry leading </span> and <span
+                            We offer <span className={"text-c-red"}>affordable, accessible </span> and <span
                             className={"text-c-red"}> accredited </span> programs to
                             undergraduate, diploma and certificate students
                         </h3>
                         {/*paragraph */}
                         <p className=' mx-auto text-[#092A59A8] leading-8 my-4 font-medium'>
-                            Our courses are curated to meet the spiritual and leadership needs of the body of Christ in
-                            Kenya, Africa
-                            and the world. We put care in everything we do with the consciousness that our students will
-                            tomorrow
-                            face the society in the reality of God’s plan.
+                            Our courses are designed to meet the spiritual, scholarly , leadership and ministry needs of our students so as to transform them as agents of change
+                            in church and society.
                         </p>
                     </div>
                 </div>

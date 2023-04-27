@@ -4,7 +4,7 @@ import Table from "./Table";
 function ProgramView(props) {
     return (
         <div className={"p-3 px-6"}>
-            <div className={"flex"}>
+            <div className={"flex mb-4"}>
                 <div className={"flex-[0.4]"}>
                     <h4 className={"text-xl text-c-blue font-semibold"}>Program Brief View</h4>
                 </div>
@@ -15,8 +15,7 @@ function ProgramView(props) {
                     course from the table or the above groupings
                 </div>
             </div>
-            a details on every course are available and can be accessed by choosing
-            course from the table or the above groupings
+
 
             {/*Table*/}
             <Table
