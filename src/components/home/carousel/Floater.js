@@ -10,7 +10,7 @@ const Floater = ({ title, subTitle }) => {
                     </span>
                 </div>
                 <div className="">
-                    <div className="bg-[#ffffffd0] p-6">
+                    <div className="bg-[#ffffffd0] p-6 max-w-[60vw]">
                         <p className="text-2xl font-bold text-black">
                             {subTitle}
                         </p>

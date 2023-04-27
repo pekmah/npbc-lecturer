@@ -8,7 +8,7 @@ const Statistics = () => {
             {/*Floater */}
             <Floater/>
 
-            <div className="h-20"/>
+            <div className="h-24"/>
 
             <div className='flex'>
 
@@ -25,7 +25,7 @@ const Statistics = () => {
                             undergraduate, diploma and certificate students
                         </h3>
                         {/*paragraph */}
-                        <p className=' mx-auto text-[#092A59A8] leading-6 my-4 font-medium'>
+                        <p className=' mx-auto text-[#092A59A8] leading-8 my-4 font-medium'>
                             Our courses are curated to meet the spiritual and leadership needs of the body of Christ in
                             Kenya, Africa
                             and the world. We put care in everything we do with the consciousness that our students will

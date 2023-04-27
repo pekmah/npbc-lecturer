@@ -23,7 +23,7 @@ const Layout = ({children}) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/images/layout/logo.png"/>
             </Head>
-            <LayoutHeader/>
+            <LayoutHeader showModal={handleOpenModal}/>
 
             {/*  Application Modal    */}
             {show && <ApplicationModal isOpen={show} handleCloseModal={() => setShow(false)}/>}

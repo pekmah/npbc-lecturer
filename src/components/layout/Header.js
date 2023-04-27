@@ -3,7 +3,7 @@ import {Button} from '../general'
 import {FiPhone} from 'react-icons/fi'
 import {MdPersonOutline} from 'react-icons/md'
 
-const Header = () => {
+const Header = ({showModal}) => {
     return (
         <div className='bg-white px-10 h-[75px] flex items-center text-black'>
             <div className="flex gap-4 items-center flex-1">
@@ -34,7 +34,9 @@ const Header = () => {
                 </Button>
 
                 <Button
-                    className={"bg-c-red flex items-center justify-center gap-2 c-normal py-2.5 w-[160px] text-white"}>
+                    className={"bg-c-red flex items-center justify-center gap-2 c-normal py-2.5 w-[160px] text-white"}
+                    onClick={showModal}
+                >
 
                     {/* phone */}
                     <span className='text-[12px]'>Apply Now</span>
