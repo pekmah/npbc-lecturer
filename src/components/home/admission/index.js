@@ -1,31 +1,37 @@
 /* eslint-disable @next/next/no-img-element */
 import {Button} from '@/components/general'
 import React from 'react'
+import {useRouter} from "next/router";
 
 const Admission = () => {
+    const router = useRouter()
+
     return (
         <>
             {/* Admission */}
             <div className="flex">
                 {/* image */}
                 <div className="flex-1">
-                    <img src="/images/home/admission-1.webp" alt="admission" />
+                    <img className={"h-full object-cover"} src="/images/home/admission-1.webp" alt="admission"/>
                 </div>
 
                 {/* desc */}
                 <div className="bg-c-red flex-1 py-12 flex flex-col items-center text-white">
                     <h2 className="c-h4 font-semibold" data-aos="fade-up-left">Apply for Admission</h2>
 
-                    <p className="c-large mt-4 font-normal" data-aos="fade-up-left">{new Date().getFullYear()} Applications are now open</p>
+                    <p className="c-large mt-4 font-normal"
+                       data-aos="fade-up-left">{new Date().getFullYear()} Applications are now open</p>
 
                     <div className="my-10 c-medium font-normal w-10/12 mx-auto leading-6" data-aos="fade-up-left">
-                        <p>Please contact our Admission Office on 0754 569 687 who will be happy to arrange this for you.</p>
-                        <br />
+                        <p>Please contact our Admission Office on 0754 569 687 who will be happy to arrange this for
+                            you.</p>
+                        <br/>
                         <p>For Detailed information, brochures and other forms can be mailed to you upon request.</p>
                     </div>
 
                     <div className="w-10/12 mx-auto" data-aos="fade-up">
-                        <Button className={"bg-white py-3 w-3/6 text-c-red font-bold "}>
+                        <Button className={"bg-white py-3 w-3/6 text-c-red font-bold "}
+                                onClick={() => router.push("?apply=true")}>
                             Apply Now
                         </Button>
                     </div>

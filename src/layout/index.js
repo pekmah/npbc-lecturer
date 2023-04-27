@@ -1,9 +1,13 @@
 import {ApplicationModal, LayoutHeader, Navbar} from '@/components'
 import Footer from '@/components/footer'
 import Head from 'next/head'
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
+import {useRouter} from "next/router"
 
 const Layout = ({children}) => {
+    const router = useRouter()
+
+    const query = router.query
 
     /**
      * @type {boolean}
@@ -14,6 +18,43 @@ const Layout = ({children}) => {
     const handleOpenModal = () => {
         setShow(true)
     }
+
+    /**
+     * @method
+     * @return void
+     * @desc extracts apply query from the url
+     */
+    const handleQuery = () => {
+        //     If a query name apply is passed, show the application modal.
+        const applicationQuery = query?.apply
+
+        if (applicationQuery) {
+            setShow(applicationQuery)
+        } else {
+            setShow(false)
+        }
+    }
+
+    /**
+     * @return void
+     * @desc deletes apply query passed via url
+     */
+    function removeQueryParams() {
+        router.push(router.pathname);
+    }
+
+    /**
+     * @return void
+     * @desc closes the applicatoin modal
+     */
+    const handleCloseApplicationModal = () => {
+        removeQueryParams()
+        setShow(false)
+    }
+    useEffect(() => {
+        //     Listen for query change
+        handleQuery()
+    }, [query])
 
     return (
         <main className='overflow-y-hidden bg-white relative'>
@@ -26,7 +67,7 @@ const Layout = ({children}) => {
             <LayoutHeader showModal={handleOpenModal}/>
 
             {/*  Application Modal    */}
-            {show && <ApplicationModal isOpen={show} handleCloseModal={() => setShow(false)}/>}
+            {show && <ApplicationModal isOpen={show} handleCloseModal={handleCloseApplicationModal}/>}
 
             {/* Navbar */}
             <Navbar/>

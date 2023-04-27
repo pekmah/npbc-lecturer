@@ -1,7 +1,10 @@
 import {Button} from '@/components/general'
 import React from 'react'
+import {useRouter} from "next/router";
 
 const Intakes = () => {
+    const router = useRouter();
+    
     return (
         <section id={"intakes"} className='flex bg-[#fff]'>
             <div className="flex-1 h-[550px]">
@@ -53,7 +56,9 @@ const Intakes = () => {
                     </p>
 
                     <div className="flex gap-4 mt-8" data-aos="fade-up">
-                        <Button className={"bg-c-red text-white font-semibold text-xs w-32"}>
+                        <Button
+                            onClick={() => router.push("?apply=true")}
+                            className={"bg-c-red text-white font-semibold text-xs w-32"}>
                             Apply Now
                         </Button>
 

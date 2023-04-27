@@ -3,8 +3,11 @@ import React from 'react'
 import {MdOutlinePhone} from 'react-icons/md'
 import {HiOutlineDownload} from 'react-icons/hi'
 import RequirementItem from './RequirementItem'
+import {useRouter} from "next/router";
 
 const Application = () => {
+    const router = useRouter()
+
     return (
         <section id={"application"} className='flex text-white'>
             {/**Online Application */}
@@ -56,7 +59,9 @@ const Application = () => {
                     </Button>
 
                     <Button
-                        className={"bg-white h-8 text-xs text-c-red flex items-center gap-2 font-semibold px-5 w-32 justify-center"}>
+                        className={"bg-white h-8 text-xs text-c-red flex items-center gap-2 font-semibold px-5 w-32 justify-center"}
+                        onClick={() => router.push("?apply=true")}
+                    >
                         Apply Now
                     </Button>
                 </div>
