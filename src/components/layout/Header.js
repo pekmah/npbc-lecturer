@@ -9,7 +9,7 @@ const Header = ({showModal}) => {
             <div className="flex gap-4 items-center flex-1">
                 {/* Image */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className='h-[80px] w-[70px] object-contain' src="/images/layout/logo-1.png" alt="logo"/>
+                <img className='h-[80px] w-[70px] object-contain' src="/images/layout/npbc-logo-2.png" alt="logo" />
 
                 {/* title */}
                 <h4 className="c-h7 text-xl font-bold text-c-blue">Nairobi Pentecostal Bible College</h4>

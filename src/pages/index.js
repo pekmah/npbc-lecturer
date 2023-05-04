@@ -21,10 +21,10 @@ export default function Home() {
                 <Admission/>
 
                 {/* News and updates */}
-                <News/>
+                {/* <News/> */}
 
                 {/* Questions */}
-                <Questions/>
+                {/* <Questions/> */}
 
             </Layout>
         </>
