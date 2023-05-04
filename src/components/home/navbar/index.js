@@ -109,7 +109,7 @@ const nav_list = [
         ]
     }, {
         name: "E-Learning",
-        path: "",
+        path: "https://classroom.google.com/u/0/h",
         key: "e-learning"
     }, {
         name: "Downloads",

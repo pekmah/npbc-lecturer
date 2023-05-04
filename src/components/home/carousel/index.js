@@ -40,7 +40,7 @@ const Carousel = ({
                     </div>
 
                     <div className='relative h-[70vh]'>
-                        <img className='h-[70vh] object-top object-cover' src="/images/home/carousel-3.webp" alt='img-3'/>
+                        <img className='h-[70vh] object-top object-cover' src="/images/home/carousel-5.webp" alt='img-3' />
 
                         <Floater
                             title={'Vision'}

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import {GrLinkedin} from "react-icons/gr";
 import {FaInstagram, FaTwitter} from "react-icons/fa";
