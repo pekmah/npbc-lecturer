@@ -4,14 +4,14 @@ import LifeItem from './LifeItem'
 const Life = () => {
     return (
         <div className="bg-white w-full my-20">
-            <div className="p-12 flex items-center justify-center flex-col text-center" data-aos="fade-up">
+            <div className="p-6 md:p-12 flex items-center justify-center flex-col text-center" data-aos="fade-up">
                 <h4 className="c-h4 text-black mb-2">Life at NPBC</h4>
 
                 <p className='text-gray-500'>Your time at NPBC is a great opportunity to discover, develop and <br /> deploy your Christian Ministry</p>
             </div>
 
 
-            <div className="flex">
+            <div className="flex flex-col md:flex-row">
                 <LifeItem style={{
                     background:
                         " linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(.jpg), url(/images/home/life-1.jpg)",
