@@ -62,7 +62,7 @@ const Navbar = () => {
             })}
             </div>
 
-            <div className={"flex-1 flex md:hidden h-full px-4 justify-between" }>
+            <div className={"flex-1 flex md:hidden h-full px-4 justify-between text-white" }>
                 <h4 className={"font-semibold my-auto "}>Nairobi Pentecostal College</h4>
 
                 <Button className={"p-2 rounded-md focus:bg-[#ffffff20] my-auto"} onClick={handleOpenNav}>
