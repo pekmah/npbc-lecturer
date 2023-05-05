@@ -29,8 +29,8 @@ const Admission = () => {
                         <p>For Detailed information, brochures and other forms can be mailed to you upon request.</p>
                     </div>
 
-                    <div className="w-11/12 mx-auto" data-aos="fade-up">
-                        <Button className={"bg-white py-2 md:py-3 px-8 md:px-0 md:w-3/6 text-c-red text-sm md:text-base font-semibold md:font-bold "}
+                    <div className="w-11/12 mx-auto flex md:block justify-center" data-aos="fade-up">
+                        <Button className={"bg-white mx-auto py-2 md:py-3 px-8 md:px-0 md:w-3/6 text-c-red text-sm md:text-base font-semibold md:font-bold "}
                                 onClick={() => router.push("?apply=true")}>
                             Apply Now
                         </Button>
