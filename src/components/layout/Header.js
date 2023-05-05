@@ -5,20 +5,20 @@ import {MdPersonOutline} from 'react-icons/md'
 
 const Header = ({showModal}) => {
     return (
-        <div className='bg-white px-10 h-[75px] flex items-center text-black'>
-            <div className="flex gap-4 items-center flex-1">
+        <div className='bg-white md:px-10 px-3 h-[75px] flex items-center text-black'>
+            <div className="flex flex-col md:flex-row gap-[0.5] md:gap-4 justify-center md:items-center ">
                 {/* Image */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className='h-[80px] w-[70px] object-contain' src="/images/layout/npbc-logo-2.png" alt="logo" />
+                <img className=' h-12 md:h-[80px] w-[70px] object-contain' src="/images/layout/npbc-logo-2.png" alt="logo" />
 
                 {/* title */}
-                <h4 className="c-h7 text-xl font-bold text-c-blue">Nairobi Pentecostal Bible College</h4>
+                <h4 className="c-h7 text-xl font-bold text-c-blue hidden md:inline-flex">Nairobi Pentecostal Bible College</h4>
             </div>
 
             {/* buttons */}
             <div className="flex gap-3 flex-1 justify-end">
                 <Button
-                    className={"bg-c-red-pale flex items-center justify-center gap-2 c-normal py-2.5 w-[160px] text-c-red"}>
+                    className={" bg-c-red-pale hidden md:flex items-center justify-center gap-2 c-normal py-2.5 w-[160px] text-c-red"}>
                     {/* icon */}
                     <FiPhone className=''/>
                     {/* phone */}
@@ -26,7 +26,7 @@ const Header = ({showModal}) => {
                 </Button>
 
                 <Button
-                    className={"bg-c-red-pale flex items-center justify-center gap-2 c-normal py-2.5 w-[160px] text-c-red"}>
+                    className={"bg-c-red-pale flex items-center justify-center gap-2 c-normal py-2.5 w-auto px-2 md:px-0 md:w-[160px] text-c-red"}>
                     {/* icon */}
                     <MdPersonOutline className='text-lg'/>
                     {/* phone */}
@@ -34,7 +34,7 @@ const Header = ({showModal}) => {
                 </Button>
 
                 <Button
-                    className={"bg-c-red flex items-center justify-center gap-2 c-normal py-2.5 w-[160px] text-white"}
+                    className={"bg-c-red flex items-center justify-center gap-2 c-normal py-2.5 w-auto px-5 md:px-0 md:w-[160px] text-white"}
                     onClick={showModal}
                 >
 

@@ -4,7 +4,7 @@ import Line from './Line'
 
 const Courses = () => {
     return (
-        < div className="flex" >
+        < div className="hidden md:flex" >
             {/* courses */}
             <CourseItem style={{
                 background:

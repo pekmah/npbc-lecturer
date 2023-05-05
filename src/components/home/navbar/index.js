@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react'
 import NavItem from './NavItem'
 import {useRouter as useNavigate} from "next/navigation";
 import {useRouter} from "next/router";
+import {Button} from "@/components";
+import {HiViewList} from "react-icons/hi";
 
 const Navbar = () => {
     const navigate = useNavigate()
@@ -9,12 +11,21 @@ const Navbar = () => {
 
     const [currentTab, setCurrentTab] = useState("home")
     const [currentCollapsibleTab, setCurrentCollapsibleTab] = useState("")
+    const [isOpen, setIsOpen] = useState(false)
 
     const handleNavigate =(nav)=>{
+        setIsOpen(false)
         setCurrentTab(nav?.path)
         navigate.push(nav?.path)
     }
 
+    const handleCloseNav=()=>{
+        setIsOpen(false)
+    }
+
+    const handleOpenNav=()=>{
+        setIsOpen(true)
+    }
 
 
     useEffect(()=>{
@@ -29,8 +40,10 @@ const Navbar = () => {
     },[router.pathname])
 
     return (
-        <div className='bg-c-blue-dark h-14 px-10 flex justify-between items-center '>
+        <>
+        <div className='bg-c-blue-dark h-14 md:px-10  '>
             {/* Nav Items */}
+            <div className={"hidden md:flex flex-1 h-full justify-between items-center"}>
             {nav_list?.map((item) => {
 
                 return (
@@ -47,8 +60,65 @@ const Navbar = () => {
                     />
                 )
             })}
+            </div>
 
+            <div className={"flex-1 flex md:hidden h-full px-4 justify-between text-white" }>
+                <h4 className={"font-semibold my-auto "}>Nairobi Pentecostal College</h4>
+
+                <Button className={"p-2 rounded-md focus:bg-[#ffffff20] my-auto"} onClick={handleOpenNav}>
+                    <HiViewList className={"text-3xl  "}/>
+                </Button>
+            </div>
         </div>
+
+            <div
+                className={`z-[80] top-0 fixed right-0 bottom-0 h-screen bg-[#00000050]  ${
+                    isOpen ? " w-screen " : "w-0"
+                } transition-all duration-500 ease-in-out overflow-hidden`}
+                  onClick={handleCloseNav}
+            >
+                <div
+                    className={`float-right h-full bg-c-blue-dark z-50 ${
+                        isOpen ? " w-screen sm:w-[70vw]" : "w-0"
+                    } transition-all duration-700 ease-in-out overflow-hidden`}
+                    onClick={() => {}}
+                >
+                    <div className={`block`}>
+                        <div className="p-5 flex justify-end">
+                            <button className="" onClick={()=>{}}>
+                                <svg
+                                    width="30"
+                                    height="30"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M1.02136 28.9813L15.0027 15M28.984 1.01868L15 15M15 15L1.02136 1.01868M15.0027 15L28.984 28.9813"
+                                        stroke="#fff"
+                                        strokeWidth="1.5"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div className=" flex flex-col justify-center items-center gap-8 py-16">
+                            {nav_list?.map((item, i, key) => (
+
+                                <button key={key} className='h-full' onClick={()=> handleNavigate(item)}>
+                                    <div className={`c-normal h-full flex items-center px-6 text-lg font-semibold text-white hover:bg-c-red ease-in duration-300`} >
+                                        {item.name}
+                                    </div>
+
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
     )
 }
 
