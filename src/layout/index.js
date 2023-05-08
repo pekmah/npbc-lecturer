@@ -57,7 +57,7 @@ const Layout = ({children}) => {
     }, [query])
 
     return (
-        <main className='overflow-y-hidden bg-white relative'>
+        <main className='max-w-screen overflow-x-hidden overflow-y-hidden bg-white relative'>
             <Head>
                 <title>Nairobi Pentecostal Bible College</title>
                 <meta name="description" content="Nurturing potential, building character"/>
