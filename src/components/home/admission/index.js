@@ -12,7 +12,7 @@ const Admission = () => {
             <div className="flex flex-col md:flex-row">
                 {/* image */}
                 <div className="flex-1">
-                    <img className={"h-full object-cover"} src="/images/home/admission-1.webp" alt="admission"/>
+                    <img className={"h-full object-contain md:object-cover"} src="/images/home/admission-1.webp" alt="admission"/>
                 </div>
 
                 {/* desc */}
