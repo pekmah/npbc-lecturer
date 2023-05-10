@@ -14,7 +14,7 @@ import Link from "next/link";
  */
 const CourseItem = ({title, desc, isComingSoon, link = ""}) => {
     return (
-        <div className="w-[32%] bg-white px-1.5 py-3 flex gap-3 relative">
+        <div className="w-full md:w-[32%] bg-white px-1.5 py-3 flex gap-3 relative">
             {isComingSoon &&
                 <div className="absolute -top-8 -left-8 w-32 h-32 bg-none z-20 flex items-center justify-center">
                     <div className=" text-xs text-white p-1 text-center w-36 bg-[#1C3B66] -rotate-45 ">Coming soon</div>
@@ -25,7 +25,7 @@ const CourseItem = ({title, desc, isComingSoon, link = ""}) => {
             <img
                 src="/images/courses/programs-1.jpg"
                 alt="programs-1"
-                className='h-32 my-auto'
+                className='h-24 md:h-32 my-auto'
             />
 
             <div>

@@ -3,13 +3,13 @@ import Table from "./Table";
 
 function ProgramView(props) {
     return (
-        <div className={"p-3 px-6"}>
-            <div className={"flex mb-4"}>
-                <div className={"flex-[0.4]"}>
+        <div className={"p-3 px-3 md:px-6"}>
+            <div className={"flex flex-col md:flex-row mb-4 gap-y-2"}>
+                <div className={"md:flex-[0.4]"}>
                     <h4 className={"text-xl text-c-blue font-semibold"}>Program Brief View</h4>
                 </div>
 
-                <div className={"font-semibold text-sm text-c-blue flex-1"}>
+                <div className={"font-medium md:font-semibold text-sm text-c-blue flex-1"}>
                     This table shows all our programs with brief details for a unified view that makes comparison easy
                     and convenient. All extra details on every course are available and can be accessed by choosing
                     course from the table or the above groupings
@@ -17,11 +17,13 @@ function ProgramView(props) {
             </div>
 
 
+            <div className={"max-w-[100vw] overflow-x-scroll"}>
             {/*Table*/}
             <Table
                 headerList={table_columns}
                 data={table_data}
             />
+            </div>
         </div>
     );
 }
