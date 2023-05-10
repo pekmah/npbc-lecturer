@@ -83,11 +83,7 @@ function StudyModes() {
           </div>
           {/*    Virtual Platforms    */}
           <div className={"flex-1 border-t border-line-gray"}>
-            <h3
-              className={
-                "c-xl text-c-blue my-2 text-center font-medium text-center"
-              }
-            >
+            <h3 className={"c-xl text-c-blue my-2 text-center font-medium"}>
               Virtual Platforms
             </h3>
 
