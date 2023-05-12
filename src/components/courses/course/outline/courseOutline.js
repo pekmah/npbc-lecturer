@@ -1,95 +1,136 @@
-import React from 'react';
+import React from "react";
 import ReadMoreBtn from "@/components/home/questions/ReadMoreBtn";
-import {Button} from "@/components";
-import {AiOutlineDownload} from "react-icons/ai";
+import { Button } from "@/components";
+import { AiOutlineDownload } from "react-icons/ai";
 
 const CourseOutline = () => {
-    return (
-        <div className={"bg-slate-100 p-12 flex"}>
-            <div className={"w-1/4 "}/>
+  return (
+    <div className={"bg-slate-100 p-0 md:p-12 flex"}>
+      <div className={"w-1/4 hidden md:flex "} />
 
-            <div className={"bg-white p-4 w-3/4 text-c-blue flex flex-col gap-1"}>
-                <h6 className={"c-large font-bold"}>Course Outline</h6>
+      <div
+        className={
+          "bg-white p-4 w-full md:w-3/4 text-c-blue flex flex-col gap-1"
+        }
+      >
+        <h6 className={"c-large font-bold"}>Course Outline</h6>
 
-                {/*    description  */}
-                <p className={"text-sm my-1"}>
-                    The course covers these topics in the years of study exhaustively to reveal the Bible in the context
-                    of the discussion and how leadership and management should be done in the context of churches
-                </p>
+        {/*    description  */}
+        <p className={"text-sm my-1"}>
+          The course covers these topics in the years of study exhaustively to
+          reveal the Bible in the context of the discussion and how leadership
+          and management should be done in the context of churches
+        </p>
 
-                {/*    Course study schedule    */}
-                {/*    Year 1   */}
-                <div>
-                    {/*    Option     */}
-                    <div className={"c-large border-b border-b-gray-300 py-2 px-1 flex justify-between"}>
-                        <span>Year 1</span>
+        {/*    Course study schedule    */}
+        {/*    Year 1   */}
+        <div>
+          {/*    Option     */}
+          <div
+            className={
+              "c-medium md:c-large font-semibold border-b border-b-gray-300 py-2 px-1 flex justify-between"
+            }
+          >
+            <span>Year 1</span>
 
-                        <ReadMoreBtn/>
-                    </div>
+            <ReadMoreBtn />
+          </div>
 
-                    {/*    collapsible Suboptions   */}
-                    <ul>
-                        <li className={"c-medium font-semibold border-b border-b-gray-300 py-2.5 px-1 flex justify-between ml-10"}>
-                            <span>Unit 1</span>
+          {/*    collapsible Suboptions   */}
+          <ul>
+            <li
+              className={
+                "c-normal md:c-medium font-semibold border-b border-b-gray-300 py-2.5 px-1 flex justify-between ml-5 md:ml-10"
+              }
+            >
+              <span>Unit 1</span>
 
-                            <ReadMoreBtn/>
-                        </li>
-                        <li className={"c-medium font-semibold border-b border-b-gray-300 py-2.5 px-1 flex justify-between ml-10"}>
-                            <span>Unit 2</span>
+              <ReadMoreBtn />
+            </li>
+            <li
+              className={
+                "c-normal md:c-medium font-semibold border-b border-b-gray-300 py-2.5 px-1 flex justify-between ml-5 md:ml-10"
+              }
+            >
+              <span>Unit 2</span>
 
-                            <ReadMoreBtn/>
-                        </li>
-                        <li className={"c-medium font-semibold border-b border-b-gray-300 py-2.5 px-1 flex justify-between ml-10"}>
-                            <span>Unit 3</span>
+              <ReadMoreBtn />
+            </li>
+            <li
+              className={
+                "c-normal md:c-medium font-semibold border-b border-b-gray-300 py-2.5 px-1 flex justify-between ml-5 md:ml-10"
+              }
+            >
+              <span>Unit 3</span>
 
-                            <ReadMoreBtn/>
-                        </li>
-                        <li className={"c-medium font-semibold border-b border-b-gray-300 py-2.5 px-1 flex justify-between ml-10"}>
-                            <span>Unit 4</span>
+              <ReadMoreBtn />
+            </li>
+            <li
+              className={
+                "c-normal md:c-medium font-semibold border-b border-b-gray-300 py-2.5 px-1 flex justify-between ml-5 md:ml-10"
+              }
+            >
+              <span>Unit 4</span>
 
-                            <ReadMoreBtn/>
-                        </li>
-                    </ul>
-                </div>
-
-                <div>
-                    {/*    Option     */}
-                    <div className={"c-large border-b border-b-gray-300 py-2 px-1 flex justify-between"}>
-                        <span>Year 2</span>
-
-                        <ReadMoreBtn/>
-                    </div>
-                </div>
-
-                <div>
-                    {/*    Option     */}
-                    <div className={"c-large border-b border-b-gray-300 py-2 px-1 flex justify-between"}>
-                        <span>Year 3</span>
-
-                        <ReadMoreBtn/>
-                    </div>
-                </div>
-
-                <div>
-                    {/*    Option     */}
-                    <div className={"c-large border-b border-b-gray-300 py-2 px-1 flex justify-between"}>
-                        <span>Year 4</span>
-
-                        <ReadMoreBtn/>
-                    </div>
-                </div>
-
-                {/*    Download button  */}
-                <div className={"flex justify-end p-4"}>
-                    {/*    Button   */}
-                    <Button
-                        className={"flex justify-center text-c-blue items-center gap-1 text-sm bg-bg-blue font-semibold px-4"}>
-                        <span>Download Outline</span> <AiOutlineDownload className={"text-xl ml-1"}/>
-                    </Button>
-                </div>
-            </div>
+              <ReadMoreBtn />
+            </li>
+          </ul>
         </div>
-    );
+
+        <div>
+          {/*    Option     */}
+          <div
+            className={
+              "c-normal font-semibold md:c-large border-b border-b-gray-300 py-2 px-1 flex justify-between"
+            }
+          >
+            <span>Year 2</span>
+
+            <ReadMoreBtn />
+          </div>
+        </div>
+
+        <div>
+          {/*    Option     */}
+          <div
+            className={
+              "c-normal font-semibold md:c-large border-b border-b-gray-300 py-2 px-1 flex justify-between"
+            }
+          >
+            <span>Year 3</span>
+
+            <ReadMoreBtn />
+          </div>
+        </div>
+
+        <div>
+          {/*    Option     */}
+          <div
+            className={
+              "c-normal font-semibold md:c-large border-b border-b-gray-300 py-2 px-1 flex justify-between"
+            }
+          >
+            <span>Year 4</span>
+
+            <ReadMoreBtn />
+          </div>
+        </div>
+
+        {/*    Download button  */}
+        <div className={"flex justify-end p-4"}>
+          {/*    Button   */}
+          <Button
+            className={
+              "flex justify-center text-c-blue items-center gap-1 text-sm bg-bg-blue font-semibold px-4"
+            }
+          >
+            <span>Download Outline</span>{" "}
+            <AiOutlineDownload className={"text-xl ml-1"} />
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default CourseOutline;
