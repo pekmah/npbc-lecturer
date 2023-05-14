@@ -1,23 +1,27 @@
 /* eslint-disable @next/next/no-img-element */
-import { Button } from '@/components/general'
-import React from 'react'
+import { Button } from "@/components/general";
+import React from "react";
 
 const NewsItem = ({ image, date, desc }) => {
-    return (
-        <div className='w-[24%] flex flex-col gap-4' data-aos="fade-right">
-            <img className='h-44' src={image} alt="news" />
+  return (
+    <div
+      className="w-full md:w-[24%] flex flex-col gap-4"
+      data-aos="fade-right"
+    >
+      <img className="h-44" src={image} alt="news" />
 
-            <span className="text-gray-400 font-medium c-medium">
-                {date}
-            </span>
+      <span className="text-gray-400 font-medium c-medium">{date}</span>
 
-            <p className='text-black c-normal leading-6'>{desc}</p>
+      <p className="text-black c-normal leading-6">{desc}</p>
 
-            <div className="text-white" data-aos="fade-up">
-                <Button className={"bg-c-blue py-3 px-4 text c-normal"} text={"Read More"} />
-            </div>
-        </div >
-    )
-}
+      <div className="text-white" data-aos="fade-up">
+        <Button
+          className={"bg-c-blue py-3 px-4 text c-normal"}
+          text={"Read More"}
+        />
+      </div>
+    </div>
+  );
+};
 
-export default NewsItem
+export default NewsItem;
