@@ -1,65 +1,147 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
+import React, { useState } from "react";
+import CouseItem from "@/components/modal/application/pages/select_course/CouseItem";
+import { FiChevronDown } from "react-icons/fi";
 
 const AvailableCourses = () => {
+  // saves course category on view
+  const [current, setCurrent] = useState("undergraduate");
+  // handles toggle's collapse visibility
+  const [isOpen, setIsOpen] = useState(false);
+
+  /**
+   * @desc renders courses on small screen
+   * @returns {JSX.Element}
+   */
+  const renderSmallScreen = () => {
     return (
-        <div className={"flex-1 flex flex-col"}>
-            <h6 className={"c-medium font-bold text-c-blue px-3"}>Program of choice</h6>
-
-            <div className={"px-3 border-l border-l-gray-400 my-4 flex-1"}>
-                <ul className={"py-3 flex flex-col gap-4"}>
-
-                    <li>
-                        <div className={"flex border border-gray-200"}>
-                            <div className={"h-24 w-32 flex-0.4 relative overflow-hidden"}>
-                                <img src={"/images/home/course-1.jpg"} alt={"statistics-1"}
-                                     className='w-full h-full object-cover'/>
-                                <div className='absolute top-0 left-0 right-0 bottom-0 bg-[#A225317A]'/>
-                            </div>
-
-                            <div className={"flex-1 p-2 flex flex-col gap-1"}>
-                                <h6 className={"font-bold text-md"}>Diploma in Bible and Theology</h6>
-                                <div className={"flex gap-1 text-sm"}>
-                                    <span className={"font-semibold"}>Study Mode:</span>
-                                    <span className={""}>Regular</span>
-                                </div>
-
-                                <div className={"flex gap-1 text-sm"}>
-                                    <span className={"font-semibold"}>Start Date:</span>
-                                    <span className={""}>1st Feb 2024</span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </li>
-
-                    <li>
-                        <div className={"flex border border-gray-200"}>
-                            <div className={"h-24 w-32 flex-0.4 relative overflow-hidden"}>
-                                <img src={"/images/home/course-1.jpg"} alt={"statistics-1"}
-                                     className='w-full h-full object-cover'/>
-                                <div className='absolute top-0 left-0 right-0 bottom-0 bg-[#A225317A]'/>
-                            </div>
-
-                            <div className={"flex-1 p-2 flex flex-col gap-1"}>
-                                <h6 className={"font-bold text-md"}>Diploma in Christian Ministry</h6>
-                                <div className={"flex gap-1 text-sm"}>
-                                    <span className={"font-semibold"}>Study Mode:</span>
-                                    <span className={""}>Regular</span>
-                                </div>
-
-                                <div className={"flex gap-1 text-sm"}>
-                                    <span className={"font-semibold"}>Start Date:</span>
-                                    <span className={""}>1st Feb 2024</span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </li>
-                </ul>
+      <ul className={"py-2 flex flex-col gap-2 md:gap-4"}>
+        {Object.keys(courses).map((item) => (
+          <li className={"cursor-pointer"} onClick={() => setCurrent(item)}>
+            {/*collapsible courses toggle*/}
+            <div
+              className={`py-2 focus:outline-none text-md font-semibold flex justify-between ${
+                current.toLowerCase() === item?.toLowerCase()
+                  ? "text-c-blue"
+                  : "text-gray-500"
+              }`}
+            >
+              <span className={"capitalize "}>{item}</span>
+              {/*    icon*/}
+              <FiChevronDown
+                className={`text-c-red text-2xl ${
+                  current.toLowerCase() === item?.toLowerCase()
+                    ? "-rotate-180"
+                    : "rotate-0"
+                }`}
+              />
             </div>
-        </div>
+
+            {/*  courses wrapper*/}
+
+            <div
+              className={` bg-gray-100 flex flex-col gap-2 overflow-hidden  duration-500 ${
+                current.toLowerCase() === item?.toLowerCase()
+                  ? "h-auto p-2"
+                  : "h-[0px]"
+              }`}
+            >
+              <CouseItem
+                className={`duration-500 ${
+                  current.toLowerCase() === item?.toLowerCase()
+                    ? "scale-100"
+                    : "scale-0"
+                }`}
+              />
+              <CouseItem
+                className={`duration-500 ${
+                  current.toLowerCase() === item?.toLowerCase()
+                    ? "scale-100"
+                    : "scale-0"
+                }`}
+              />
+              <CouseItem
+                className={`duration-500 ${
+                  current.toLowerCase() === item?.toLowerCase()
+                    ? "scale-100"
+                    : "scale-0"
+                }`}
+              />
+            </div>
+          </li>
+        ))}
+      </ul>
     );
+  };
+  return (
+    <div className={"flex-1 flex flex-col"}>
+      <h6 className={"c-medium font-bold text-c-blue px-3"}>
+        Program of choice
+      </h6>
+
+      <div className={"md:px-3 md:border-l border-l-gray-400 my-4 flex-1"}>
+        {renderSmallScreen()}
+      </div>
+    </div>
+  );
 };
 
 export default AvailableCourses;
+
+/**
+ * @type Object
+ * list of courses grouped by category
+ */
+const courses = {
+  undergraduate: [
+    {
+      title: "Bachelor of Arts in Bible & Theology",
+      mode: "Regular",
+      date: "1st Feb 2024",
+    },
+    {
+      title: "Bachelor of Arts in Christian Education",
+      mode: "Regular",
+      date: "1st Feb 2024",
+    },
+    {
+      title: "Bachelor of Arts in Intercultural Studies",
+      mode: "Regular",
+      date: "1st Feb 2024",
+    },
+  ],
+  diploma: [
+    {
+      title: "Diploma in Christian Ministry",
+      mode: "Regular",
+      date: "1st Feb 2024",
+    },
+    {
+      title: "Diploma in Bible and Theology",
+      mode: "Regular",
+      date: "1st Feb 2024",
+    },
+    {
+      title: "Diploma in Counseling Psychology",
+      mode: "Regular",
+      date: "1st Feb 2024",
+    },
+  ],
+  certificate: [
+    {
+      title: "Certificate in Christian Ministry",
+      mode: "Regular",
+      date: "1st Feb 2024",
+    },
+    {
+      title: "Certificate in Youth Minstry",
+      mode: "Regular",
+      date: "1st Feb 2024",
+    },
+    {
+      title: "Certificate in Women Ministry",
+      mode: "Regular",
+      date: "1st Feb 2024",
+    },
+  ],
+};

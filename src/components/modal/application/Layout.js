@@ -23,7 +23,11 @@ const Layout = ({
         "fixed top-0 right-0 bottom-0 left-0 z-50 bg-[#00000090] max-h-screen p-1 md:p-4 max-w-screen"
       }
     >
-      <div className={"bg-slate-50 h-full w-full overflow-y-scroll"}>
+      <div
+        className={
+          "bg-slate-50 h-full w-full overflow-y-scroll overflow-x-hidden"
+        }
+      >
         <Header currentModal={currentModal} switchModal={switchModal} />
 
         {/*layout body*/}

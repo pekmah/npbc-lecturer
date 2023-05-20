@@ -14,13 +14,13 @@ const Courses = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
           <BsArrowLeft className={"text-2xl"} />
         </Button>
         <div className={"flex items-center flex-col flex-1 text-center"}>
-          <h4 className={"text-2xl md:c-h5 font-bold md:w-2/3 mx-auto"}>
+          <h4 className={"text-xl md:c-h5 font-bold md:w-2/3 mx-auto"}>
             Here is everything you need to complete your application
           </h4>
 
           <div
             className={
-              "flex items-center gap-4 mt-8 h-10 border-b border-gray-400 md:w-1/3"
+              "hidden md:flex items-center gap-4 mt-8 h-10 border-b border-gray-400 md:w-1/3 "
             }
           >
             <BsSearch className={"text-md text-gray-500"} />
@@ -57,13 +57,13 @@ const Courses = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
           <Button
             onClick={handleCloseModal}
             className={
-              "bg-c-red-pale text-c-red py-3 px-14 text-sm font-semibold"
+              "bg-c-red-pale text-c-red py-2 md:py-3 px-4 md:px-14 text-sm font-semibold"
             }
             text={"close"}
           />
           <Button
             className={
-              "bg-c-red outline-none text-white py-3 px-12 text-sm font-semibold"
+              "bg-c-red outline-none text-white py-2 md:py-3 px-4 md:px-12 text-sm font-semibold"
             }
             text={"Continue"}
           />

@@ -122,7 +122,11 @@ const ApplicationModal = ({ isOpen, handleCloseModal }) => {
       currentModal={currentModal}
       switchModal={handleSelectModal}
     >
-      <div className={"text-black px-2 py-6 md:p-10 h-full flex  "}>
+      <div
+        className={
+          "text-black px-2 py-6 md:p-10 h-full flex overflow-x-hidden "
+        }
+      >
         {renderBody()}
       </div>
     </Layout>
