@@ -10,7 +10,7 @@ const SideMenu = () => {
       <ul className={"w-9/12"}>
         {/*Menu items*/}
         <MenuItem isCurrent name={"History"} />
-        <MenuItem name={"Accredition"} />
+        <MenuItem name={"Accreditation"} />
         <MenuItem name={"Mission & Vision"} />
         <MenuItem name={"Philosophy & Core Values"} />
         <MenuItem name={"Our Goals"} />
