@@ -95,11 +95,6 @@ const Explore = () => (
 
     {/* Email */}
     <div className="block leading-6">
-      <a href="">Community</a>
-    </div>
-
-    {/* Email */}
-    <div className="block leading-6">
       <a href="">Social Media</a>
     </div>
 
