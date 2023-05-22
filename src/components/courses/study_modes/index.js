@@ -27,6 +27,10 @@ function StudyModes() {
               Campus Locations
             </h3>
 
+            <span className={"text-sm px-2 text-c-blue"}>
+              Our campuses are located through out the country for more
+              information contact us
+            </span>
             {/*    Campus 1    */}
             <div className={"text-c-blue p-2"}>
               <span className={"font-semibold c-medium flex-1"}>
@@ -52,31 +56,6 @@ function StudyModes() {
                       />
                     </Button>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            {/*    Campus 2     */}
-            <div className={"text-c-blue p-2"}>
-              <span className={"font-semibold c-medium "}>Ruiru Campus</span>
-
-              <div className={"flex  justify-between items-center py-1"}>
-                <span className={"text-sm flex-[1.3]"}>
-                  Garden Estate Off Thika Road Office
-                </span>
-
-                <div className={"flex-1 flex"}>
-                  <Button
-                    className={
-                      "flex justify-center text-c-blue items-center gap-1 text-sm bg-bg-blue font-semibold"
-                    }
-                  >
-                    <span>View Location</span>{" "}
-                    <IoLocationOutline
-                      className={"text-lg"}
-                      color={Theme.colors.c_blue}
-                    />
-                  </Button>
                 </div>
               </div>
             </div>
