@@ -16,8 +16,12 @@ const AvailableCourses = () => {
   const renderSmallScreen = () => {
     return (
       <ul className={"py-2 flex flex-col gap-2 md:gap-4"}>
-        {Object.keys(courses).map((item) => (
-          <li className={"cursor-pointer"} onClick={() => setCurrent(item)}>
+        {Object.keys(courses).map((item, index) => (
+          <li
+            key={index}
+            className={"cursor-pointer"}
+            onClick={() => setCurrent(item)}
+          >
             {/*collapsible courses toggle*/}
             <div
               className={`py-2 focus:outline-none text-md font-semibold flex justify-between ${
