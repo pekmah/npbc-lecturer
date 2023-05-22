@@ -180,6 +180,10 @@ const nav_list = [
     key: "courses",
     subnavs: [
       {
+        name: "Postgraduate Programs",
+        path: "/courses#undergraduate",
+      },
+      {
         name: "Undergraduate Programs",
         path: "/courses#undergraduate",
       },

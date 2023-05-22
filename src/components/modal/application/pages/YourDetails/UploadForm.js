@@ -29,24 +29,6 @@ const UploadForm = () => {
             </div>
           </div>
         </div>
-
-        <div>
-          {/*    label    */}
-          <h6 className={"font-medium mb-2"}>Birth Certificate</h6>
-          <div
-            className={
-              "border-2 border-dashed border-c-gray flex items-center justify-center h-28 w-full"
-            }
-          >
-            <div className="flex gap-6 items-center">
-              <div className="h-12 w-12 border border-c-gray rounded-full flex items-center justify-center">
-                <MdOutlineDriveFolderUpload className="text-c-red text-lg" />
-              </div>
-              <span className="text-gray-400"> Drag and Drop Here</span>
-            </div>
-          </div>
-        </div>
-
         <div>
           {/*    label    */}
           <h6 className={"font-medium mb-2"}>
