@@ -1,37 +1,37 @@
-import React from 'react';
+import React from "react";
 import Layout from "@/layout";
-import {Carousel, Goals, Mission, Philosophy} from "@/components";
+import { Carousel, Goals, Mission, Philosophy } from "@/components";
 import History from "@/components/about/history";
 import Leadership from "@/components/about/leadership";
 import Partners from "@/components/about/partners";
 
 const About = () => {
-    return (
-        <Layout>
-            {/*    Carousel     */}
-            <Carousel
-                title={"Our Philosophy"}
-                subTitle={"Nurturing potential building character"}
-            />
+  return (
+    <Layout>
+      {/*    Carousel     */}
+      <Carousel
+        title={"Our Philosophy"}
+        subTitle={"Nurturing Potential Building Character"}
+      />
 
-            {/*    History     */}
-            <History/>
-            {/*    Mission & Vision     */}
-            <Mission/>
+      {/*    History     */}
+      <History />
+      {/*    Mission & Vision     */}
+      <Mission />
 
-            {/*    Philosophy*/}
-            <Philosophy/>
+      {/*    Philosophy*/}
+      <Philosophy />
 
-            {/*    Goals    */}
-            <Goals/>
+      {/*    Goals    */}
+      <Goals />
 
-            {/*    Leadership     */}
-            <Leadership/>
+      {/*    Leadership     */}
+      <Leadership />
 
-            {/*    Partners     */}
-            <Partners/>
-        </Layout>
-    );
+      {/*    Partners     */}
+      <Partners />
+    </Layout>
+  );
 };
 
 export default About;

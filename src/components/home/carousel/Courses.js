@@ -1,61 +1,64 @@
-import React from 'react'
-import CourseItem from './CourseItem'
-import Line from './Line'
+import React from "react";
+import CourseItem from "./CourseItem";
+import Line from "./Line";
+import Link from "next/link";
 
 const Courses = () => {
-    return (
-        < div className="hidden md:flex" >
-            {/* courses */}
-            <CourseItem style={{
-                background:
-                    " linear-gradient(0deg, rgba(162, 37, 49,0.50), rgba(162, 37, 49,0.50)), url(/images/home/course-1.jpg)",
-                backgroundSize: "cover",
-                backgroundPosition: "bottom",
-            }}
+  return (
+    <div className="hidden md:flex">
+      {/* courses */}
+      <CourseItem
+        style={{
+          background:
+            " linear-gradient(0deg, rgba(162, 37, 49,0.90), rgba(162, 37, 49,0.90)), url(/images/home/course-1.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "bottom",
+        }}
+        to={"/courses#undergraduate"}
+      >
+        <Link href={"/courses#undergraduate"}>Postgraduate Programs</Link>
+      </CourseItem>
 
-            >
-                Bible & Theology <br /> Courses
-                <Line />
-            </CourseItem>
+      <CourseItem
+        style={{
+          background:
+            " linear-gradient(0deg, rgba(162, 37, 49,0.90), rgba(162, 37, 49,0.90)), url(/images/home/course-2.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        to={"/courses#undergraduate"}
+      >
+        <Link href={"/courses#undergraduate"}>Undergraduate Programs</Link>
+        <Line />
+      </CourseItem>
 
-            <CourseItem style={{
-                background:
-                    " linear-gradient(0deg, rgba(162, 37, 49,0.50), rgba(162, 37, 49,0.50)), url(/images/home/course-2.jpg)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-            }}
+      <CourseItem
+        style={{
+          background:
+            " linear-gradient(0deg, rgba(162, 37, 49,0.90), rgba(162, 37, 49,0.90)), url(/images/home/course-3.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        to={"/courses#diploma"}
+      >
+        <Link href={"/courses#diploma"}>Diploma Programs</Link>
 
-            >
-                Bachelor of Arts <br /> (Intercurtural Studies)
-                <Line />
+        <Line />
+      </CourseItem>
 
-            </CourseItem>
+      <CourseItem
+        style={{
+          background:
+            " linear-gradient(0deg, rgba(162, 37, 49,0.90), rgba(162, 37, 49,0.90)), url(/images/home/course-4.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        to={"/courses#certificate"}
+      >
+        <Link href={"/courses#certificate"}>Certificate Programs</Link>
+      </CourseItem>
+    </div>
+  );
+};
 
-            <CourseItem style={{
-                background:
-                    " linear-gradient(0deg, rgba(162, 37, 49,0.50), rgba(162, 37, 49,0.50)), url(/images/home/course-3.jpg)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-            }}
-
-            >
-                Christian Education <br /> Courses
-                <Line />
-
-            </CourseItem>
-
-            <CourseItem style={{
-                background:
-                    " linear-gradient(0deg, rgba(162, 37, 49,0.50), rgba(162, 37, 49,0.50)), url(/images/home/course-4.jpg)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-            }}
-
-            >
-                Christian Ministry <br /> Courses
-            </CourseItem>
-        </div >
-    )
-}
-
-export default Courses
+export default Courses;

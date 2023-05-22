@@ -37,7 +37,7 @@ const Philosophy = () => {
             <h6 className={"c-xl font-semibold"}>Our Philosophy</h6>
 
             <p className={"c-normal leading-6 text-center text-white"}>
-              Nurturing potential building character
+              Nurturing Potential Building Character
             </p>
           </div>
           {/*    Vision   */}
