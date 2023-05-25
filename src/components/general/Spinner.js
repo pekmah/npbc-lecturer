@@ -1,6 +1,6 @@
 import React from "react";
 
-const Spinner = () => {
+const Spinner = ({ text = "Loading" }) => {
   return (
     <div className={"flex flex-col items-center"} role="status">
       <svg
@@ -19,7 +19,7 @@ const Spinner = () => {
           fill="currentFill"
         />
       </svg>
-      <span className="font-semibold text-c-blue">Loading...</span>
+      <span className="font-semibold text-c-blue">{text}...</span>
     </div>
   );
 };
