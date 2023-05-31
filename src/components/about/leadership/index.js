@@ -21,10 +21,25 @@ const Leadership = () => {
           }
         >
           {/*Leadership item*/}
-          <LeadershipItem />
-          <LeadershipItem />
-          <LeadershipItem />
-          <LeadershipItem />
+          <LeadershipItem
+            title={"Rev. Andrew Manyeki"}
+            role={" coordinator, Online, Distance and Extension Learning"}
+          />
+          <LeadershipItem
+            image={"/images/about/leadership-billy-4.webp"}
+            title={"Prof. Billy"}
+            role={" __"}
+          />
+          <LeadershipItem
+            image={"/images/about/leadership-marete-3.webp"}
+            title={"Dr. Dedan Marete"}
+            role={" __"}
+          />
+          <LeadershipItem
+            image={"/images/about/leadership-kimani-2.webp"}
+            title={"Prof. Benard Kimani"}
+            role={" __"}
+          />
         </div>
         {/*    Intake  */}
         <Intake />
