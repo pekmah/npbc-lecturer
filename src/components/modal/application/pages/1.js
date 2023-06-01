@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AppStages from "@/components/modal/application/pages/welcome/AppStages";
 import CompleteLater from "@/components/modal/application/pages/welcome/CompleteLater";
 import NeedHelp from "@/components/modal/application/pages/welcome/NeedHelp";
@@ -10,7 +10,18 @@ import { BsArrowLeft } from "react-icons/bs";
  * @returns {JSX.Element}
  * @constructor
  */
+
 const Welcome = ({ switchModal, handleCloseModal, switchToNext }) => {
+  const [name, setName] = useState("");
+
+  const handleChangeName = async (e) => {
+    setName(e.target.value);
+  };
+
+  const handleSave = () => {
+    localStorage.setItem("application", JSON.stringify({ name1: name }));
+    window.alert("Name saved");
+  };
   return (
     <div className={"text-c-blue w-full "}>
       <div className={"flex "}>
@@ -19,7 +30,6 @@ const Welcome = ({ switchModal, handleCloseModal, switchToNext }) => {
           <h4 className={"text-2xl md:c-h5 font-bold"}>Welcome to NPBC</h4>
 
           <p className={"text-lg md:c-xl mt-4 font-semibold leading-6"}>
-            {" "}
             We are glad to see you want to learn with us
           </p>
         </div>
@@ -34,7 +44,11 @@ const Welcome = ({ switchModal, handleCloseModal, switchToNext }) => {
         <AppStages switchModal={switchModal} />
 
         {/*Complete later*/}
-        <CompleteLater />
+        <CompleteLater
+          handleSave={handleSave}
+          name={name}
+          handleChange={handleChangeName}
+        />
 
         {/*    Need help    */}
         <NeedHelp />
@@ -52,6 +66,7 @@ const Welcome = ({ switchModal, handleCloseModal, switchToNext }) => {
         <Button
           className={"bg-c-red text-white py-2 px-12 text-sm font-semibold"}
           text={"Get Started"}
+          onClick={switchToNext}
         />
       </div>
       <div className={"h-20 md:hidden"} />

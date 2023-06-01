@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components";
 import Uploads from "@/components/modal/application/pages/all_you_need/Uploads";
 import ApplicationFee from "@/components/modal/application/pages/all_you_need/ApplicationFee";
@@ -6,6 +6,7 @@ import TermsAndCondition from "@/components/modal/application/pages/all_you_need
 import { BsArrowLeft } from "react-icons/bs";
 
 const AllYouNeed = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
+  const [hasRead, setHasRead] = useState(false);
   return (
     <div className={"text-c-blue w-full"}>
       {/*    Details      */}
@@ -36,7 +37,10 @@ const AllYouNeed = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
         <ApplicationFee />
 
         {/*    Need help    */}
-        <TermsAndCondition />
+        <TermsAndCondition
+          isChecked={hasRead}
+          handleCheck={(val) => setHasRead(val)}
+        />
       </div>
 
       {/*    buttons  */}
@@ -53,10 +57,14 @@ const AllYouNeed = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
             text={"close"}
           />
           <Button
-            className={
-              "bg-gray-500 outline-none text-white py-3 px-12 text-sm font-semibold"
-            }
+            className={`${
+              hasRead
+                ? "bg-c-red cursor-pointer"
+                : "bg-gray-300 cursor-not-allowed"
+            } outline-none text-white py-3 px-12 text-sm font-semibold`}
             text={"Continue"}
+            disabled={!hasRead}
+            onClick={switchToNext}
           />
         </div>
       </div>
