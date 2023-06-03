@@ -46,10 +46,10 @@ const Navbar = () => {
             "hidden md:flex flex-1 h-full justify-between items-center"
           }
         >
-          {nav_list?.map((item) => {
+          {nav_list?.map((item, key) => {
             return (
               <NavItem
-                key={item?.name?.toLocaleLowerCase()}
+                key={key}
                 title={item?.name}
                 path={item?.path}
                 subMenu={item?.subnavs}

@@ -205,12 +205,13 @@ const Uploader = ({
             value={state?.name}
           />
 
-          <Input
+          <TextArea
             label={"Description / purpose"}
             type={"text"}
             name={"purpose"}
             onChange={handleChange}
             value={state?.purpose}
+            rows={3}
           />
 
           <Input
@@ -272,6 +273,22 @@ const Input = ({ label, disabled, ...rest }) => (
     {/*    input  */}
     <input
       className={`border border-slate-400 rounded-md h-9 bg-slate-50 w-full px-3 text-sm ${
+        disabled && "opacity-50 cursor-not-allowed"
+      }`}
+      {...rest}
+      disabled={disabled}
+    />
+  </div>
+);
+
+const TextArea = ({ label, disabled, ...rest }) => (
+  <div className={"w-full"}>
+    {/*    label    */}
+    <h6 className={"font-semibold text-md mb-2"}>{label}</h6>
+
+    {/*    input  */}
+    <textarea
+      className={`border border-slate-400 rounded-md bg-slate-50 w-full px-3 text-sm ${
         disabled && "opacity-50 cursor-not-allowed"
       }`}
       {...rest}

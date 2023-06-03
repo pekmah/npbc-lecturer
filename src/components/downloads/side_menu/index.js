@@ -12,10 +12,10 @@ function SideMenu() {
 
       <ul>
         {/*Menu items*/}
-        <MenuItem isCurrent name={"Program Pamphlets"} />
-        <MenuItem name={"Admission Forms"} />
-        <MenuItem name={"Fee Structures"} />
-        <MenuItem name={"Other Materials"} />
+        <MenuItem key={1} isCurrent name={"Program Pamphlets"} />
+        <MenuItem key={2} name={"Admission Forms"} />
+        <MenuItem key={3} name={"Fee Structures"} />
+        <MenuItem key={4} name={"Other Materials"} />
       </ul>
     </div>
   );

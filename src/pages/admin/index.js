@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import { Context } from "@/storage/MainContext";
 import { useRouter } from "next/router";
 import { Button } from "@/components";
@@ -23,21 +23,20 @@ const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [editState, setEditState] = useState({});
 
-  const getItems = async () => {
+  const getItems = useCallback(async () => {
     setLoading(true);
     setUploadedFiles([]);
 
     const querySnapshot = await getDocs(collection(CFirebase.db, "projects"));
-    querySnapshot.forEach((doc) => {
+    let list = [];
+    querySnapshot?.docs?.map((doc) => {
       // doc.data() is never undefined for query doc snapshots
-      console.log(doc?.data());
-
-      // if (!uploadedFiles?.some((item) => item?.id === doc.id)) {
-      setUploadedFiles((prev) => [...prev, { id: doc.id, ...doc.data() }]);
-      // }
+      list?.push({ id: doc?.id, ...doc?.data() });
     });
+
+    setUploadedFiles(list);
     setLoading(false);
-  };
+  }, []);
 
   useEffect(() => {
     if (!user?.accessToken) {
@@ -139,7 +138,6 @@ const Index = () => {
     },
   ];
 
-  console.log(uploadedFiles);
   return (
     <>
       {isOpen && (
