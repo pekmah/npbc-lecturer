@@ -4,7 +4,7 @@ import NotFound from "@/components/downloads/other_material/NotFound";
 
 function OtherMaterial(props) {
   return (
-    <div className={"py-10 px-5 md:px-0"}>
+    <div className={"py-10 px-5 md:px-0 overflow-x-hidden"}>
       <h5 className={"text-xl md:text-3xl font-medium mb-5 text-c-blue"}>
         Other Material
       </h5>
