@@ -45,7 +45,7 @@ function Body({ children }) {
         {/*    Children     */}
         <div
           className={
-            "max-w-[100vw] overflow-x-scroll w-full flex flex-col gap-8"
+            "max-w-[100vw] overflow-x-hidden w-full flex flex-col gap-8"
           }
         >
           {children}
