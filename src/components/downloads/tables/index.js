@@ -1,5 +1,6 @@
 // This is a build of the Downloads table structure
 import React from "react";
+import { Table } from "antd";
 
 /**
  * @typedef {{title:string, headerList:Array<string>, data:Obect[]}} Props
@@ -9,7 +10,7 @@ import React from "react";
  * @return {JSX.Element}
  * @param {Props} props
  */
-function Table({ title, columns, data }) {
+function CTable({ title, columns, data }) {
   return (
     <div className={"w-full "}>
       {/*Title*/}
@@ -24,4 +25,4 @@ function Table({ title, columns, data }) {
   );
 }
 
-export default Table;
+export default CTable;
