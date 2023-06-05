@@ -122,8 +122,6 @@ function Downloads() {
     getOtherUploads;
   }, []);
 
-  console.log("STATE IS: ", state);
-
   return (
     <Layout>
       <div className={"relative min-h-[95vh] bg-[#092A5905]"}>
@@ -133,7 +131,7 @@ function Downloads() {
         {/*Main Body*/}
         <Body>
           {/*   Program Table     */}
-          <div className={"relative"} key={1}>
+          <div className={"relative pr-3"} key={1}>
             {loading.program && (
               <div
                 className={
@@ -163,7 +161,7 @@ function Downloads() {
             )}
             <Table
               title={"Admission Forms"}
-              headerList={table_columns}
+              columns={programColumns}
               data={state?.admission}
             />
           </div>
@@ -181,7 +179,7 @@ function Downloads() {
             )}
             <Table
               title={"Fee Structure"}
-              headerList={fee_table_columns}
+              columns={programColumns}
               data={state?.fee}
             />
           </div>
@@ -201,136 +199,6 @@ export default Downloads;
  * @type {Program[]} program_data
  * @desc Program Pamphlets data
  */
-const fee_Data = [
-  {
-    item: "All programs Pamphlet",
-    size: "1.5Mbs",
-  },
-  {
-    item: "BA in Bible and Theology",
-    size: "1.5Mbs",
-  },
-  {
-    item: "BA in Christian Education",
-    size: "1.5Mbs",
-  },
-  {
-    item: "BA in Intercultural Studies",
-    size: "433Kb",
-  },
-  {
-    item: "Diploma in Christian Ministry",
-    size: "1.5Mbs",
-  },
-  {
-    item: "Diploma in Bible and Theologoy",
-    size: "1.5Mbs",
-  },
-  {
-    item: "Diploma in Counseling Psychology",
-    size: "1.5Mbs",
-  },
-  {
-    item: "Certificate in Bible and Theology",
-    size: "1.5Mbs",
-  },
-];
-
-/** @typedef {{item:string, purpose:string, size: string}} Program */
-/**
- * @type {Program[]} program_data
- * @desc Program Pamphlets data
- */
-const admission_Data = [
-  {
-    item: "All programs Pamphlet",
-    purpose: "This contains all info about",
-    size: "1.5Mbs",
-  },
-  {
-    item: "BA in Bible and Theology",
-    purpose: "This contains all info about",
-    size: "345kb",
-  },
-  {
-    item: "BA in Christian Education",
-    purpose: "This contains all info about",
-    size: "247kb",
-  },
-  {
-    item: "BA in Intercultural Studies",
-    purpose: "This contains all info about",
-    size: "433Kb",
-  },
-  {
-    item: "Diploma in Christian Ministry",
-    purpose: "This contains all info about",
-    size: "401kb",
-  },
-  {
-    item: "Diploma in Bible and Theologoy",
-    purpose: "This contains all info about",
-    size: "298kb",
-  },
-  {
-    item: "Diploma in Counseling Psychology",
-    purpose: "This contains all info about",
-    size: "314kb",
-  },
-  {
-    item: "Certificate in Bible and Theology",
-    purpose: "This contains all info about",
-    size: "235kb",
-  },
-];
-
-/** @typedef {{item:string, purpose:string, size: string}} Program */
-/**
- * @type {Program[]} program_data
- * @desc Program Pamphlets data
- */
-const program_Data = [
-  {
-    item: "All programs",
-    purpose: "This contains all info about",
-    size: "1.5Mbs",
-  },
-  {
-    item: "BA in Bible and Theology",
-    purpose: "This contains all info about",
-    size: "345kb",
-  },
-  {
-    item: "BA in Christian Education",
-    purpose: "This contains all info about",
-    size: "247kb",
-  },
-  {
-    item: "BA in Intercultural Studies",
-    purpose: "This contains all info about",
-    size: "433Kb",
-  },
-  {
-    item: "Diploma in Christian Ministry",
-    purpose: "This contains all info about",
-    size: "401kb",
-  },
-  {
-    item: "Diploma in Bible and Theologoy",
-    purpose: "This contains all info about",
-    size: "298kb",
-  },
-  {
-    item: "Diploma in Counseling Psychology",
-    purpose: "This contains all info about",
-    size: "314kb",
-  },
-  {
-    item: "Certificate in Bible and Theology",
-    purpose: "This contains all info about",
-    size: "235kb",
-  },
-];
 
 /**
  * @type {string[]}
@@ -359,11 +227,17 @@ const programColumns = [
     title: "Size",
     dataIndex: "size",
     key: "size",
+    render: (_, item) => {
+      let kbs = item?.size / 1000;
+      let mbs = item?.size / 1000000;
+      return <span>{kbs > 100 ? mbs + " mb" : kbs + " kb"}</span>;
+    },
   },
 
   {
     title: "Action",
     key: "action",
+    width: 250,
     render: (_, record) => (
       <Space className={"font-medium"} size="middle">
         <td className={`flex justify-between items-center my-auto `}>
@@ -371,9 +245,10 @@ const programColumns = [
             Open in browser
           </Button>
 
-          <Button className={"px-2 bg-none"}>
+          <a href={record?.url} className={"px-2 bg-none text-blue-500"}>
             <MdOutlineFileDownload className={"text-2xl"} />
-          </Button>
+            {record?.link}
+          </a>
         </td>
       </Space>
     ),
