@@ -65,6 +65,11 @@ a {
   color: inherit;
   text-decoration: none;
 }
+.ant-table-thead .ant-table-cell {
+  background-color: #E7EAEF !important;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
