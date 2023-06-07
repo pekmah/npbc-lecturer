@@ -1,9 +1,21 @@
 import React from "react";
 
-const CouseItem = ({ className }) => {
+const CouseItem = ({
+  title,
+  mode,
+  date,
+  isCurrent,
+  handleClick,
+  className,
+}) => {
   return (
     <li>
-      <div className={`flex border border-gray-200 bg-white ${className}`}>
+      <div
+        className={`flex  ${
+          isCurrent ? "border-2 border-blue-900" : "border border-gray-200"
+        } bg-white ${className}`}
+        onClick={handleClick}
+      >
         <div
           className={"h-auto md:h-24 w-32 md:flex-0.4 relative overflow-hidden"}
         >
@@ -16,17 +28,15 @@ const CouseItem = ({ className }) => {
         </div>
 
         <div className={"flex-1 p-2 flex flex-col gap-1"}>
-          <h6 className={"font-bold text-sm md:text-md"}>
-            Diploma in Bible and Theology
-          </h6>
+          <h6 className={"font-bold text-sm md:text-md"}>{title}</h6>
           <div className={"flex gap-1 text-[13px] md:text-sm"}>
             <span className={"font-semibold"}>Study Mode:</span>
-            <span className={""}>Regular</span>
+            <span className={""}>{mode}</span>
           </div>
 
           <div className={"flex gap-1 text-[13px] md:text-sm"}>
             <span className={"font-semibold"}>Start Date:</span>
-            <span className={""}>1st Feb 2024</span>
+            <span className={""}>{date}</span>
           </div>
         </div>
       </div>
