@@ -1,11 +1,16 @@
-import React from "react";
-import { Button } from "@/components";
+import React, { useState } from "react";
+
 import { BsArrowLeft, BsSearch } from "react-icons/bs";
+
+import { Button } from "@/components";
 import ProgramChoice from "@/components/modal/application/pages/select_course/ProgramChoice";
 import AvailableCourses from "@/components/modal/application/pages/select_course/AvailableCourses";
 import CourseDetails from "@/components/modal/application/pages/select_course/CourseDetails";
 
 const Courses = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
+  // saves course category on view
+  const [current, setCurrent] = useState("undergraduate");
+  const [chosenCourse, setChosenCourse] = useState("");
   return (
     <div className={"text-c-blue w-full"}>
       {/*    Details      */}
@@ -39,10 +44,15 @@ const Courses = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
 
       <div className={"flex gap-5 py-8 border-b border-gray-400"}>
         {/*    Program of choice  */}
-        <ProgramChoice />
+        <ProgramChoice current={current} setCurrent={setCurrent} />
 
         {/*Available course*/}
-        <AvailableCourses />
+        <AvailableCourses
+          current={current}
+          setCurrent={setCurrent}
+          chosenCourse={chosenCourse}
+          setChosenCourse={setChosenCourse}
+        />
 
         {/*    course details   */}
         <CourseDetails />
@@ -50,6 +60,7 @@ const Courses = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
 
       {/*    buttons  */}
       <div className={"flex py-3"}>
+        {JSON.stringify()}
         <Button className={"text-sm text-gray-500 font-bold"}>
           Need Help?
         </Button>
@@ -62,10 +73,14 @@ const Courses = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
             text={"close"}
           />
           <Button
-            className={
-              "bg-c-red outline-none text-white py-2 md:py-3 px-4 md:px-12 text-sm font-semibold"
-            }
+            className={`${
+              chosenCourse
+                ? "bg-c-red cursor-pointer"
+                : "bg-gray-300 cursor-not-allowed"
+            } outline-none text-white py-3 px-12 text-sm font-semibold`}
             text={"Continue"}
+            disabled={!!!chosenCourse}
+            onClick={switchToNext}
           />
         </div>
       </div>
