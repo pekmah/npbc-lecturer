@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import CouseItem from "@/components/modal/application/pages/select_course/CouseItem";
 import { FiChevronDown } from "react-icons/fi";
 
-const AvailableCourses = () => {
-  // saves course category on view
-  const [current, setCurrent] = useState("undergraduate");
+const AvailableCourses = ({
+  current,
+  setCurrent,
+  chosenCourse,
+  setChosenCourse,
+}) => {
   // handles toggle's collapse visibility
   const [isOpen, setIsOpen] = useState(false);
 
@@ -50,27 +53,23 @@ const AvailableCourses = () => {
                   : "h-[0px]"
               }`}
             >
-              <CouseItem
-                className={`duration-500 ${
-                  current.toLowerCase() === item?.toLowerCase()
-                    ? "scale-100"
-                    : "scale-0"
-                }`}
-              />
-              <CouseItem
-                className={`duration-500 ${
-                  current.toLowerCase() === item?.toLowerCase()
-                    ? "scale-100"
-                    : "scale-0"
-                }`}
-              />
-              <CouseItem
-                className={`duration-500 ${
-                  current.toLowerCase() === item?.toLowerCase()
-                    ? "scale-100"
-                    : "scale-0"
-                }`}
-              />
+              {courses[item]?.map((course, cKey) => (
+                <CouseItem
+                  key={cKey}
+                  className={`duration-500 ${
+                    current.toLowerCase() === item?.toLowerCase()
+                      ? "scale-100"
+                      : "scale-0"
+                  }`}
+                  title={course?.title}
+                  mode={course?.mode}
+                  date={course?.date}
+                  handleClick={() =>
+                    setChosenCourse(course?.title?.toLowerCase())
+                  }
+                  isCurrent={chosenCourse === course?.title?.toLowerCase()}
+                />
+              ))}
             </div>
           </li>
         ))}
