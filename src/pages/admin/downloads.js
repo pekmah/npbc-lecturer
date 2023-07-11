@@ -127,7 +127,7 @@ const Index = () => {
             }}
             className={"bg-blue-600 w-16 text-white"}
           >
-            <Edit></Edit>
+           Edit
           </Button>
           <Button
             onClick={() => handleDelete(record)}
