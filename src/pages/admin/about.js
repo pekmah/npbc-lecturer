@@ -58,7 +58,7 @@ const About = () => {
                 Add
               </Button>
             </div>
-            <Table columns={pColumns} dataSource={mngt} />
+            <Table columns={[]} dataSource={mngt} />
           </div>
         </div>
       </div>
