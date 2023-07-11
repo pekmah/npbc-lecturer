@@ -53,6 +53,7 @@ const Layout = ({ children }) => {
   useEffect(() => {
     //     Listen for query change
     handleQuery();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
 
   return (

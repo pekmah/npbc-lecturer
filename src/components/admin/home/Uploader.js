@@ -35,6 +35,7 @@ const Uploader = ({
     if (isEditing) {
       setState(editState);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const isValid = useMemo(() => {

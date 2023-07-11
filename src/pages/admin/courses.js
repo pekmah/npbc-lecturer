@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import AdminLayout from "@/layout/AdminLayout";
 import { Space, Table } from "antd";

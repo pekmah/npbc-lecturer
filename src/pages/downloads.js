@@ -120,6 +120,7 @@ function Downloads() {
     getAdmissionUploads();
     getProgramUploads();
     getOtherUploads;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

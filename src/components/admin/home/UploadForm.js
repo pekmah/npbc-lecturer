@@ -9,19 +9,16 @@ const UploadForm = ({ setImage, file, handleChangeFile, setError }) => {
     inputRef?.current?.click();
   };
 
-  const onDrop = useCallback(
-    async (acceptedFiles) => {
-      let file = acceptedFiles[0];
-      // let reader = new FileReader();
-      handleChangeFile({
-        type: "file",
-        data: file,
-      });
-    },
-    [setImage]
-  );
+  const onDrop = useCallback(async (acceptedFiles) => {
+    let file = acceptedFiles[0];
+    handleChangeFile({
+      type: "file",
+      data: file,
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const { getRootProps, getInputProps, open } = useDropzone({
+  const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     maxFiles: 1,
     // accept: { "*": [] },

@@ -19,7 +19,7 @@ const Index = () => {
       // setIsChecked(true);
       // push("/admin/login");
     }
-  }, []);
+  }, [user?.accessToken]);
 
   // delete saved data
 
@@ -75,7 +75,7 @@ const Index = () => {
                       rows={6}
                       type="text"
                       className={
-                        "h-auto w-full h-full focus:outline-none text-sm"
+                        "h-auto w-full focus:outline-none text-sm"
                       }
                       value={
                         "We have courses for everyone with any level of qualification and educational background At NPBC, we are committed to providing a high-quality education in biblical studies and ministry training. In order to ensure that our students are well-prepared for their future ministry work."
@@ -169,7 +169,7 @@ const Index = () => {
                     rows={6}
                     type="text"
                     className={
-                      "h-auto w-full h-full focus:outline-none text-sm"
+                      "h-auto w-full focus:outline-none text-sm"
                     }
                     value={
                       "Intake is now open\n\n" +

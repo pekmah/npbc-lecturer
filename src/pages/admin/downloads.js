@@ -46,6 +46,7 @@ const Index = () => {
     } else {
       getItems();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // delete saved data

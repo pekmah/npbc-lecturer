@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "@/storage/MainContext";
 import { useRouter } from "next/router";
