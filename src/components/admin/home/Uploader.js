@@ -35,7 +35,7 @@ const Uploader = ({
     if (isEditing) {
       setState(editState);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const isValid = useMemo(() => {
@@ -116,7 +116,7 @@ const Uploader = ({
 
   const handleUpdate = () => {
     setLoading(true);
-    console.log("UPDATING:::: ");
+
     const docRef = doc(CFirebase.db, "projects", editState?.id);
 
     updateDoc(docRef, {

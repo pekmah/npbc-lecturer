@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useContext, useEffect, useState } from "react";
-import { Context } from "@/storage/MainContext";
-import { useRouter } from "next/router";
+import React, {useContext, useState} from "react";
+import {Context} from "@/storage/MainContext";
+import {useRouter} from "next/router";
 import Spinner from "@/components/general/Spinner";
 import Uploader from "@/components/admin/home/Uploader";
 import AdminLayout from "@/layout/AdminLayout";
@@ -15,15 +15,6 @@ const Index = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [editState, setEditState] = useState({});
-
-  useEffect(() => {
-    if (!user?.accessToken) {
-      // setIsChecked(true);
-      // push("/admin/login");
-    }
-  }, []);
-
-  // delete saved data
 
   return (
     <AdminLayout currentNav={"home"}>

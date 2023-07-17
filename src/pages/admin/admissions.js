@@ -1,40 +1,73 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import { Context } from "@/storage/MainContext";
 import { useRouter } from "next/router";
 import Spinner from "@/components/general/Spinner";
-import Uploader from "@/components/admin/home/Uploader";
 import AdminLayout from "@/layout/AdminLayout";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import CFirebase from "@/configs/Firebase";
 
 const Index = () => {
   const { user, setUser } = useContext(Context);
   const { push } = useRouter();
 
   const [loading, setLoading] = useState(false);
+  const [state, setState] = useState({
+    qualifications: "",
+    diploma: "",
+    undergraduate: "",
+    certificate: "",
+    intakes: "",
+  });
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [editState, setEditState] = useState({});
+  const getItems = useCallback(async () => {
+    setLoading(true);
+    // setUploadedFiles([]);
+
+    const data = await getDoc(doc(CFirebase.db, "pages", "admission"));
+
+    setState(data?.data());
+    // setUploadedFiles(list);
+    setLoading(false);
+  }, []);
 
   useEffect(() => {
-    if (!user?.accessToken) {
-      // setIsChecked(true);
-      // push("/admin/login");
+    if (user?.accessToken) {
+      getItems();
     }
   }, [user?.accessToken]);
 
   // delete saved data
 
+  const handleSubmit = () => {
+    setLoading(true);
+
+    setDoc(doc(CFirebase.db, "pages", "admission"), {
+      ...state,
+    })
+      .then((r) => {
+        console.log("Details saved!", r?.id);
+        window.alert("Home page details updated.");
+
+        setLoading(false);
+
+        setState({
+          qualifications: "",
+          diploma: "",
+          undergraduate: "",
+          certificate: "",
+          intakes: "",
+        });
+
+        getItems();
+      })
+      .catch((err) => {
+        console.error("File save error", err);
+        setLoading(false);
+      });
+  };
+
   return (
     <AdminLayout currentNav={"admissions"}>
-      {isOpen && (
-        <Uploader
-          isEditing={!!editState?.name}
-          editState={editState}
-          resetEdit={() => setEditState({})}
-          getItems={getItems}
-          handleClose={() => setIsOpen(false)}
-        />
-      )}
-
       <div className={"bg-gray-100 flex justify-center "}>
         <div className={"w-full bg-white p-8 relative"}>
           {loading && (
@@ -74,11 +107,13 @@ const Index = () => {
                     <textarea
                       rows={6}
                       type="text"
-                      className={
-                        "h-auto w-full focus:outline-none text-sm"
-                      }
-                      value={
-                        "We have courses for everyone with any level of qualification and educational background At NPBC, we are committed to providing a high-quality education in biblical studies and ministry training. In order to ensure that our students are well-prepared for their future ministry work."
+                      className={"h-auto w-full focus:outline-none text-sm"}
+                      value={state?.qualifications}
+                      onChange={(e) =>
+                        setState((prev) => ({
+                          ...prev,
+                          qualifications: e?.target?.value,
+                        }))
                       }
                     />
                   </div>
@@ -99,9 +134,16 @@ const Index = () => {
                         "min-h-16 w-full h-full focus:outline-none text-sm"
                       }
                       value={
-                        "All undergraduate courses require a KCSE grade of C+ or Diploma in Bible and Theology and go for Ksh 7,500.\n" +
-                        "\n" +
-                        "Find out the specific qualification needed in each particular course by selecting a course you are interested in."
+                        // "All undergraduate courses require a KCSE grade of C+ or Diploma in Bible and Theology and go for Ksh 7,500.\n" +
+                        // "\n" +
+                        // "Find out the specific qualification needed in each particular course by selecting a course you are interested in."
+                        state?.undergraduate
+                      }
+                      onChange={(e) =>
+                        setState((prev) => ({
+                          ...prev,
+                          undergraduate: e?.target?.value,
+                        }))
                       }
                     />
                   </div>
@@ -122,10 +164,12 @@ const Index = () => {
                       className={
                         "min-h-16 w-full h-full focus:outline-none text-sm"
                       }
-                      value={
-                        "Diploma courses generally require C- or KCE division II, KACE one (1) Principal or an equivalent qualification or Certificate of Experiential Learning or KNQF 5.\n" +
-                        "\n" +
-                        "The fee ranges from 1500Ksh to 2000 Ksh per course depending on the course you choose but more specific details are found in the courses page."
+                      value={state?.diploma}
+                      onChange={(e) =>
+                        setState((prev) => ({
+                          ...prev,
+                          diploma: e?.target?.value,
+                        }))
                       }
                     />
                   </div>
@@ -146,10 +190,12 @@ const Index = () => {
                       className={
                         "min-h-16 w-full h-full focus:outline-none text-sm"
                       }
-                      value={
-                        "Certificate courses are open to everyone with any level of qualification at a fee of Ksh 1,100.\n" +
-                        "\n" +
-                        "Find out the specific qualification needed in each particular course by selecting a course you are interested in."
+                      value={state?.certificate}
+                      onChange={(e) =>
+                        setState((prev) => ({
+                          ...prev,
+                          certificate: e?.target?.value,
+                        }))
                       }
                     />
                   </div>
@@ -168,17 +214,27 @@ const Index = () => {
                   <textarea
                     rows={6}
                     type="text"
-                    className={
-                      "h-auto w-full focus:outline-none text-sm"
-                    }
-                    value={
-                      "Intake is now open\n\n" +
-                      "We have continuous intakes through out the year. The major intakes happens in January, april, may, August, September & November.\n" +
-                      "\n" +
-                      "Our application process is clear and simple so you can apply from anywhere."
+                    className={"h-auto w-full focus:outline-none text-sm"}
+                    value={state?.intakes}
+                    onChange={(e) =>
+                      setState((prev) => ({
+                        ...prev,
+                        intakes: e?.target?.value,
+                      }))
                     }
                   />
                 </div>
+              </div>
+
+              <div className={"flex"}>
+                <button
+                  onClick={handleSubmit}
+                  className={
+                    "bg-blue-800 h-12 w-full text-white lg:w-3/5 text-center rounded-md mx-auto mt-5 mx-auto"
+                  }
+                >
+                  Submit
+                </button>
               </div>
             </div>
           </div>
