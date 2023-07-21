@@ -46,7 +46,7 @@ const Index = () => {
     } else {
       getItems();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // delete saved data
@@ -127,7 +127,7 @@ const Index = () => {
             }}
             className={"bg-blue-600 w-16 text-white"}
           >
-           Edit
+            Edit
           </Button>
           <Button
             onClick={() => handleDelete(record)}

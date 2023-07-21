@@ -64,9 +64,17 @@ const AvailableCourses = ({
                   title={course?.title}
                   mode={course?.mode}
                   date={course?.date}
-                  handleClick={() =>
-                    setChosenCourse(course?.title?.toLowerCase())
-                  }
+                  handleClick={() => {
+                    setChosenCourse(course?.title?.toLowerCase());
+                    const d = JSON.parse(localStorage.getItem("application"));
+                    localStorage.setItem(
+                      "application",
+                      JSON.stringify({
+                        ...d,
+                        chosenCourse: course?.title?.toLowerCase(),
+                      })
+                    );
+                  }}
                   isCurrent={chosenCourse === course?.title?.toLowerCase()}
                 />
               ))}

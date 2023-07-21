@@ -9,8 +9,13 @@ import CourseDetails from "@/components/modal/application/pages/select_course/Co
 
 const Courses = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
   // saves course category on view
-  const [current, setCurrent] = useState("undergraduate");
-  const [chosenCourse, setChosenCourse] = useState("");
+  const [current, setCurrent] = useState(
+    JSON.parse(localStorage.getItem("application"))?.programCategory ||
+      "undergraduate"
+  );
+  const [chosenCourse, setChosenCourse] = useState(
+    JSON.parse(localStorage.getItem("application"))?.chosenCourse || ""
+  );
   return (
     <div className={"text-c-blue w-full"}>
       {/*    Details      */}

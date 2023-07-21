@@ -45,7 +45,6 @@ const Index = () => {
       ...state,
     })
       .then((r) => {
-        console.log("Details saved!", r?.id);
         window.alert("Home page details updated.");
 
         setLoading(false);
@@ -106,7 +105,6 @@ const Index = () => {
                   >
                     <textarea
                       rows={6}
-                      type="text"
                       className={"h-auto w-full focus:outline-none text-sm"}
                       value={state?.qualifications}
                       onChange={(e) =>
@@ -129,7 +127,6 @@ const Index = () => {
                   >
                     <textarea
                       rows={6}
-                      type="text"
                       className={
                         "min-h-16 w-full h-full focus:outline-none text-sm"
                       }
@@ -160,7 +157,6 @@ const Index = () => {
                   >
                     <textarea
                       rows={6}
-                      type="text"
                       className={
                         "min-h-16 w-full h-full focus:outline-none text-sm"
                       }
@@ -186,7 +182,6 @@ const Index = () => {
                   >
                     <textarea
                       rows={6}
-                      type="text"
                       className={
                         "min-h-16 w-full h-full focus:outline-none text-sm"
                       }
@@ -213,7 +208,6 @@ const Index = () => {
                 >
                   <textarea
                     rows={6}
-                    type="text"
                     className={"h-auto w-full focus:outline-none text-sm"}
                     value={state?.intakes}
                     onChange={(e) =>

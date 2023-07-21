@@ -17,7 +17,17 @@ const ProgramChoice = ({ current, setCurrent }) => {
               }
             >
               <input
-                onClick={() => setCurrent(prog?.split(" ")[0]?.toLowerCase())}
+                onClick={() => {
+                  setCurrent(prog?.split(" ")[0]?.toLowerCase());
+                  const d = JSON.parse(localStorage.getItem("application"));
+                  localStorage.setItem(
+                    "application",
+                    JSON.stringify({
+                      ...d,
+                      programCategory: prog?.split(" ")[0]?.toLowerCase(),
+                    })
+                  );
+                }}
                 checked={current === prog?.split(" ")[0]?.toLowerCase()}
                 id="default-radio-1"
                 type="radio"

@@ -6,7 +6,9 @@ import TermsAndCondition from "@/components/modal/application/pages/all_you_need
 import { BsArrowLeft } from "react-icons/bs";
 
 const AllYouNeed = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
-  const [hasRead, setHasRead] = useState(false);
+  const [hasRead, setHasRead] = useState(
+    JSON.parse(localStorage.getItem("application"))?.isRead || false
+  );
   return (
     <div className={"text-c-blue w-full"}>
       {/*    Details      */}
@@ -39,7 +41,14 @@ const AllYouNeed = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
         {/*    Need help    */}
         <TermsAndCondition
           isChecked={hasRead}
-          handleCheck={(val) => setHasRead(val)}
+          handleCheck={(val) => {
+            setHasRead(val);
+            const data = JSON.parse(localStorage.getItem("application"));
+            localStorage.setItem(
+              "application",
+              JSON.stringify({ ...data, isRead: val })
+            );
+          }}
         />
       </div>
 

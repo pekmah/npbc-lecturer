@@ -15,7 +15,7 @@ const UploadForm = ({ setImage, file, handleChangeFile, setError }) => {
       type: "file",
       data: file,
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const { getRootProps, getInputProps } = useDropzone({

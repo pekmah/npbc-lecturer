@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AppStages from "@/components/modal/application/pages/welcome/AppStages";
 import CompleteLater from "@/components/modal/application/pages/welcome/CompleteLater";
 import NeedHelp from "@/components/modal/application/pages/welcome/NeedHelp";
@@ -22,6 +22,12 @@ const Welcome = ({ switchModal, handleCloseModal, switchToNext }) => {
     localStorage.setItem("application", JSON.stringify({ name1: name }));
     window.alert("Name saved");
   };
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("application"));
+    setName(data?.name1);
+  }, []);
+
   return (
     <div className={"text-c-blue w-full "}>
       <div className={"flex "}>
