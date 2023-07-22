@@ -15,13 +15,7 @@ const AdminLayout = ({ b_icon, b_title, currentNav, children }) => {
   }, []);
 
   return (
-    <div className={"min-h-screen flex flex-row admin"}>
-      <SideNav isOpen={showSideBar} current={currentNav} />
-
-      <div className={"min-h-full w-full z-0 ml-[250px]"}>
-        <div className={"flex-1 p-2 relative"}>{children}</div>
-      </div>
-    </div>
+    <div className={"min-h-screen flex flex-row admin"}>Loading . . .</div>
   );
 };
 
