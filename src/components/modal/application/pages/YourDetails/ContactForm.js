@@ -1,7 +1,7 @@
 import Input from "@/components/general/Input";
 import React from "react";
 
-const ContactForm = () => {
+const ContactForm = ({ state, handleChange }) => {
   return (
     <div className={"p-3 md:p-5 border border-gray-300"}>
       <h6 className={"font-bold text-lg"}>Contact Details</h6>
@@ -17,35 +17,43 @@ const ContactForm = () => {
           {/*    label    */}
           <h6 className={"font-medium"}>First Name</h6>
 
-          <Input />
+          <Input name={"fName"} onChange={handleChange} value={state?.fName} />
         </div>
 
         <div className={""}>
           {/*    label    */}
           <h6 className={"font-medium"}>Email</h6>
 
-          <Input />
+          <Input name={"email"} onChange={handleChange} value={state?.email} />
         </div>
 
         <div className={""}>
           {/*    label    */}
           <h6 className={"font-medium"}>Nationality</h6>
 
-          <Input />
+          <Input
+            name={"nationality"}
+            value={state?.nationality}
+            onChange={handleChange}
+          />
         </div>
 
         <div className={""}>
           {/*    label    */}
-          <h6 className={"font-medium"}>Country/Region</h6>
+          <h6 className={"font-medium"}>County/Region</h6>
 
-          <Input />
+          <Input
+            name={"county"}
+            onChange={handleChange}
+            value={state?.county}
+          />
         </div>
 
         <div className={""}>
           {/*    label    */}
           <h6 className={"font-medium"}>Town</h6>
 
-          <Input />
+          <Input name={"town"} onChange={handleChange} value={state?.town} />
         </div>
       </form>
     </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PersonalForm from "@/components/modal/application/pages/YourDetails/PersonalForm";
 import ContactForm from "./ContactForm";
 import NextOfKin from "./NextOfKin";
@@ -7,20 +7,36 @@ import ProgramForm from "./ProgramForm";
 import OccupationForm from "./OccupationForm";
 import UploadForm from "./UploadForm";
 
-const Form = ({ className }) => {
+const Form = ({
+  className,
+  state,
+  handlePersonalDataChange,
+  handleContactDataChange,
+  handleNokDataChange,
+  handleEducationDataChange,
+}) => {
   return (
     <div className={`md:flex-[3] text-c-blue flex flex-col gap-4 ${className}`}>
       {/*    Personal Details */}
-      <PersonalForm />
+      <PersonalForm
+        state={state?.personal}
+        handleChange={handlePersonalDataChange}
+      />
 
       {/* Details */}
-      <ContactForm />
+      <ContactForm
+        state={state?.contact}
+        handleChange={handleContactDataChange}
+      />
 
       {/* Next of kin */}
-      <NextOfKin />
+      <NextOfKin state={state?.nextOfKin} handleChange={handleNokDataChange} />
 
       {/* Educational Background */}
-      <EducationalForm />
+      <EducationalForm
+        state={state?.education}
+        handleChange={handleEducationDataChange}
+      />
 
       {/* Program Form */}
       <ProgramForm />

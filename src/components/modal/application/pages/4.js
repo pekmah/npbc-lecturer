@@ -1,10 +1,130 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components";
 import { BsArrowLeft } from "react-icons/bs";
 import Details from "@/components/modal/application/pages/YourDetails/Details";
 import Form from "@/components/modal/application/pages/YourDetails/Form";
+import { setDoc, collection, doc, updateDoc } from "firebase/firestore";
+import CFirebase from "@/configs/Firebase";
 
 const YourDetails = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
+  const [state, setState] = useState({
+    personal: {
+      first: "",
+      second: "",
+      surname: "",
+      dob: "",
+      gender: "",
+      n_id: "",
+      maritalStatus: "",
+      church: "",
+      disability: "",
+    },
+    contact: {
+      fName: "",
+      email: "",
+      nationality: "",
+      county: "",
+      town: "",
+    },
+    nextOfKin: {
+      first: "",
+      second: "",
+      relationship: "",
+      phone: "",
+      email: "",
+      n_id: "",
+      nationality: "",
+      county: "",
+      town: "",
+    },
+    education: {
+      school: "", //string
+      years: "", //number(2 etc);
+      qualification: "",
+    },
+  });
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const d = JSON.parse(localStorage.getItem("application"));
+    setState(d?.data);
+    console.log(d);
+  }, []);
+
+  const handlePersonalDataChange = (e) => {
+    const { name, value } = e?.target;
+
+    setState((prev) => ({
+      ...prev,
+      personal: {
+        ...prev?.personal,
+        [name]: value,
+      },
+    }));
+  };
+
+  const handleContactDataChange = (e) => {
+    const { name, value } = e?.target;
+
+    setState((prev) => ({
+      ...prev,
+      contact: {
+        ...prev?.contact,
+        [name]: value,
+      },
+    }));
+  };
+  const handleNokDataChange = (e) => {
+    const { name, value } = e?.target;
+
+    setState((prev) => ({
+      ...prev,
+      nextOfKin: {
+        ...prev?.nextOfKin,
+        [name]: value,
+      },
+    }));
+  };
+  const handleEducationDataChange = (e) => {
+    const { name, value } = e?.target;
+
+    setState((prev) => ({
+      ...prev,
+      education: {
+        ...prev?.education,
+        [name]: value,
+      },
+    }));
+  };
+
+  const handleSave = () => {
+    const d = JSON.parse(localStorage.getItem("application"));
+    localStorage.setItem(
+      "application",
+      JSON.stringify({
+        ...d,
+        data: state,
+      })
+    );
+
+    setLoading(true);
+
+    setDoc(doc(CFirebase.db, "application", d?.name1), {
+      ...state,
+    })
+      .then((r) => {
+        console.log("Details saved!", r?.id);
+        window.alert("Details saved.");
+
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("File save error", err);
+        window.alert("Document not saved.", err?.message);
+        setLoading(false);
+      });
+  };
+
   return (
     <div className={"text-c-blue w-full"}>
       {/*    Details      */}
@@ -29,7 +149,13 @@ const YourDetails = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
         <Details />
 
         {/*Form*/}
-        <Form />
+        <Form
+          state={state}
+          handlePersonalDataChange={handlePersonalDataChange}
+          handleEducationDataChange={handleEducationDataChange}
+          handleNokDataChange={handleNokDataChange}
+          handleContactDataChange={handleContactDataChange}
+        />
       </div>
 
       {/*    buttons  */}
@@ -46,10 +172,12 @@ const YourDetails = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
             text={"close"}
           />
           <Button
-            className={
-              "bg-c-red outline-none text-white py-2 md:py-3 px-4 md:px-12 text-sm font-semibold"
-            }
-            text={"Continue"}
+            onClick={handleSave}
+            className={`bg-c-red outline-none text-white py-2 md:py-3 px-4 md:px-12 text-sm font-semibold ${
+              loading && "opacity-60"
+            }`}
+            disabled={loading}
+            text={loading ? "Saving..." : "Continue"}
           />
         </div>
       </div>

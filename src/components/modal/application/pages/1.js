@@ -19,7 +19,8 @@ const Welcome = ({ switchModal, handleCloseModal, switchToNext }) => {
   };
 
   const handleSave = () => {
-    localStorage.setItem("application", JSON.stringify({ name1: name }));
+    const d = JSON.parse(localStorage.getItem("application"));
+    localStorage.setItem("application", JSON.stringify({ ...d, name1: name }));
     window.alert("Name saved");
   };
 
