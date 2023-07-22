@@ -10,12 +10,7 @@ const AdminLayout = ({ b_icon, b_title, currentNav, children }) => {
   const [showSideBar, setShowSideBar] = useState(true);
 
   useEffect(() => {
-    if (!user?.accessToken) {
-      // setIsChecked(true);
-      push("/admin/login");
-    } else {
-      // getItems();
-    }
+    window.location.href = "https://npbc-admin.netlify.app";
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
