@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import Life from "./Life";
 import SvgItem from "./SvgItem";
+import life from "./Life";
 
-const About = () => {
+const About = ({ lifeData, data }) => {
   return (
     <div className="bg-c-blue px-4 py-8 md:py-14 md:p-14 flex flex-col items-center text-white">
       <div className="mx-auto md:w-11/12 w-full flex">
@@ -22,7 +23,7 @@ const About = () => {
           </h4>
         </div>
         {/* Description */}
-        <div className="flex flex-col gap-8 md:gap-16 flex-1">
+        <div className="flex flex-col gap-5 md:gap-12 flex-1">
           <p
             className="c-xl text-xl md:text-[22px] text-[#FFFFFFB2] leading-8"
             data-aos="fade-left"
@@ -33,16 +34,7 @@ const About = () => {
           </p>
 
           <div className="flex flex-col gap-3" data-aos="fade-left">
-            <h5 className="text-xl md:c-xl font-semibold text-white capitalize">
-              We are working with other 70 denominations in over 40 counties in
-              KENYA and in 200 centers on learning
-            </h5>
-
-            <p className="text-white">
-              We exist to bring maturity to church and transformation to society
-              through equipped leadership based on Christian values and
-              principles by training people in their area of calling
-            </p>
+            <p className="text-white text-lg">{data?.body}</p>
           </div>
 
           <div className="flex flex-col gap-6">
@@ -81,7 +73,7 @@ const About = () => {
       </div>
 
       {/* Life At NPBC */}
-      <Life />
+      <Life data={lifeData} />
     </div>
   );
 };

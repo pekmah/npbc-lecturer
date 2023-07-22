@@ -3,7 +3,7 @@ import { Button } from "@/components/general";
 import React from "react";
 import { useRouter } from "next/router";
 
-const Admission = () => {
+const Admission = ({ data }) => {
   const router = useRouter();
 
   return (
@@ -36,13 +36,7 @@ const Admission = () => {
             className=" my-5 md:my-10 text-sm md:c-medium font-normal w-11/12 md:w-10/12 mx-auto leading-6"
             data-aos="fade-up-left"
           >
-            <p>
-              Please contact our Admission Office on{" "}
-              <strong>
-                +254754569687, +254115008558, +25474090922, +254111539596{" "}
-              </strong>{" "}
-              who will be happy to arrange this for you.
-            </p>
+            <p>{data?.body}</p>
             <br className={"hidden md:block"} />
             <p>
               For Detailed information, brochures and other forms can be mailed
