@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import { Button } from "@/components/general";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import CFirebase from "@/configs/Firebase";
 
 const Admission = ({ data }) => {
   const router = useRouter();

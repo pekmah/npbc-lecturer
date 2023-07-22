@@ -2,7 +2,7 @@ import { Button } from "@/components/general";
 import React from "react";
 import { useRouter } from "next/router";
 
-const Intakes = () => {
+const Intakes = ({ data }) => {
   const router = useRouter();
 
   return (
@@ -22,45 +22,8 @@ const Intakes = () => {
             Our Intakes
           </h3>
 
-          <span className="text-sm" data-aos="fade-up-left">
-            Intake is now open
-          </span>
-          <br />
-
           <p className="text-sm mt-3" data-aos="fade-up-left">
-            We have continuous intakes through out the year. The major intakes
-            happens in January, april, may, August, September & November.
-          </p>
-          <br />
-          {/*<div className="my-8" data-aos="fade-up-left">*/}
-          {/*  <h5 className="c-medium font-bold">Intake closes in</h5>*/}
-
-          {/*  <div className="flex gap-5 text-center">*/}
-          {/*    <div className="flex flex-col gap-1 my-3">*/}
-          {/*      <span className="text-sm text-c-blue">Days</span>*/}
-          {/*      <h3 className="c-h6 text-c-red">10</h3>*/}
-          {/*    </div>*/}
-
-          {/*    <div className="flex flex-col gap-1 my-3">*/}
-          {/*      <span className="text-sm text-c-blue">Hours</span>*/}
-          {/*      <h3 className="c-h6 text-c-red">12</h3>*/}
-          {/*    </div>*/}
-
-          {/*    <div className="flex flex-col gap-1 my-3">*/}
-          {/*      <span className="text-sm text-c-blue">Minutes</span>*/}
-          {/*      <h3 className="c-h6 text-c-red">50</h3>*/}
-          {/*    </div>*/}
-
-          {/*    <div className="flex flex-col gap-1 my-3">*/}
-          {/*      <span className="text-sm text-c-blue">Seconds</span>*/}
-          {/*      <h3 className="c-h6 text-c-red">22</h3>*/}
-          {/*    </div>*/}
-          {/*  </div>*/}
-          {/*</div>*/}
-
-          <p className="text-sm" data-aos="fade-up-left">
-            Our application process is clear and simple so you can apply from
-            anywhere.
+            {data?.body}
           </p>
 
           <div className="flex gap-4 mt-8" data-aos="fade-up">

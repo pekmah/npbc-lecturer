@@ -32,7 +32,6 @@ export default function Home() {
   useEffect(() => {
     getItems();
   }, []);
-  console.log(state);
 
   return (
     <>

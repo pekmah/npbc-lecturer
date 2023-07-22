@@ -1,7 +1,7 @@
 import React from "react";
 import QualificationItem from "./QualificationItem";
 
-const Qualifications = () => {
+const Qualifications = ({ data }) => {
   return (
     <section
       id={"qualifications"}
@@ -21,11 +21,11 @@ const Qualifications = () => {
           className="c-normal md:c-medium leading-6 font-medium text-c-blue px-3"
           data-aos="fade-left"
         >
-          We have courses for everyone with any level of qualification and
-          educational background At NPBC, we are committed to providing a
-          high-quality education in biblical studies and ministry training. In
-          order to ensure that our students are well-prepared for their future
-          ministry work.
+          {
+            data
+              ?.filter((item) => item?.title === "Course Qualifications")
+              ?.at(0)?.body
+          }
         </p>
 
         <div className="my-6 grid grid-cols-1 md:grid-cols-2 relative gap-x-16 gap-y-8 pr-10">
@@ -33,12 +33,13 @@ const Qualifications = () => {
             title={"Undergraduate"}
             desc={
               <>
-                All undergraduate courses require a KCSE grade of C+ or Diploma
-                in Bible and Theology and go for Ksh 7,500.
-                <br />
-                <br />
-                Find out the specific qualification needed in each particular
-                course by selecting a course you are interested in.
+                {
+                  data
+                    ?.filter(
+                      (item) => item?.title?.toLowerCase() === "undergraduate"
+                    )
+                    ?.at(0)?.body
+                }
               </>
             }
           />
@@ -47,14 +48,7 @@ const Qualifications = () => {
             title={"Diploma"}
             desc={
               <>
-                Diploma courses generally require C- or KCE division II, KACE
-                one (1) Principal or an equivalent qualification or Certificate
-                of Experiential Learning or KNQF 5.
-                <br />
-                <br />
-                The fee ranges from 1500Ksh to 2000 Ksh per course depending on
-                the course you choose but more specific details are found in the
-                courses page.
+                {data?.filter((item) => item?.title === "Diploma")?.at(0)?.body}
               </>
             }
           />
@@ -63,12 +57,10 @@ const Qualifications = () => {
             title={"Certificate"}
             desc={
               <>
-                Certificate courses are open to everyone with any level of
-                qualification at a fee of Ksh 1,100.
-                <br />
-                <br />
-                Find out the specific qualification needed in each particular
-                course by selecting a course you are interested in.
+                {
+                  data?.filter((item) => item?.title === "Certificate")?.at(0)
+                    ?.body
+                }
               </>
             }
           />

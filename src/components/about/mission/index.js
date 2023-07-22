@@ -2,7 +2,7 @@ import React from "react";
 import Mission from "@/components/about/mission/icons/Mission";
 import Vision from "@/components/about/mission/icons/Vision";
 
-const Index = () => {
+const Index = ({ data }) => {
   return (
     <section id={"mission"} className={" p-12 flex bg-white text-c-blue"}>
       {/*Side Menu*/}
@@ -29,9 +29,11 @@ const Index = () => {
             <h6 className={"c-xl font-semibold"}>Our Mission</h6>
 
             <p className={"c-normal font-medium text-center text-c-blue"}>
-              We exist to bring maturity to church and transformation to society
-              through equipped leadership based on Christian values and
-              principles by training people in their area of calling
+              {
+                data?.filter(
+                  (item) => item?.title?.toLowerCase() === "our mission"
+                )[0]?.body
+              }
             </p>
           </div>
           {/*    Vision   */}
@@ -45,9 +47,11 @@ const Index = () => {
             <h6 className={"c-xl font-semibold"}>Our Vision</h6>
 
             <p className={"c-normal font-medium text-center text-c-blue "}>
-              To be the training center of choice among our target denominations
-              and churches by providing the best training skills that are
-              relevant to society.
+              {
+                data?.filter(
+                  (item) => item?.title?.toLowerCase() === "our vision"
+                )[0]?.body
+              }
             </p>
           </div>
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 import PhilosophyIcon from "@/components/about/philosophy/icons/philosophy";
 import Values from "@/components/about/philosophy/icons/values";
 
-const Philosophy = () => {
+const Philosophy = ({ data }) => {
   return (
     <section
       id={"philosophy"}
@@ -37,7 +37,11 @@ const Philosophy = () => {
             <h6 className={"c-xl font-semibold"}>Our Philosophy</h6>
 
             <p className={"c-normal leading-6 text-center text-white"}>
-              Nurturing Potential Building Character
+              {
+                data?.filter(
+                  (item) => item?.title?.toLowerCase() === "our philosophy"
+                )[0]?.body
+              }
             </p>
           </div>
           {/*    Vision   */}
@@ -51,12 +55,11 @@ const Philosophy = () => {
             <h6 className={"c-xl font-semibold"}>Our Core values</h6>
 
             <p className={"c-normal  text-center text-white leading-6"}>
-              Excellence, Relevance, Competence
-              <br />
-              <br />
-              We deliver quality teaching and learning. We seek to meet the
-              needs of the industry. Proficient in skills, knowledge and
-              attitudes
+              {
+                data?.filter(
+                  (item) => item?.title?.toLowerCase() === "our core values"
+                )[0]?.body
+              }
             </p>
           </div>
         </div>
