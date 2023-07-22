@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useCallback, useEffect, useState } from "react";
 import Layout from "@/layout";
 import { Carousel, Goals, Mission, Philosophy } from "@/components";
@@ -35,7 +36,6 @@ const About = () => {
   useEffect(() => {
     getItems();
   }, []);
-  console.log(state);
   return (
     <Layout>
       {/*    Carousel     */}

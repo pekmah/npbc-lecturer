@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { AboutUs, Admission, Carousel, Courses } from "@/components";
 import Layout from "@/layout";
 import { useCallback, useEffect, useState } from "react";
