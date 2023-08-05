@@ -109,7 +109,7 @@ const YourDetails = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
 
     setLoading(true);
 
-    setDoc(doc(CFirebase.db, "application", d?.name1), {
+    setDoc(doc(CFirebase.db, "application"), {
       ...state,
     })
       .then((r) => {
