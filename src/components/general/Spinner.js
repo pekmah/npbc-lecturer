@@ -1,7 +1,7 @@
 import React from "react";
 
 const Spinner = ({
-  text = "Loading",
+  text = "Loading ...",
   className = "flex-col text-c-blue",
   size = "h-8 w-8",
 }) => {
@@ -23,7 +23,7 @@ const Spinner = ({
           fill="currentFill"
         />
       </svg>
-      <span className="font-semibold ">{text}...</span>
+      <span className="font-semibold ">{text}</span>
     </div>
   );
 };

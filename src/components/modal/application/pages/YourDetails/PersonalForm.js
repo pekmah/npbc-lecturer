@@ -108,7 +108,7 @@ const PersonalForm = ({ state, handleChange }) => {
           >
             <option selected>Select</option>
             <option value="married">Married</option>
-            <option value="">Not married</option>
+            <option value="not_married">Not married</option>
           </select>
         </div>
 

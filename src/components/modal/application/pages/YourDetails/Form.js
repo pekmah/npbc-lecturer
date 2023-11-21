@@ -14,6 +14,10 @@ const Form = ({
   handleContactDataChange,
   handleNokDataChange,
   handleEducationDataChange,
+
+  handleIdUpload,
+  handleCertificateUpload,
+  handlePassportUpload,
 }) => {
   return (
     <div className={`md:flex-[3] text-c-blue flex flex-col gap-4 ${className}`}>
@@ -39,13 +43,24 @@ const Form = ({
       />
 
       {/* Program Form */}
-      <ProgramForm />
+      <ProgramForm
+        state={state?.program}
+        handleChange={handleEducationDataChange}
+      />
 
       {/* Occupation Form */}
-      <OccupationForm />
+      <OccupationForm
+        state={state?.occupation}
+        // handleChange={handleOccupationChange}
+      />
 
       {/* Upload Form */}
-      <UploadForm />
+      <UploadForm
+        state={state?.upload}
+        handleIdUpload={handleIdUpload}
+        handleCertificateUpload={handleCertificateUpload}
+        handlePassportUpload={handlePassportUpload}
+      />
     </div>
   );
 };

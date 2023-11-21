@@ -40,7 +40,7 @@ const OccupationForm = () => {
 
         <div className={""}>
           {/*    label    */}
-          <h6 className={"font-medium"}>Role/crouse</h6>
+          <h6 className={"font-medium"}>Role/course</h6>
 
           <input
             className={"mt-1 bg-inherit w-full h-10 border-b border-gray-400"}

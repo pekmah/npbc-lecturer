@@ -48,7 +48,6 @@ const YourDetails = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
   useEffect(() => {
     const d = JSON.parse(localStorage.getItem("application"));
     setState(d?.data);
-    console.log(d);
   }, []);
 
   const handlePersonalDataChange = (e) => {
