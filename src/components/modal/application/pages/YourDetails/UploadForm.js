@@ -4,9 +4,18 @@ import React, { useState } from "react";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { MdOutlineDriveFolderUpload } from "react-icons/md";
 
-const UploadForm = ({ handleFileUrlChange }) => {
-  const [loading, setUploading] = useState(true);
-  const [current, setCurrent] = useState("certificate");
+const UploadForm = ({
+  handleIdUpload,
+  handleCertificateUpload,
+  handlePassportUpload,
+  idUrl,
+  passportUrl,
+  certificateUrl,
+
+  handleRemoveFile,
+}) => {
+  const [loading, setUploading] = useState(false);
+  const [current, setCurrent] = useState(null);
 
   /**
    *
@@ -38,11 +47,25 @@ const UploadForm = ({ handleFileUrlChange }) => {
       (err) => console.error(err),
       () => {
         getDownloadURL(storageRef).then((url) => {
-          handleFileUrlChange({
-            url,
-            fileType: file?.data?.type,
-            size: file?.data?.size,
-          });
+          if (current === "id") {
+            handleIdUpload({
+              url,
+              fileType: file?.data?.type,
+              size: file?.data?.size,
+            });
+          } else if (current === "certificate") {
+            handleCertificateUpload({
+              url,
+              fileType: file?.data?.type,
+              size: file?.data?.size,
+            });
+          } else if (current === "passport") {
+            handlePassportUpload({
+              url,
+              fileType: file?.data?.type,
+              size: file?.data?.size,
+            });
+          }
 
           setUploading(false);
           setCurrent(null);
@@ -67,18 +90,24 @@ const UploadForm = ({ handleFileUrlChange }) => {
           title={"National ID/Passport"}
           handleChangeFile={(file) => uploadFile(file, "id")}
           isUploading={current === "id" && loading}
+          uploadUrl={idUrl}
+          handleRemoveImage={() => handleRemoveFile("id")}
         />
 
         <UploadInput
           title={"High School Certificate / Results"}
           handleChangeFile={(file) => uploadFile(file, "certificate")}
           isUploading={current === "certificate" && loading}
+          uploadUrl={certificateUrl}
+          handleRemoveImage={() => handleRemoveFile("certificate")}
         />
 
         <UploadInput
           title={"Passport size photo"}
-          handleChangeFile={(file) => uploadFile(file, "password")}
+          handleChangeFile={(file) => uploadFile(file, "passport")}
           isUploading={current === "passport" && loading}
+          uploadUrl={passportUrl}
+          handleRemoveImage={() => handleRemoveFile("passport")}
         />
       </form>
     </div>

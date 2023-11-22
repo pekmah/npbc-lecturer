@@ -9,7 +9,7 @@ import UploadForm from "./UploadForm";
 
 const Form = ({
   className,
-  state,
+  data,
   handlePersonalDataChange,
   handleContactDataChange,
   handleNokDataChange,
@@ -18,48 +18,54 @@ const Form = ({
   handleIdUpload,
   handleCertificateUpload,
   handlePassportUpload,
+  handleRemoveFile,
 }) => {
+  console.log(data);
   return (
     <div className={`md:flex-[3] text-c-blue flex flex-col gap-4 ${className}`}>
       {/*    Personal Details */}
       <PersonalForm
-        state={state?.personal}
+        state={data?.personal}
         handleChange={handlePersonalDataChange}
       />
 
       {/* Details */}
       <ContactForm
-        state={state?.contact}
+        state={data?.contact}
         handleChange={handleContactDataChange}
       />
 
       {/* Next of kin */}
-      <NextOfKin state={state?.nextOfKin} handleChange={handleNokDataChange} />
+      <NextOfKin state={data?.nextOfKin} handleChange={handleNokDataChange} />
 
       {/* Educational Background */}
       <EducationalForm
-        state={state?.education}
+        state={data?.education}
         handleChange={handleEducationDataChange}
       />
 
       {/* Program Form */}
       <ProgramForm
-        state={state?.program}
+        state={data?.program}
         handleChange={handleEducationDataChange}
       />
 
       {/* Occupation Form */}
       <OccupationForm
-        state={state?.occupation}
+        state={data?.occupation}
         // handleChange={handleOccupationChange}
       />
 
       {/* Upload Form */}
       <UploadForm
-        state={state?.upload}
+        state={data?.upload}
         handleIdUpload={handleIdUpload}
         handleCertificateUpload={handleCertificateUpload}
         handlePassportUpload={handlePassportUpload}
+        idUrl={data?.documents?.id?.url}
+        passportUrl={data?.documents?.passport?.url}
+        certificateUrl={data?.documents?.certificate?.url}
+        handleRemoveFile={handleRemoveFile}
       />
     </div>
   );

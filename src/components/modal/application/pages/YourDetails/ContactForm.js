@@ -15,9 +15,16 @@ const ContactForm = ({ state, handleChange }) => {
       >
         <div className={""}>
           {/*    label    */}
-          <h6 className={"font-medium"}>First Name</h6>
+          <h6 className={"font-medium"}>Name</h6>
 
-          <Input name={"fName"} onChange={handleChange} value={state?.fName} />
+          <Input name={"fName"} onChange={handleChange} value={state?.name} />
+        </div>
+
+        <div className={""}>
+          {/*    label    */}
+          <h6 className={"font-medium"}>Phone</h6>
+
+          <Input name={"phone"} onChange={handleChange} value={state?.phone} />
         </div>
 
         <div className={""}>

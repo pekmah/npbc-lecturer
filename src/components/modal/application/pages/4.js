@@ -20,7 +20,8 @@ const YourDetails = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
       disability: "",
     },
     contact: {
-      fName: "",
+      name: "",
+      phone: "",
       email: "",
       nationality: "",
       county: "",
@@ -42,14 +43,73 @@ const YourDetails = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
       years: "", //number(2 etc);
       qualification: "",
     },
+    documents: {
+      id: {
+        url: null,
+        fileType: null,
+        size: null,
+      },
+      certificate: {
+        url: null,
+        fileType: null,
+        size: null,
+      },
+      passport: {
+        url: null,
+        fileType: null,
+        size: null,
+      },
+    },
   });
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const d = JSON.parse(localStorage.getItem("application"));
-    setState(d?.data);
+    if (d?.data) {
+      setState(d?.data);
+    }
   }, []);
 
+  const handleRemoveFile = (file) => {
+    switch (file) {
+      case "id":
+        return setState((prev) => ({
+          ...prev,
+          documents: {
+            ...prev?.documents,
+            id: {
+              url: null,
+              fileType: null,
+              size: null,
+            },
+          },
+        }));
+      case "certificate":
+        return setState((prev) => ({
+          ...prev,
+          documents: {
+            ...prev?.documents,
+            certificate: {
+              url: null,
+              fileType: null,
+              size: null,
+            },
+          },
+        }));
+      case "passport":
+        return setState((prev) => ({
+          ...prev,
+          documents: {
+            ...prev?.documents,
+            passport: {
+              url: null,
+              fileType: null,
+              size: null,
+            },
+          },
+        }));
+    }
+  };
   const handlePersonalDataChange = (e) => {
     const { name, value } = e?.target;
 
@@ -61,7 +121,6 @@ const YourDetails = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
       },
     }));
   };
-
   const handleContactDataChange = (e) => {
     const { name, value } = e?.target;
 
@@ -92,6 +151,35 @@ const YourDetails = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
       education: {
         ...prev?.education,
         [name]: value,
+      },
+    }));
+  };
+
+  const handleIdChange = (vals) => {
+    setState((prev) => ({
+      ...prev,
+      documents: {
+        ...prev?.documents,
+        ...vals,
+      },
+    }));
+  };
+
+  const handleCertificateChange = (vals) => {
+    setState((prev) => ({
+      ...prev,
+      documents: {
+        ...prev?.documents,
+        ...vals,
+      },
+    }));
+  };
+  const handlePassportChange = (vals) => {
+    setState((prev) => ({
+      ...prev,
+      documents: {
+        ...prev?.documents,
+        ...vals,
       },
     }));
   };
@@ -149,11 +237,15 @@ const YourDetails = ({ handleCloseModal, switchToPrevious, switchToNext }) => {
 
         {/*Form*/}
         <Form
-          state={state}
+          data={state}
           handlePersonalDataChange={handlePersonalDataChange}
           handleEducationDataChange={handleEducationDataChange}
           handleNokDataChange={handleNokDataChange}
           handleContactDataChange={handleContactDataChange}
+          handleIdUpload={handleIdChange}
+          handleCertificateUpload={handleCertificateChange}
+          handlePassportUpload={handlePassportChange}
+          handleRemoveFile={handleRemoveFile}
         />
       </div>
 

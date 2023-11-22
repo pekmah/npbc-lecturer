@@ -14,19 +14,11 @@ const OccupationForm = () => {
       >
         <div className={""}>
           {/*    label    */}
-          <h6 className={"font-medium"}>Occupation Type</h6>
+          <h6 className={"font-medium"}>Occupation </h6>
 
-          <select
-            id="countries"
-            className="bg-inherit border-b border-gray-400 text-gray-900 rounded-none focus:outline-none block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white "
-          >
-            <option selected>Select</option>
-            {programs?.map((item, key) => (
-              <option key={key} value="1">
-                {item}
-              </option>
-            ))}
-          </select>
+          <input
+            className={"mt-1 bg-inherit w-full h-10 border-b border-gray-400"}
+          />
         </div>
 
         <div className={""}>
