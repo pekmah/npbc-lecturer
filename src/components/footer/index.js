@@ -1,31 +1,33 @@
 import React from "react";
 import { Button } from "../general";
 
-const Footer = ({ showModal }) => {
+const Footer = ({ showModal, hideApplication }) => {
   return (
     <div className="text-white ">
       {/* image */}
-      <div
-        className="text-center h-48 c-h7 md:c-h3 p-3 flex flex-col gap-5 items-center justify-center"
-        style={{
-          background:
-            " linear-gradient(0deg, rgba(9, 42, 89, 0.66), rgba(9, 42, 89, 0.66)), url(/images/footer/npbc-footer.webp)",
-          backgroundSize: "contain",
-          backgroundPosition: "bottom",
-        }}
-      >
-        <p className="leading-8 md:leading-10 text-white" data-aos="fade-up">
-          Become a student at <br /> NPBC
-        </p>
-
-        <Button
-          onClick={showModal}
-          className={"bg-white text-c-blue c-normal w-44 h-10 font-semibold"}
-          data-aos="fade-left"
+      {!hideApplication && (
+        <div
+          className="text-center h-48 c-h7 md:c-h3 p-3 flex flex-col gap-5 items-center justify-center"
+          style={{
+            background:
+              " linear-gradient(0deg, rgba(9, 42, 89, 0.66), rgba(9, 42, 89, 0.66)), url(/images/footer/npbc-footer.webp)",
+            backgroundSize: "contain",
+            backgroundPosition: "bottom",
+          }}
         >
-          Apply Today
-        </Button>
-      </div>
+          <p className="leading-8 md:leading-10 text-white" data-aos="fade-up">
+            Become a student at <br /> NPBC
+          </p>
+
+          <Button
+            onClick={showModal}
+            className={"bg-white text-c-blue c-normal w-44 h-10 font-semibold"}
+            data-aos="fade-left"
+          >
+            Apply Today
+          </Button>
+        </div>
+      )}
       {/* links */}
       <div className="flex flex-col gap-y-5 md:flex-row bg-c-blue text-sm justify-evenly py-14 text-white">
         <div className={"flex flex-1  justify-around md:justify-around"}>

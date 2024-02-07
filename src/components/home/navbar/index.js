@@ -203,7 +203,7 @@ const nav_list = [
   },
   {
     name: "E-Learning",
-    path: "https://classroom.google.com/u/0/h",
+    path: "/e-learning",
     key: "e-learning",
   },
   {
