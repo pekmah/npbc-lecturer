@@ -3,7 +3,7 @@ import Footer from "@/components/footer";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, hideApplication }) => {
   const router = useRouter();
 
   const query = router.query;
@@ -53,7 +53,7 @@ const Layout = ({ children }) => {
   useEffect(() => {
     //     Listen for query change
     handleQuery();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
 
   return (
@@ -75,7 +75,7 @@ const Layout = ({ children }) => {
       {children}
 
       {/* Footer */}
-      <Footer showModal={handleOpenModal} />
+      <Footer hideApplication={hideApplication} showModal={handleOpenModal} />
     </main>
   );
 };

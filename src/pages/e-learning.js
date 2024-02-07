@@ -1,7 +1,13 @@
 import React from "react";
+import Layout from "@/layout";
+import { Hero } from "@/components";
 
 const ELearning = () => {
-  return <div>Hellow world</div>;
+  return (
+    <Layout hideApplication={true}>
+      <Hero />
+    </Layout>
+  );
 };
 
 export default ELearning;

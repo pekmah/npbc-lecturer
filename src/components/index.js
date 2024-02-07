@@ -4,9 +4,10 @@ export * from "./home/index";
 export * from "./admission/index";
 export * from "./courses/index";
 export * from "./courses/course";
-export * from "./downloads/index"
-export * from "./contacts/index"
-export * from "./about"
-export * from "./modal"
-export * from "./about/news"
-export * from "./about/news/view"
+export * from "./downloads/index";
+export * from "./contacts/index";
+export * from "./about";
+export * from "./modal";
+export * from "./about/news";
+export * from "./about/news/view";
+export * from "./e-learning";
