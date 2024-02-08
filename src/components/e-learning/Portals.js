@@ -1,8 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@/components";
+import { useRouter } from "next/router";
 
 const Portals = () => {
+  const router = useRouter();
+
+  const handleNavigate = (screen) => {
+    router.push(screen ?? "/");
+  };
   return (
     <div
       className={
@@ -39,6 +45,7 @@ const Portals = () => {
             <Button
               className={" bg-white text-black text-sm font-semibold px-4"}
               text={`Login as ${item?.type}`}
+              onClick={() => handleNavigate(item?.route ?? "")}
             />
           </div>
         </div>
@@ -59,6 +66,7 @@ const portals = [
     desc: "Sign in to manage your account and view updates and information communicated by the administration. ",
     type: "student",
     image: "/images/e-learning/students.jpeg",
+    route: "/portal/student/login",
   },
   {
     title: "Lecturer Portal",
