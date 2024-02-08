@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "@/layout";
 import { Hero, Portals } from "@/components";
 
-const ELearning = () => {
+const Index = () => {
   return (
     <Layout hideApplication={true}>
       {/*  Hero section*/}
@@ -14,4 +14,4 @@ const ELearning = () => {
   );
 };
 
-export default ELearning;
+export default Index;
