@@ -203,7 +203,7 @@ const nav_list = [
   },
   {
     name: "E-Learning",
-    path: "/e-learning",
+    path: "/portal",
     key: "e-learning",
   },
   {

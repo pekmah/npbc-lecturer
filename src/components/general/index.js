@@ -1,5 +1,4 @@
-import Button from "./Button"
+import Button from "./Button";
+import LabelledInput from "./LabelledInput";
 
-export {
-    Button
-}
+export { Button, LabelledInput };
