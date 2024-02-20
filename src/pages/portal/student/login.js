@@ -36,9 +36,7 @@ const Login = () => {
               Student Portal
             </h3>
 
-            <p
-              className={"mt-2 text-[13px] w-full md:w-1/3 lg:w-1/4 text-white"}
-            >
+            <p className={"mt-2 text-sm w-full md:w-1/3 lg:w-1/4 text-white"}>
               Sign in to manage your account and view updates and information
               communicated by the administration.
               <br /> <br />
