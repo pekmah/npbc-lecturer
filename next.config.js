@@ -1,5 +1,3 @@
-module.exports = nextConfig;
-// next.config.js
 /** @type {import('next').NextConfig} */
 
 const path = require("path");
