@@ -2,14 +2,14 @@ import React from "react";
 import Image from "next/image";
 
 import Layout from "@/layout";
-import { LabelledInput } from "@/components";
-import { Button } from "@/components/ui/button";
 
-const FormLayout = ({ children, formClassName }) => {
-  const handleSubmit = (e) => {
+const FormLayout = ({
+  children,
+  formClassName,
+  handleSubmit = (e) => {
     e.preventDefault();
-  };
-
+  },
+}) => {
   return (
     <Layout hideApplication={true}>
       {/*hero section */}
