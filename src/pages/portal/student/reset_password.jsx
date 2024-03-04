@@ -3,10 +3,18 @@ import React from "react";
 import { LabelledInput } from "@/components";
 import { Button } from "@/components/ui/button";
 import { FormLayout } from "./_components";
+import { useRouter } from "next/router";
 
 const ResetPassword = () => {
+  const router = useRouter();
+
+  const handleProceed = (e) => {
+    e.preventDefault();
+
+    router.push("/portal/student/verification");
+  };
   return (
-    <FormLayout formClassName={"gap-3"}>
+    <FormLayout handleSubmit={handleProceed} formClassName={"gap-3"}>
       <h4 className={"text-xl md:text-2xl font-semibold text-c-blue "}>
         Reset your password
       </h4>
