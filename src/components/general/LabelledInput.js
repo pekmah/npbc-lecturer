@@ -32,4 +32,40 @@ const LabelledInput = ({
   );
 };
 
+export const VerificationCodeInput = ({
+  noOfInputs = 5,
+  containerClassName,
+  inputClassName,
+  labelClassName,
+  title,
+  id,
+  type = "text",
+  required,
+  ...rest
+}) => {
+  return (
+    <div
+      className={`grid w-full max-w-xl items-center gap-1.5 ${containerClassName}`}
+    >
+      <Label className={`text-c-blue ${labelClassName}`} htmlFor={id}>
+        {title} {required && <span className={"text-red-600"}>*</span>}
+      </Label>
+
+      <div className={"flex gap-4"}>
+        {new Array(noOfInputs).fill("")?.map((inp, ind) => (
+          <Input
+            key={ind}
+            className={`text-center ${inputClassName}`}
+            type={type}
+            id={id}
+            required={required}
+            maxLength={1}
+            {...rest}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export default LabelledInput;
