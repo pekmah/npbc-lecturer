@@ -2,10 +2,19 @@ import React from "react";
 import { FormLayout } from "@/pages/portal/student/_components";
 import { Button } from "@/components/ui/button";
 import { VerificationCodeInput } from "@/components/general/LabelledInput";
+import { useRouter } from "next/router";
 
 const ResetPasswordVerification = () => {
+  const router = useRouter();
+
+  const handleProceed = (e) => {
+    e.preventDefault();
+
+    router.push("/portal/student/create_password");
+  };
+
   return (
-    <FormLayout>
+    <FormLayout handleSubmit={handleProceed}>
       <h4 className={"text-xl md:text-2xl font-semibold text-c-blue "}>
         Reset your password
       </h4>
