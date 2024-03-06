@@ -1,3 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+    .flex_row {
+        @apply flex
+    }
+
+    .flex_col {
+        @apply flex flex-col
+    }
+
+    .flex_row-center {
+        @apply flex justify-center items-center
+    }
+
+    .flex_row-center-x {
+        @apply flex justify-center
+    }
+
+    .flex_row-center-y {
+        @apply flex items-center
+    }
+
+    .inter {
+        font-family: "Inter", sans-serif;
+    }
+}

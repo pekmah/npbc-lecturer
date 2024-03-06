@@ -66,7 +66,7 @@ const portals = [
     desc: "Sign in to manage your account and view updates and information communicated by the administration. ",
     type: "student",
     image: "/images/e-learning/students.jpeg",
-    route: "/portal/student/login",
+    route: "/portal/student/auth/login",
   },
   {
     title: "Lecturer Portal",

@@ -29,6 +29,11 @@ module.exports = {
         "line-gray": "#D9D9D9",
         "bg-blue": "#092A5914",
       },
+      fontSize: {
+        13: "13px",
+        15: "15px",
+        md: "17px",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
