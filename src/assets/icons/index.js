@@ -4,6 +4,7 @@ import ProfileSvg from "./Profile";
 import ReceiptSvg from "./Receipt";
 import WalletSvg from "./Wallet";
 import DashboardSvg from "./Dashboard";
+import LogoutSvg from "./Logout";
 
 export {
   NotificationBellSvg,
@@ -12,4 +13,5 @@ export {
   WalletSvg,
   ReceiptSvg,
   DashboardSvg,
+  LogoutSvg,
 };
