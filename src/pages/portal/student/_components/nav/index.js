@@ -2,13 +2,13 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { NotificationBellSvg } from "@/assets/icons";
-import { FaChevronDown } from "react-icons/all";
+import { FaChevronDown } from "react-icons/fa";
 
 const Navbar = () => {
   return (
     <div
       className={
-        "flex_row-center-y justify-between p-2 bg-white md:px-10 inter min-h-[80px]"
+        "flex_row-center-y justify-between p-2 bg-white md:px-10 inter min-h-[80px] shadow"
       }
     >
       {/*logo*/}
