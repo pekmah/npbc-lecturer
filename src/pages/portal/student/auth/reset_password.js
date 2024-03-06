@@ -2,7 +2,7 @@ import React from "react";
 
 import { LabelledInput } from "@/components";
 import { Button } from "@/components/ui/button";
-import { FormLayout } from "./_components";
+import { FormLayout } from "../_components";
 import { useRouter } from "next/router";
 
 const ResetPassword = () => {
@@ -11,7 +11,7 @@ const ResetPassword = () => {
   const handleProceed = (e) => {
     e.preventDefault();
 
-    router.push("/portal/student/verification");
+    router.push("/portal/student/auth/verification");
   };
   return (
     <FormLayout handleSubmit={handleProceed} formClassName={"gap-3"}>

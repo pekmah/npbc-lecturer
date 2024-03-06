@@ -10,7 +10,7 @@ const ResetPasswordVerification = () => {
   const handleProceed = (e) => {
     e.preventDefault();
 
-    router.push("/portal/student/create_password");
+    router.push("/portal/student/auth/create_password");
   };
 
   return (

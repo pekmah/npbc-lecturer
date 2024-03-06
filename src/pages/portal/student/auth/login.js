@@ -1,10 +1,7 @@
 import React from "react";
-import Image from "next/image";
-
-import Layout from "@/layout";
 import { LabelledInput } from "@/components";
 import { Button } from "@/components/ui/button";
-import { FormLayout } from "./_components";
+import { FormLayout } from "../_components";
 import { useRouter } from "next/router";
 
 const Login = () => {
@@ -15,7 +12,7 @@ const Login = () => {
   };
 
   const handleResetPassword = () => {
-    router.push("/portal/student/reset_password");
+    router.push("/portal/auth/student/reset_password");
   };
   return (
     <FormLayout formClassName={"gap-5"}>

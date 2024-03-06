@@ -2,8 +2,13 @@ import React from "react";
 import { FormLayout } from "@/pages/portal/student/_components";
 import { LabelledInput } from "@/components";
 import { Button } from "react-bootstrap";
+import { useRouter } from "next/router";
 
 const CreatePassword = () => {
+  const router = useRouter();
+  const handleProceed = () => {
+    router.push("/portal/student");
+  };
   return (
     <FormLayout formClassName={"gap-4"}>
       <h4 className={"text-xl md:text-2xl font-semibold text-c-blue"}>
