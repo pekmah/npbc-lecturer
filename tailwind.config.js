@@ -30,6 +30,7 @@ module.exports = {
         "bg-blue": "#092A5914",
       },
       fontSize: {
+        11: "11px",
         13: "13px",
         15: "15px",
         md: "17px",
