@@ -26,6 +26,14 @@
         @apply flex items-center
     }
 
+    .border_gray_300 {
+        @apply border border-gray-300
+    }
+
+    .dashboard_card {
+        @apply border_gray_300 rounded-xl p-6
+    }
+
     .inter {
         font-family: "Inter", sans-serif;
     }
