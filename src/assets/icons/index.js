@@ -6,6 +6,7 @@ import WalletSvg from "./Wallet";
 import DashboardSvg from "./Dashboard";
 import LogoutSvg from "./Logout";
 import CertAwardSvg from "./CertAward";
+import StatisticsSvg from "./Statistics";
 
 export {
   NotificationBellSvg,
@@ -16,4 +17,5 @@ export {
   DashboardSvg,
   LogoutSvg,
   CertAwardSvg,
+  StatisticsSvg,
 };
