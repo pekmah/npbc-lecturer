@@ -15,7 +15,7 @@ const ResultsTable = () => {
       <TableHeader className={"bg-gray-50"}>
         <TableRow className={"text-red-500"}>
           {titles?.map(({ className, name }, key) => (
-            <TableHead key={key} className={`text-black ${className}`}>
+            <TableHead key={key} className={`text-black py-5 ${className}`}>
               {name}
             </TableHead>
           ))}
