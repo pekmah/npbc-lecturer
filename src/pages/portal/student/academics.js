@@ -1,6 +1,7 @@
 import React from "react";
 import {
   AcademicAttendance,
+  AcademicMarkAttendance,
   AcademicStatsCards,
   AcademicTimetable,
   StudentPortalLayout,
@@ -12,7 +13,10 @@ const Academics = () => {
       {/*  stats cards  */}
       <AcademicStatsCards />
 
-      <AcademicTimetable />
+      <div className={"grid grid-cols-3 gap-5"}>
+        <AcademicTimetable />
+        <AcademicMarkAttendance />
+      </div>
 
       <AcademicAttendance />
       <div />
