@@ -1,8 +1,7 @@
 import React from "react";
 
-import { LabelledInput } from "@/components";
+import { FormLayout, LabelledInput } from "@/components";
 import { Button } from "@/components/ui/button";
-import { FormLayout } from "../_components";
 import { useRouter } from "next/router";
 
 const ResetPassword = () => {

@@ -1,6 +1,5 @@
 import React from "react";
-import { FormLayout } from "@/pages/portal/student/_components";
-import { LabelledInput } from "@/components";
+import { FormLayout, LabelledInput } from "@/components";
 import { Button } from "react-bootstrap";
 import { useRouter } from "next/router";
 
