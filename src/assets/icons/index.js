@@ -7,6 +7,9 @@ import DashboardSvg from "./Dashboard";
 import LogoutSvg from "./Logout";
 import CertAwardSvg from "./CertAward";
 import StatisticsSvg from "./Statistics";
+import BooksSvg from "./Books";
+import CalendarSvg from "./Calendar";
+import TrainingSvg from "./Training";
 
 export {
   NotificationBellSvg,
@@ -18,4 +21,7 @@ export {
   LogoutSvg,
   CertAwardSvg,
   StatisticsSvg,
+  BooksSvg,
+  CalendarSvg,
+  TrainingSvg,
 };

@@ -21,12 +21,13 @@ const SideNav = () => {
 
       {/*nav list*/}
       <ul className={"flex_col gap-3 h-3/4"}>
-        {navList?.map(({ icon, name }, ind) => (
+        {navList?.map(({ icon, name, path }, ind) => (
           <SideNavListItem
             key={ind}
             isCurrent={ind === 0}
             icon={icon}
             name={name}
+            path={path}
           />
         ))}
       </ul>
@@ -42,17 +43,17 @@ const navList = [
   {
     icon: <DashboardSvg />,
     name: "Dashboard",
-    path: "",
+    path: "/portal/student",
   },
   {
     icon: <BookSvg />,
     name: "Academics",
-    path: "/academics",
+    path: "/portal/student/academics",
   },
   {
     icon: <WalletSvg />,
     name: "Finances",
-    path: "/finances",
+    path: "/portal/student/finances",
   },
   {
     icon: <ReceiptSvg />,
