@@ -1,19 +1,20 @@
 import React from "react";
-import { StudentPortalLayout } from "./_components";
+
 import {
   DashboardCourseCard,
   DashboardFeeBalanceCard,
   DashboardResultsTable,
   DashboardStatisticsCard,
   DashboardWelcomeCard,
-} from "./_components/dashboard";
+} from "../../../components/e-learning/dashboard";
 import { Button } from "@/components/ui/button";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { LiaDownloadSolid } from "react-icons/lia";
+import { StudentPortalLayout } from "@/components";
 
 const Index = () => {
   return (
-    <StudentPortalLayout className={"grid md:grid-cols-4 gap-4 inter"}>
+    <StudentPortalLayout className={"grid md:grid-cols-4 gap-6 inter"}>
       {/*row 1*/}
       <DashboardWelcomeCard />
 
