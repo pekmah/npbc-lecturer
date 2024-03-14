@@ -12,7 +12,7 @@ import { LiaDownloadSolid } from "react-icons/lia";
 
 const Timetable = () => {
   return (
-    <>
+    <div className={"col-span-2"}>
       <h5 className={" text-c-red text-base font-semibold mt-7"}>
         Semester Timetable
       </h5>
@@ -67,7 +67,7 @@ const Timetable = () => {
           </TableBody>
         </Table>
       </div>
-    </>
+    </div>
   );
 };
 
