@@ -3,6 +3,7 @@ import { StudentPortalLayout } from "./_components";
 import {
   DashboardCourseCard,
   DashboardFeeBalanceCard,
+  DashboardResultsTable,
   DashboardStatisticsCard,
   DashboardWelcomeCard,
 } from "./_components/dashboard";
@@ -45,10 +46,10 @@ const Index = () => {
         </div>
 
         {/*    body   */}
-        <div className={"p-5"}>
+        <div className={"p-5 px-10"}>
           <div className={"flex_row justify-between"}>
-            <div className={"text-gray-700"}>
-              <h6 className={"font-medium text-15 mb-1"}>
+            <div className={"text-gray-700 "}>
+              <h6 className={"font-medium text-15 mb-3"}>
                 Diploma in Theology Studies
               </h6>
               <h6 className={"text-sm"}>Results for Year 2 Semester 2</h6>
@@ -64,6 +65,14 @@ const Index = () => {
               <LiaDownloadSolid className={"text-lg"} />
             </Button>
           </div>
+        </div>
+
+        <div
+          className={
+            "mx-10  border border-gray-200 rounded-xl mb-5 overflow-hidden"
+          }
+        >
+          <DashboardResultsTable />
         </div>
       </div>
     </StudentPortalLayout>
