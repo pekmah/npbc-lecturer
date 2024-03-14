@@ -9,6 +9,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    router.push("/portal/student");
   };
 
   const handleResetPassword = () => {
@@ -16,7 +17,7 @@ const Login = () => {
   };
 
   return (
-    <FormLayout formClassName={"gap-5"}>
+    <FormLayout handleSubmit={handleSubmit} formClassName={"gap-5"}>
       <h4 className={"text-xl md:text-2xl font-semibold text-c-blue "}>
         Login as Student
       </h4>
