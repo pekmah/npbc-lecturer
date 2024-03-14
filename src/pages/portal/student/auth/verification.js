@@ -1,8 +1,8 @@
 import React from "react";
-import { FormLayout } from "@/pages/portal/student/_components";
 import { Button } from "@/components/ui/button";
 import { VerificationCodeInput } from "@/components/general/LabelledInput";
 import { useRouter } from "next/router";
+import { FormLayout } from "@/components";
 
 const ResetPasswordVerification = () => {
   const router = useRouter();

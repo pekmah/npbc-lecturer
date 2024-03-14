@@ -1,7 +1,7 @@
 import React from "react";
-import { LabelledInput } from "@/components";
+import { FormLayout, LabelledInput } from "@/components";
 import { Button } from "@/components/ui/button";
-import { FormLayout } from "../_components";
+
 import { useRouter } from "next/router";
 
 const Login = () => {
@@ -14,11 +14,13 @@ const Login = () => {
   const handleResetPassword = () => {
     router.push("/portal/auth/student/reset_password");
   };
+
   return (
     <FormLayout formClassName={"gap-5"}>
       <h4 className={"text-xl md:text-2xl font-semibold text-c-blue "}>
         Login as Student
       </h4>
+
       <LabelledInput
         required={true}
         labelClassName={"px-1"}
