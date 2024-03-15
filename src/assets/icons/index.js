@@ -13,6 +13,7 @@ import TrainingSvg from "./Training";
 import HandMoneySvg from "./handMoney";
 import MoneyHandSvg from "./MoneyHand";
 import ReceiptMoneySvg from "./ReceiptMoney";
+import ReceiptLongSvg from "./ReceiptLong";
 
 export {
   NotificationBellSvg,
@@ -30,4 +31,5 @@ export {
   HandMoneySvg,
   MoneyHandSvg,
   ReceiptMoneySvg,
+  ReceiptLongSvg,
 };
