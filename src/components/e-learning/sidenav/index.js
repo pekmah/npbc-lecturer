@@ -1,17 +1,10 @@
 import React from "react";
 
 import SideNavListItem from "./SideNavListItem";
-import {
-  BookSvg,
-  DashboardSvg,
-  LogoutSvg,
-  ProfileSvg,
-  ReceiptSvg,
-  WalletSvg,
-} from "@/assets/icons";
+import { LogoutSvg } from "@/assets/icons";
 import { usePathname } from "next/navigation";
 
-const SideNav = () => {
+const SideNav = ({ navList }) => {
   const currentPage = usePathname();
 
   const verifyIsCurrent = (nav) => {
@@ -37,38 +30,12 @@ const SideNav = () => {
           />
         ))}
       </ul>
+
       <SideNavListItem icon={<LogoutSvg />} name={"Logout"} />
+
       <div className={"h-12 "} />
     </div>
   );
 };
 
 export default SideNav;
-
-const navList = [
-  {
-    icon: <DashboardSvg />,
-    name: "Dashboard",
-    path: "/portal/student",
-  },
-  {
-    icon: <BookSvg />,
-    name: "Academics",
-    path: "/portal/student/academics",
-  },
-  {
-    icon: <WalletSvg />,
-    name: "Finances",
-    path: "/portal/student/finances",
-  },
-  {
-    icon: <ReceiptSvg />,
-    name: "Examinations",
-    path: "",
-  },
-  {
-    icon: <ProfileSvg />,
-    name: "My Profile",
-    path: "profile",
-  },
-];

@@ -1,6 +1,4 @@
 import React from "react";
-import Navbar from "./nav";
-import SideNav from "./sidenav";
 import {
   BookSvg,
   DashboardSvg,
@@ -8,8 +6,10 @@ import {
   ReceiptSvg,
   WalletSvg,
 } from "@/assets/icons";
+import SideNav from "@/components/e-learning/sidenav";
+import Navbar from "@/components/e-learning/nav";
 
-const StudentPortalLayout = ({ children, className }) => {
+const LecturerPortalLayout = ({ children, className }) => {
   return (
     <div className={"max-h-screen overflow-y-hidden"}>
       {/*navbar */}
@@ -29,23 +29,23 @@ const StudentPortalLayout = ({ children, className }) => {
   );
 };
 
-export default StudentPortalLayout;
+export default LecturerPortalLayout;
 
 const navList = [
   {
     icon: <DashboardSvg />,
     name: "Dashboard",
-    path: "/portal/student",
+    path: "/portal/lecturer",
   },
   {
     icon: <BookSvg />,
     name: "Academics",
-    path: "/portal/student/academics",
+    path: "/portal/lecturer/asdd",
   },
   {
     icon: <WalletSvg />,
     name: "Finances",
-    path: "/portal/student/finances",
+    path: "/portal/lecturer/sdfds",
   },
   {
     icon: <ReceiptSvg />,
