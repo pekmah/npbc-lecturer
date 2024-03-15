@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  FeePaymentStatements,
   FinanceBanner,
   FinanceFeeStructure,
   FinanceStatsCards,
@@ -17,6 +18,9 @@ const Finances = () => {
 
       {/* Fee Structure */}
       <FinanceFeeStructure />
+
+      {/*  Fee Payment Table   */}
+      <FeePaymentStatements />
     </StudentPortalLayout>
   );
 };
