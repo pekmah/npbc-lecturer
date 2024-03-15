@@ -4,6 +4,7 @@ import Image from "next/image";
 import Layout from "@/layout";
 
 const FormLayout = ({
+  title,
   children,
   formClassName,
   handleSubmit = (e) => {
@@ -33,7 +34,7 @@ const FormLayout = ({
                 "font-bold text-white text-2xl md:text-3xl lg:text-4xl"
               }
             >
-              Student Portal
+              {title || "Student Portal"}
             </h3>
 
             <p className={"mt-2 text-sm w-full md:w-1/3 lg:w-1/4 text-white"}>
