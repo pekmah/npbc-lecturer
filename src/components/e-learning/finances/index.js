@@ -1,4 +1,5 @@
 import FinanceBanner from "./Banner";
 import FinanceStatsCards from "./StatsCards";
+import FinanceFeeStructure from "./FeeStructure";
 
-export { FinanceStatsCards, FinanceBanner };
+export { FinanceStatsCards, FinanceBanner, FinanceFeeStructure };

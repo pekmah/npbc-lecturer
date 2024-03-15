@@ -1,6 +1,7 @@
 import React from "react";
 import {
   FinanceBanner,
+  FinanceFeeStructure,
   FinanceStatsCards,
   StudentPortalLayout,
 } from "@/components";
@@ -14,7 +15,8 @@ const Finances = () => {
       {/*  Banner  */}
       <FinanceBanner />
 
-      {/*    Exam timetable  */}
+      {/* Fee Structure */}
+      <FinanceFeeStructure />
     </StudentPortalLayout>
   );
 };
