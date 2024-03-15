@@ -10,6 +10,9 @@ import StatisticsSvg from "./Statistics";
 import BooksSvg from "./Books";
 import CalendarSvg from "./Calendar";
 import TrainingSvg from "./Training";
+import HandMoneySvg from "./handMoney";
+import MoneyHandSvg from "./MoneyHand";
+import ReceiptMoneySvg from "./ReceiptMoney";
 
 export {
   NotificationBellSvg,
@@ -24,4 +27,7 @@ export {
   BooksSvg,
   CalendarSvg,
   TrainingSvg,
+  HandMoneySvg,
+  MoneyHandSvg,
+  ReceiptMoneySvg,
 };
