@@ -73,6 +73,7 @@ const portals = [
     desc: "Learn about admission requirements, how to apply, and the next steps once you’ve applied to the NPBC.",
     type: "lecturer",
     image: "/images/e-learning/lecturer.jpeg",
+    route: "/portal/lecturer/auth/login",
   },
   {
     title: "Center Coordinator",
