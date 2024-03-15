@@ -9,8 +9,14 @@ import {
   ReceiptSvg,
   WalletSvg,
 } from "@/assets/icons";
+import { usePathname } from "next/navigation";
 
 const SideNav = () => {
+  const currentPage = usePathname();
+
+  const verifyIsCurrent = (nav) => {
+    return currentPage === nav;
+  };
   return (
     <div
       className={
@@ -24,7 +30,7 @@ const SideNav = () => {
         {navList?.map(({ icon, name, path }, ind) => (
           <SideNavListItem
             key={ind}
-            isCurrent={ind === 0}
+            isCurrent={verifyIsCurrent(path)}
             icon={icon}
             name={name}
             path={path}
