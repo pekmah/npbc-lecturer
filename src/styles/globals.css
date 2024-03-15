@@ -38,5 +38,9 @@
         font-family: "Inter", sans-serif;
     }
 
+    .finance-gradient {
+        background: linear-gradient(91.16deg, #FFE9EB 19.4%, #E7F1FF 64.71%);
+
+    }
     
 }

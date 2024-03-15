@@ -13,7 +13,7 @@ const StatsCards = () => {
 
 export default StatsCards;
 
-const Card = ({ icon, title, desc }) => (
+export const Card = ({ icon, title, desc }) => (
   <div
     className={
       "p-4 py-6 rounded-2xl border border-gray-200 flex-1 flex_row gap-3 items-center"
