@@ -29,7 +29,7 @@ const Login = () => {
         title={"Registration Number"}
         inputClassName={"rounded-xl h-12"}
         placeholder={"Enter your registration number"}
-        type={"email"}
+        type={"text"}
       />
       <div>
         <LabelledInput
