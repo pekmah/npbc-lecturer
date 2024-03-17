@@ -40,7 +40,7 @@ const navList = [
   {
     icon: <BookSvg />,
     name: "Academics",
-    path: "/portal/lecturer/asdd",
+    path: "/portal/lecturer/academics",
   },
   {
     icon: <WalletSvg />,

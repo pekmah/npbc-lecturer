@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -8,12 +7,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { MarkAttendanceActions } from "@/components/e-learning/academics/MarkAttendance";
 
 const MarkAttendance = () => {
   return (
     <div
       className={
-        "col-span-1 my-4 border border-gray-200 rounded-xl items-center mt-16"
+        "flex-1 my-4 border border-gray-200 rounded-xl items-center mt-16"
       }
     >
       <div className={"px-5 py-3"}>
@@ -43,7 +43,7 @@ const MarkAttendance = () => {
         </TableHeader>
 
         <TableBody>
-          {results?.map((res, ind) => (
+          {data?.map((res, ind) => (
             <TableRow key={ind} className={"border-b border-gray-100"}>
               {Object.keys(res)?.map((cKey, index) => (
                 <TableCell
@@ -63,28 +63,6 @@ const MarkAttendance = () => {
 
 export default MarkAttendance;
 
-export const MarkAttendanceActions = () => (
-  <div className={"flex_row gap-2"}>
-    <Button
-      className={
-        "text-[11px] text-c-blue border border-c-blue font-light p-1 h-6 px-2"
-      }
-      variant={"outline"}
-    >
-      Present
-    </Button>
-
-    <Button
-      className={
-        "text-xs  text-c-blue border border-c-blue font-light py-0 px-1 h-6 px-2"
-      }
-      variant={"outline"}
-    >
-      Absent
-    </Button>
-  </div>
-);
-
 const titles = [
   {
     name: "Monday",
@@ -95,7 +73,7 @@ const titles = [
   },
 ];
 
-const results = [
+const data = [
   {
     unit: "Church History UCU 202",
     actions: <MarkAttendanceActions />,
