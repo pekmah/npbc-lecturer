@@ -5,7 +5,7 @@ import { Table, TableBody, TableRow } from "@/components/ui/table";
 import ResourceCard from "@/components/e-learning/ResourceCard";
 import Theme from "@/constants/Theme";
 
-const UploadedResults = () => {
+const UploadedResults = ({ hideUpload = false }) => {
   return (
     <>
       <h5 className={" text-c-red text-base font-semibold mt-7"}>
@@ -21,15 +21,17 @@ const UploadedResults = () => {
 
             {/*  upload button  */}
 
-            <Button
-              variant={"outlined"}
-              className={
-                "border bg-c-blue text-white gap-3 font-medium text-[13px]"
-              }
-            >
-              Upload New Results
-              <UploadSvg />
-            </Button>
+            {!hideUpload && (
+              <Button
+                variant={"outlined"}
+                className={
+                  "border bg-c-blue text-white gap-3 font-medium text-[13px]"
+                }
+              >
+                Upload New Results
+                <UploadSvg />
+              </Button>
+            )}
           </div>
 
           <Table>

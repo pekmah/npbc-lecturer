@@ -50,7 +50,7 @@ const navList = [
   {
     icon: <ReceiptSvg />,
     name: "Examinations",
-    path: "",
+    path: "/portal/student/examinations",
   },
   {
     icon: <ProfileSvg />,
