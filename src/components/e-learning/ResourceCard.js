@@ -1,9 +1,9 @@
 import React from "react";
-import { GantChartSvg } from "@/assets/icons";
 import { Button } from "@/components/ui/button";
 import { LiaDownloadSolid } from "react-icons/lia";
 
 const ResourceCard = ({
+  icon,
   cardTitle,
   fileName,
   customActions,
@@ -13,7 +13,7 @@ const ResourceCard = ({
     <div className={"flex_row gap-3 inter items-center"}>
       {/*    icon   */}
       <div className={"h-24 w-28 bg-slate-100 flex_row-center rounded-xl"}>
-        <GantChartSvg />
+        {icon}
       </div>
 
       {/*    resource details   */}

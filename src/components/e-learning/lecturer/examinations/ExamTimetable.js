@@ -1,6 +1,7 @@
 import React from "react";
 
 import ResourceCard from "../../ResourceCard";
+import { GantChartSvg } from "@/assets/icons";
 
 const ExamTimetable = () => {
   return (
@@ -21,6 +22,7 @@ const ExamTimetable = () => {
           className={"my-4 border border-gray-200 rounded-xl items-center p-3"}
         >
           <ResourceCard
+            icon={<GantChartSvg />}
             cardTitle={"Comprehensive Exams Schedule Sep - Dec 2024"}
             fileName={"Final_Exams_2024_Semester1_exams_timetable.xls"}
             actionTitle={"Download Timetable"}
