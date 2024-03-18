@@ -17,6 +17,7 @@ import ReceiptLongSvg from "./ReceiptLong";
 import BuildingMarkSvg from "./BuildingMark";
 import TrainingClassSvg from "./TrainingClass";
 import GantChartSvg from "./GantChart";
+import UploadSvg from "./Upload";
 
 export {
   NotificationBellSvg,
@@ -38,4 +39,5 @@ export {
   BuildingMarkSvg,
   TrainingClassSvg,
   GantChartSvg,
+  UploadSvg,
 };

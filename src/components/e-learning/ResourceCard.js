@@ -10,7 +10,11 @@ const ResourceCard = ({
   actionTitle = "Download",
 }) => {
   return (
-    <div className={"flex_row gap-3 inter items-center"}>
+    <div
+      className={
+        "flex_row gap-3 inter items-center border border-gray-200 p-3 rounded-2xl"
+      }
+    >
       {/*    icon   */}
       <div className={"h-24 w-28 bg-slate-100 flex_row-center rounded-xl"}>
         {icon}

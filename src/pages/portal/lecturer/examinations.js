@@ -1,6 +1,10 @@
 import React from "react";
 import LecturerPortalLayout from "@/components/e-learning/lecturer/LecturerPortalLayout";
-import { LecturerExamsStatCards, LecturerExamTimetable } from "@/components";
+import {
+  LecturerExamsStatCards,
+  LecturerExamTimetable,
+  LecturerExamUploadedResults,
+} from "@/components";
 
 const Examinations = () => {
   return (
@@ -8,6 +12,8 @@ const Examinations = () => {
       <LecturerExamsStatCards />
 
       <LecturerExamTimetable />
+
+      <LecturerExamUploadedResults />
     </LecturerPortalLayout>
   );
 };
