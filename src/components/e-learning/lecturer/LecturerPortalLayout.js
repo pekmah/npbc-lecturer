@@ -44,6 +44,6 @@ const navList = [
   {
     icon: <ProfileSvg />,
     name: "My Profile",
-    path: "profile",
+    path: "/portal/lecturer/profile",
   },
 ];
