@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  BookSvg,
-  DashboardSvg,
-  ProfileSvg,
-  ReceiptSvg,
-  WalletSvg,
-} from "@/assets/icons";
+import { BookSvg, DashboardSvg, ProfileSvg, ReceiptSvg } from "@/assets/icons";
 import SideNav from "@/components/e-learning/sidenav";
 import Navbar from "@/components/e-learning/nav";
 
@@ -43,11 +37,6 @@ const navList = [
     path: "/portal/lecturer/academics",
   },
   {
-    icon: <WalletSvg />,
-    name: "Finances",
-    path: "/portal/lecturer/sdfds",
-  },
-  {
     icon: <ReceiptSvg />,
     name: "Examinations",
     path: "/portal/lecturer/examinations",
@@ -55,6 +44,6 @@ const navList = [
   {
     icon: <ProfileSvg />,
     name: "My Profile",
-    path: "profile",
+    path: "/portal/lecturer/profile",
   },
 ];
