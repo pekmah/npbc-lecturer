@@ -57,7 +57,7 @@ const Layout = ({ children, hideApplication }) => {
   }, [query]);
 
   return (
-    <main className="max-w-screen overflow-x-hidden overflow-y-hidden bg-white relative">
+    <main className="relative overflow-x-hidden overflow-y-hidden bg-white max-w-screen">
       <LayoutHeader showModal={handleOpenModal} />
 
       {/*  Application Modal    */}

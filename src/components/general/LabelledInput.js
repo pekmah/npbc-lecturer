@@ -1,6 +1,7 @@
 import React from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Controller } from "react-hook-form";
 
 const LabelledInput = ({
   containerClassName,
@@ -29,6 +30,21 @@ const LabelledInput = ({
         {...rest}
       />
     </div>
+  );
+};
+
+/**
+ * return a controlled labelled input
+ * @returns {JSX.Element}
+ */
+export const ControlledLabelledInput = ({ control, rules, name, ...rest }) => {
+  return (
+    <Controller
+      name={name}
+      control={control}
+      rules={rules}
+      render={({ field }) => <LabelledInput {...field} {...rest} />}
+    />
   );
 };
 

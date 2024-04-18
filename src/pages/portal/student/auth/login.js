@@ -1,38 +1,66 @@
-import React from "react";
 import { FormLayout, LabelledInput } from "@/components";
+import { SubmitButton } from "@/components/e-learning/common";
+import { ControlledLabelledInput } from "@/components/general/LabelledInput";
 import { Button } from "@/components/ui/button";
+import { login, loginStudent } from "@/services/AuthServices";
+import { useMutation } from "@tanstack/react-query";
 
 import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
   const router = useRouter();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    router.push("/portal/student");
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   router.push("/portal/student");
+  // };
 
   const handleResetPassword = () => {
     router.push("/portal/auth/student/reset_password");
   };
 
+  const {
+    handleSubmit,
+    control,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const signinMutation = useMutation({
+    mutationKey: "loginStudent",
+    mutationFn: loginStudent,
+  });
+
+  // signin as student
+  const onSubmit = (data) => {
+    const { email, password } = data;
+
+    signinMutation.mutate({ email, password });
+  };
+
   return (
-    <FormLayout handleSubmit={handleSubmit} formClassName={"gap-5"}>
+    <FormLayout onSubmit={handleSubmit(onSubmit)} formClassName={"gap-5"}>
       <h4 className={"text-xl md:text-2xl font-semibold text-c-blue "}>
         Login as Student
       </h4>
 
-      <LabelledInput
+      <ControlledLabelledInput
+        name={"email"}
+        control={control}
         required={true}
         labelClassName={"px-1"}
         containerClassName={"gap-2.5"}
-        title={"Registration Number"}
+        title={"Email"}
         inputClassName={"rounded-xl h-12"}
-        placeholder={"Enter your registration number"}
-        type={"text"}
+        placeholder={"Enter your email"}
+        type={"email"}
       />
+
       <div>
-        <LabelledInput
+        <ControlledLabelledInput
+          name={"password"}
+          control={control}
           required={true}
           labelClassName={"px-1"}
           containerClassName={"gap-2.5"}
@@ -54,9 +82,14 @@ const Login = () => {
         </div>
       </div>
       <div className={"w-full h-24"} />
-      <Button type={"submit"} className={"bg-c-red text-white rounded-xl h-12"}>
+      <SubmitButton
+        type={"submit"}
+        className={"bg-c-red text-white rounded-xl h-12"}
+        isLoading={signinMutation.isLoading}
+        disabled={signinMutation.isLoading}
+      >
         Login
-      </Button>
+      </SubmitButton>
     </FormLayout>
   );
 };

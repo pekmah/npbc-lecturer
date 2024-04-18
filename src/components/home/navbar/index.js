@@ -39,7 +39,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="bg-c-blue-dark h-14 md:px-10  ">
+      <div className="bg-c-blue-dark h-14 md:px-10 ">
         {/* Nav Items */}
         <div
           className={
@@ -97,7 +97,7 @@ const Navbar = () => {
           onClick={() => {}}
         >
           <div className={`block`}>
-            <div className="p-5 flex justify-end">
+            <div className="flex justify-end p-5">
               <button className="" onClick={() => {}}>
                 <svg
                   width="30"
@@ -117,8 +117,8 @@ const Navbar = () => {
               </button>
             </div>
 
-            <div className=" flex flex-col justify-center items-center gap-8 py-16">
-              {nav_list?.map((item, i, key) => (
+            <div className="flex flex-col items-center justify-center gap-8 py-16 ">
+              {nav_list?.map((item, key) => (
                 <button
                   key={key}
                   className="h-full"
