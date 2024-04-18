@@ -3,14 +3,7 @@ import Image from "next/image";
 
 import Layout from "@/layout";
 
-const FormLayout = ({
-  title,
-  children,
-  formClassName,
-  handleSubmit = (e) => {
-    e.preventDefault();
-  },
-}) => {
+const FormLayout = ({ title, children, formClassName, ...rest }) => {
   return (
     <Layout hideApplication={true}>
       {/*hero section */}
@@ -52,7 +45,7 @@ const FormLayout = ({
       <div className={"h-60 relative max-w-[1300px] w-full mx-auto"}>
         <form
           className={`absolute right-0 bottom-10 z-10 bg-white shadow p-3 sm:p-5 lg:p-10 md:min-w-[600px] rounded-2xl flex flex-col ${formClassName}`}
-          onSubmit={handleSubmit}
+          {...rest}
         >
           {children}
         </form>
