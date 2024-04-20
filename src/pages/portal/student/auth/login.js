@@ -2,19 +2,18 @@ import { FormLayout, LabelledInput } from "@/components";
 import { SubmitButton } from "@/components/e-learning/common";
 import { ControlledLabelledInput } from "@/components/general/LabelledInput";
 import { Button } from "@/components/ui/button";
+import useError from "@/hooks/useError";
 import { login, loginStudent } from "@/services/AuthServices";
 import { useMutation } from "@tanstack/react-query";
 
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const router = useRouter();
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   router.push("/portal/student");
-  // };
+  const handleError = useError();
 
   const handleResetPassword = () => {
     router.push("/portal/auth/student/reset_password");
@@ -30,6 +29,8 @@ const Login = () => {
   const signinMutation = useMutation({
     mutationKey: "loginStudent",
     mutationFn: loginStudent,
+    onSuccess: () => toast.success("Signin successful"),
+    onError: (error) => handleError(error, "Signin failed. "),
   });
 
   // signin as student
@@ -39,6 +40,7 @@ const Login = () => {
     signinMutation.mutate({ email, password });
   };
 
+  console.log(signinMutation.isPending);
   return (
     <FormLayout onSubmit={handleSubmit(onSubmit)} formClassName={"gap-5"}>
       <h4 className={"text-xl md:text-2xl font-semibold text-c-blue "}>
@@ -82,11 +84,12 @@ const Login = () => {
         </div>
       </div>
       <div className={"w-full h-24"} />
+
       <SubmitButton
         type={"submit"}
         className={"bg-c-red text-white rounded-xl h-12"}
-        isLoading={signinMutation.isLoading}
-        disabled={signinMutation.isLoading}
+        isLoading={signinMutation.isPending}
+        disabled={signinMutation.isPending}
       >
         Login
       </SubmitButton>

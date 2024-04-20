@@ -1,4 +1,4 @@
-import { sendMail } from "../helpers/mailer";
+import { sendMail } from "../../helpers/mailer";
 
 export default async function (req, res) {
   const body = req.body;
