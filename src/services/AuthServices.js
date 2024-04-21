@@ -6,13 +6,11 @@ import axios from "axios";
 export const loginStudent = async ({ email, password }) => {
   const url = "/api/auth/login/student";
 
-  const { data } = await axios.post(ENDPOINT + endpoints.login, {
+  const { data } = await axios.post("/api/auth/login/student", {
     email,
     password,
   });
-  console.log(ENDPOINT + endpoints.login);
 
-  console.log("DATALLLL ", data);
   return data;
 };
 

@@ -1,8 +1,7 @@
-import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { NotificationBellSvg } from "@/assets/icons";
-import { FaChevronDown } from "react-icons/fa";
+import { NavDropDown } from "..";
 
 const Navbar = () => {
   return (
@@ -25,24 +24,12 @@ const Navbar = () => {
         </h3>
       </div>
 
-      <div className={"flex_row gap-3"}>
+      <div className={"flex_row gap-5 items-center"}>
         <Button variant={"ghost"} className={"py-0 p-2 rounded-full"}>
           <NotificationBellSvg />
         </Button>
 
-        <Button variant={"ghost"} className={"flex gap-3 py-1.5"}>
-          <Image
-            height={100}
-            width={100}
-            className={"h-10 w-10 rounded-full"}
-            src={"/images/e-learning/npbc-user.jpeg"}
-            alt={"profile"}
-          />
-
-          <span className={"text-base font-normal"}>Peter Muhia</span>
-
-          <FaChevronDown className={"text-primary text-md"} />
-        </Button>
+        <NavDropDown />
       </div>
     </div>
   );

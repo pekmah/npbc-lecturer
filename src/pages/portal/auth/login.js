@@ -15,7 +15,7 @@ const Login = () => {
   const handleError = useError();
 
   const handleResetPassword = () => {
-    router.push("/portal/auth/student/reset_password");
+    router.push("/portal/auth/reset_password");
   };
 
   const {
@@ -34,7 +34,10 @@ const Login = () => {
         redirect: true,
         callbackUrl: "/portal/student",
       }),
-    onSuccess: (res) => toast.success("Signin successful"),
+    onSuccess: (res) => {
+      console.log("response: ", res);
+      toast.success("Signin successful");
+    },
     onError: (error) => handleError(error, "Signin failed. "),
   });
 
@@ -46,9 +49,13 @@ const Login = () => {
   };
 
   return (
-    <FormLayout onSubmit={handleSubmit(onSubmit)} formClassName={"gap-5"}>
+    <FormLayout
+      title={"Portal"}
+      onSubmit={handleSubmit(onSubmit)}
+      formClassName={"gap-5"}
+    >
       <h4 className={"text-xl md:text-2xl font-semibold text-c-blue "}>
-        Login as Student
+        Login to portal.
       </h4>
 
       <ControlledLabelledInput
