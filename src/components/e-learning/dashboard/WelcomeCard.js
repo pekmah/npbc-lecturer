@@ -1,12 +1,16 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { HiArrowUpRight } from "react-icons/hi2";
+import { useSession } from "next-auth/react";
 
 const WelcomeCard = () => {
+  const session = useSession();
+
+  const firstName = session?.data?.user?.name?.split(" ")[0];
   return (
     <div className={"col-span-3 dashboard_card"}>
       <h3 className={"text-c-red font-semibold text-xl"}>
-        Welcome back, Peter
+        Welcome back, {firstName}
       </h3>
 
       <p className={"text-sm my-2"}>

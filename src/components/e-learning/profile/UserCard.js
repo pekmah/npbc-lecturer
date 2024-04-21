@@ -1,21 +1,25 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useSession } from "next-auth/react";
 
 const UserCard = () => {
+  const session = useSession();
   return (
     <div className={"p-5 border border-gray-200 rounded-2xl"}>
       <Image
         className={"h-56 w-56 object-cover rounded-2xl mb-5"}
-        src={"/images/e-learning/npbc-user.jpeg"}
+        src={"/images/e-learning/user.webp"}
         alt={"profile"}
         height={1000}
         width={1000}
       />
 
       <div className={"flex_col gap-2"}>
-        <h6 className={"font-medium text-xl"}>Peter Muhia</h6>
-        <p className={"font-light text-sm text-gray-700"}>TES - 5000 - 0000</p>
+        <h6 className={"font-medium text-xl"}>{session?.data?.user?.name}</h6>
+        <p className={"font-light text-sm text-gray-700"}>
+          {session?.data?.user?.reg_no}
+        </p>
 
         <p className={"text-sm text-gray-600"}>Year 2 . Semester 2</p>
 

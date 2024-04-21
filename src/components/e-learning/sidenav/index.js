@@ -3,6 +3,7 @@ import React from "react";
 import SideNavListItem from "./SideNavListItem";
 import { LogoutSvg } from "@/assets/icons";
 import { usePathname } from "next/navigation";
+import { signOut } from "next-auth/react";
 
 const SideNav = ({ navList }) => {
   const currentPage = usePathname();
@@ -10,6 +11,11 @@ const SideNav = ({ navList }) => {
   const verifyIsCurrent = (nav) => {
     return currentPage === nav;
   };
+
+  const logout = () => {
+    signOut();
+  };
+
   return (
     <div
       className={
@@ -31,7 +37,9 @@ const SideNav = ({ navList }) => {
         ))}
       </ul>
 
-      <SideNavListItem icon={<LogoutSvg />} name={"Logout"} />
+      <button onClick={logout}>
+        <SideNavListItem icon={<LogoutSvg />} name={"Logout"} />
+      </button>
 
       <div className={"h-12 "} />
     </div>

@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { LiaDownloadSolid } from "react-icons/lia";
 import { StudentPortalLayout } from "@/components";
+import { useSession } from "next-auth/react";
 
 const Index = () => {
   return (

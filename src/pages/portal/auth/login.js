@@ -35,7 +35,6 @@ const Login = () => {
         callbackUrl: "/portal/student",
       }),
     onSuccess: (res) => {
-      console.log("response: ", res);
       toast.success("Signin successful");
     },
     onError: (error) => handleError(error, "Signin failed. "),

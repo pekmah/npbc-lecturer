@@ -11,17 +11,20 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useSession } from "next-auth/react";
 
 const formSchema = z.object({
   username: z.string().min(2).max(50),
 });
 
 const ProfileForm = () => {
+  const session = useSession();
+
   // 1. Define your form.
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      firstname: "",
+      firstname: session?.data?.user?.name?.split(" ")?.at(0),
       secondname: "",
       email: "",
       phone: "",
@@ -29,11 +32,7 @@ const ProfileForm = () => {
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
-  }
+  function onSubmit(values) {}
 
   return (
     <Form {...form}>
@@ -43,21 +42,31 @@ const ProfileForm = () => {
             name={"firstname"}
             label={"First Name"}
             control={form.control}
+            disabled={true}
+            value={session?.data?.user?.name?.split(" ")?.at(0)}
           />
 
           <FormInput
             name={"secondname"}
             label={"Second Name"}
             control={form.control}
+            disabled
+            value={session?.data?.user?.name?.split(" ")?.at(1)}
           />
         </div>
 
-        <FormInput name={"email"} label={"Email"} control={form.control} />
+        <FormInput
+          name={"email"}
+          label={"Email"}
+          disabled
+          value={session?.data?.user?.email}
+        />
 
         <FormInput
           name={"phone"}
           label={"Phone Number"}
-          control={form.control}
+          value={session?.data?.user?.phone}
+          disabled
         />
       </form>
     </Form>
@@ -66,7 +75,15 @@ const ProfileForm = () => {
 
 export default ProfileForm;
 
-const FormInput = ({ name, label, placeholder, control, className }) => (
+const FormInput = ({
+  name,
+  label,
+  placeholder,
+  control,
+  className,
+  value,
+  ...rest
+}) => (
   <FormField
     control={control}
     name={name}
@@ -77,7 +94,8 @@ const FormInput = ({ name, label, placeholder, control, className }) => (
           <Input
             className={`h-14 rounded-2xl ${className}`}
             placeholder={placeholder}
-            {...field}
+            value={value}
+            {...rest}
           />
         </FormControl>
         <FormMessage />

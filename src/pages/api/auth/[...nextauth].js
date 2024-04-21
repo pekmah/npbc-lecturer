@@ -78,9 +78,7 @@ export default NextAuth({
       if (user) {
         return {
           ...token,
-          id: user.id,
-          token: user.token,
-          role: user.role,
+          ...user,
         };
       }
       return token;
@@ -94,6 +92,10 @@ export default NextAuth({
           id: token.id,
           token: token.token,
           role: token.role,
+          branch: token.branch,
+          image: token.profile_picture,
+          phone: token.phone,
+          reg_no: token.reg_no,
         },
       };
     },
