@@ -61,6 +61,11 @@ export default NextAuth({
 
           // If no error and we have user data, return it
           if (data?.token && user?.id) {
+            // Remove semester from user object
+            if ("semester" in user) {
+              delete user.semester;
+            }
+
             return {
               ...user,
               token: data.token,
@@ -96,6 +101,7 @@ export default NextAuth({
           image: token.profile_picture,
           phone: token.phone,
           reg_no: token.reg_no,
+          year: token?.year,
         },
       };
     },

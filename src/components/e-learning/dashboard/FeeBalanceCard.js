@@ -3,8 +3,12 @@ import React from "react";
 import { CertAwardSvg } from "@/assets/icons";
 import { HiArrowUpRight } from "react-icons/hi2";
 import { Button } from "@/components/ui/button";
+import useFees from "@/hooks/useFees";
+import { formatCurrency } from "@/lib/utils";
 
 const FeeBalanceCard = () => {
+  const { data } = useFees();
+  console.log("FEES ARE", data);
   return (
     <div className={"col-span-2 dashboard_card px-8 flex_col gap-5"}>
       <div className={"flex gap-3 items-center"}>
@@ -14,10 +18,10 @@ const FeeBalanceCard = () => {
 
         <div className={"flex-1 flex_col justify-center"}>
           <h6 className={"text-c-red text-base font-semibold mb-1"}>
-            Ksh 25,650
+            {formatCurrency(data?.total)}
           </h6>
 
-          <h6 className={"text-sm"}>Current Balance</h6>
+          <h6 className={"text-sm"}>Semester Fees</h6>
         </div>
 
         <Button
@@ -36,7 +40,9 @@ const FeeBalanceCard = () => {
           }
         >
           <h6 className={"text-white"}>Paid Fee Amount</h6>
-          <h6 className={"text-white font-medium text-15"}>Kes 15,300</h6>
+          <h6 className={"text-white font-medium text-15"}>
+            {formatCurrency(data?.paid)}
+          </h6>
         </div>
 
         <div
@@ -45,7 +51,10 @@ const FeeBalanceCard = () => {
           }
         >
           <h6 className={"text-white"}>Pending Balance</h6>
-          <h6 className={"text-white text-15 font-medium"}>Kes 10,000</h6>
+          <h6 className={"text-white text-15 font-medium"}>
+            {" "}
+            {formatCurrency(data?.unpaid)}
+          </h6>
         </div>
       </div>
     </div>

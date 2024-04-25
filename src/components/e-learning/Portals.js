@@ -66,14 +66,14 @@ const portals = [
     desc: "Sign in to manage your account and view updates and information communicated by the administration. ",
     type: "student",
     image: "/images/e-learning/students.jpeg",
-    route: "/portal/auth/login",
+    route: "/portal/student",
   },
   {
     title: "Lecturer Portal",
     desc: "Learn about admission requirements, how to apply, and the next steps once you’ve applied to the NPBC.",
     type: "lecturer",
     image: "/images/e-learning/lecturer.jpeg",
-    route: "/portal/auth/login",
+    route: "/portal/lecturer",
   },
   {
     title: "Center Coordinator",

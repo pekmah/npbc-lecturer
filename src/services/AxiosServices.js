@@ -6,6 +6,8 @@ import {
   POST_REQUEST,
   PUT_REQUEST,
 } from "@/configs/Globals";
+import { getSession } from "next-auth/react";
+import { getServerSession } from "next-auth";
 
 export const ENDPOINT = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -29,16 +31,20 @@ export const AxiosUtility = axios.create({
  *
  * Success function is optional so as to maintain support for callback functions and also allow async await for getting
  * responses
- *
+ * @param {string} method
+ * @param {string} url
+ * @param {object?} data
+ * @returns {Promise<AxiosResponse<any>>}
  */
-export const makeRequest = async (
-  method: string,
-  url: string,
-  data?: object
-): Promise<AxiosResponse> => {
-  /* let domain = getSubdomain();
-       domain = domain != null ? `https://${domain}/api/v1/` : DOMAIN;
-       axios.defaults.baseURL = domain;*/
+export const makeRequest = async (method, url, data) => {
+  const session = await getSession();
+
+  // injects token to request headers
+  if (session?.user?.token) {
+    PrivateAxiosUtility.defaults.headers.common[
+      "Authorization"
+    ] = `Bearer ${session.user.token}`;
+  }
 
   //make sure url starts with "/"
   if (!url.startsWith("/")) {
@@ -49,19 +55,19 @@ export const makeRequest = async (
 
   switch (method) {
     case GET_REQUEST:
-      response = await axios.get(url);
+      response = await PrivateAxiosUtility.get(url);
       break;
     case POST_REQUEST:
-      response = await axios.post(url, data);
+      response = await PrivateAxiosUtility.post(url, data);
       break;
     case DELETE_REQUEST:
-      response = await axios.delete(url, data);
+      response = await PrivateAxiosUtility.delete(url, data);
       break;
     case PUT_REQUEST:
-      response = await axios.put(url, data);
+      response = await PrivateAxiosUtility.put(url, data);
       break;
     case PATCH_REQUEST:
-      response = await axios.patch(url, data);
+      response = await PrivateAxiosUtility.patch(url, data);
       break;
     default:
       break;

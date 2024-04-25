@@ -9,9 +9,12 @@ import { Button } from "@/components/ui/button";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { LiaDownloadSolid } from "react-icons/lia";
 import { StudentPortalLayout } from "@/components";
-import { useSession } from "next-auth/react";
+import useSemesterDetails from "@/hooks/useSemesterDetails";
+import useExamResults from "@/hooks/useExamResults";
 
 const Index = () => {
+  const { data: semester } = useSemesterDetails();
+
   return (
     <StudentPortalLayout className={"grid md:grid-cols-4 gap-6 inter"}>
       {/*row 1*/}
@@ -50,9 +53,11 @@ const Index = () => {
           <div className={"flex_row justify-between"}>
             <div className={"text-gray-700 "}>
               <h6 className={"font-medium text-15 mb-3"}>
-                Diploma in Theology Studies
+                {semester?.course?.name}
               </h6>
-              <h6 className={"text-sm"}>Results for Year 2 Semester 2</h6>
+              <h6 className={"text-sm"}>
+                Results for Year {semester?.year} Semester {semester?.number}
+              </h6>
             </div>
 
             <Button

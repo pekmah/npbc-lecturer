@@ -7,8 +7,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import useExamResults from "@/hooks/useExamResults";
 
 const ResultsTable = () => {
+  const { getExamResults } = useExamResults();
+
   return (
     <Table className={""}>
       {/*<TableCaption>A list of your recent invoices.</TableCaption>*/}
@@ -23,7 +26,7 @@ const ResultsTable = () => {
       </TableHeader>
 
       <TableBody>
-        {results?.map((res, ind) => (
+        {getExamResults()?.map((res, ind) => (
           <TableRow key={ind} className={"border-b border-gray-100"}>
             {Object.keys(res)?.map((cKey, index) => (
               <TableCell
@@ -52,7 +55,11 @@ const titles = [
     className: "",
   },
   {
-    name: "Academic Hours",
+    name: "Date",
+    className: "",
+  },
+  {
+    name: "Exam Type",
     className: "",
   },
   {
@@ -62,50 +69,5 @@ const titles = [
   {
     name: "Grade",
     className: "",
-  },
-];
-
-const results = [
-  {
-    code: "SIT 101",
-    unit: "Contextual Exegesis",
-    hours: "22",
-    marks: "68",
-    grade: "C",
-  },
-  {
-    code: "SIT 101",
-    unit: "Church History and Evolution",
-    hours: "22",
-    marks: "75",
-    grade: "B",
-  },
-  {
-    code: "SIT 101",
-    unit: "Contextual Exegesis",
-    hours: "22",
-    marks: "68",
-    grade: "C",
-  },
-  {
-    code: "SIT 101",
-    unit: "Church History and Evolution",
-    hours: "22",
-    marks: "75",
-    grade: "B",
-  },
-  {
-    code: "SIT 101",
-    unit: "Church History and Evolution",
-    hours: "22",
-    marks: "75",
-    grade: "B",
-  },
-  {
-    code: "SIT 101",
-    unit: "Church History and Evolution",
-    hours: "22",
-    marks: "75",
-    grade: "B",
   },
 ];

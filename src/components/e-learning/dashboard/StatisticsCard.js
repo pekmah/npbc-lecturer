@@ -1,8 +1,13 @@
-import React from "react";
-
 import { StatisticsSvg } from "@/assets/icons";
+import useAttendance from "@/hooks/useAttendance";
+import { calculatePercentage } from "@/lib/utils";
 
 const StatisticsCard = () => {
+  const {
+    query: { data },
+    getTotalClasses,
+  } = useAttendance();
+
   return (
     <div className={"col-span-2 dashboard_card px-8 flex_col gap-5"}>
       <div className={"flex gap-3 items-center"}>
@@ -15,7 +20,10 @@ const StatisticsCard = () => {
             Class Attendance Statistics
           </h6>
 
-          <h6 className={"text-sm"}>45% lectures attended</h6>
+          <h6 className={"text-sm"}>
+            {calculatePercentage(data?.data?.length || 0, getTotalClasses())}%
+            lectures attended
+          </h6>
         </div>
       </div>
 
@@ -25,8 +33,10 @@ const StatisticsCard = () => {
             "bg-green-600 h-20 flex-1 flex_col gap-3 justify-center px-10 text-sm"
           }
         >
-          <h6 className={"text-white"}>Complete Classes this Semester</h6>
-          <h6 className={"text-white font-medium text-15"}>44 Lectures</h6>
+          <h6 className={"text-white"}>Classes attended this Semester</h6>
+          <h6 className={"text-white font-medium text-15"}>
+            {data?.data?.length || 0} Lectures
+          </h6>
         </div>
 
         <div
@@ -34,8 +44,10 @@ const StatisticsCard = () => {
             "bg-red-600 h-20 flex-1 flex_col gap-3 justify-center px-10 text-sm"
           }
         >
-          <h6 className={"text-white"}>Classes Attended</h6>
-          <h6 className={"text-white text-15 font-medium"}>20 Lectures</h6>
+          <h6 className={"text-white"}>Total Semester Lectures</h6>
+          <h6 className={"text-white text-15 font-medium"}>
+            {getTotalClasses()} Lectures
+          </h6>
         </div>
       </div>
     </div>

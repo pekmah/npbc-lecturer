@@ -2,8 +2,16 @@ import React from "react";
 
 import { CertAwardSvg } from "@/assets/icons";
 import { Badge } from "@/components/ui/badge";
+import useSemesterDetails from "@/hooks/useSemesterDetails";
+import Spinner from "@/components/general/Spinner";
+import { useSession } from "next-auth/react";
 
 const CourseCard = () => {
+  const { data: semester, isPending } = useSemesterDetails();
+  const session = useSession();
+  const hasYear = !!session?.data?.user?.year;
+  console.log(session?.data?.user);
+
   return (
     <div className={"col-span-1 dashboard_card"}>
       <div className={"flex"}>
@@ -13,17 +21,27 @@ const CourseCard = () => {
       </div>
 
       <div className={"mt-3"}>
-        <h5 className={"text-c-red text-base font-semibold"}>
-          Diploma in Theology Studies
-        </h5>
-
+        {isPending ? (
+          <Spinner size="h-6 w-6 mr-auto" text="" />
+        ) : (
+          <h5 className={"text-c-red text-base font-semibold"}>
+            {generateCourseName(
+              semester?.course?.name,
+              semester?.course?.type?.name
+            )}
+          </h5>
+        )}
         <div className={"flex_row items-center gap-2 text-13 mt-1"}>
-          <span>Year 2 </span>
+          <span>Year {semester?.year} </span>
           <div className={"h-1 w-1 rounded-full bg-gray-500"} />
-          <span>Semester 1</span>
+          <span>Semester {semester?.number}</span>
 
-          <Badge className={"bg-green-100 text-11 text-green-600 ml-2"}>
-            In Session
+          <Badge
+            className={` ${hasYear ? "bg-green-100" : "bg-red-100"} text-11 ${
+              hasYear ? "text-green-600" : "text-red-600"
+            }  ml-2`}
+          >
+            {hasYear ? "In Session" : "Stopped"}
           </Badge>
         </div>
       </div>
@@ -32,3 +50,13 @@ const CourseCard = () => {
 };
 
 export default CourseCard;
+
+const generateCourseName = (course, type = "") => {
+  if (type?.toLowerCase()?.includes("bachelor")) {
+    return `Bachelor of ${course} `;
+  } else if (type?.toLowerCase()?.includes("diploma")) {
+    return `Diploma in ${course} `;
+  } else if (type?.toLowerCase()?.includes("certificate")) {
+    return `Certificate in ${course} `;
+  }
+};

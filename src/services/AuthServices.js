@@ -1,4 +1,4 @@
-import { ENDPOINT, makeRequest } from "./AxiosServices";
+import { makeRequest } from "./AxiosServices";
 import { GET_REQUEST, POST_REQUEST } from "@/configs/Globals";
 import endpoints from "./endpoints";
 import axios from "axios";
@@ -28,4 +28,14 @@ export const getProfile = async () => {
   const { data } = await makeRequest(GET_REQUEST, endpoints.me);
 
   return data;
+};
+
+/**
+ * fetches school details i.e. semester...
+ * @returns {Promise<import("axios").AxiosResponse<any>>}
+ */
+export const getSemesterDetails = async () => {
+  const { data } = await makeRequest(GET_REQUEST, endpoints.me);
+
+  return data?.semester || {};
 };
