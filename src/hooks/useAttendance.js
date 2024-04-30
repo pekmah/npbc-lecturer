@@ -22,7 +22,6 @@ const useAttendance = () => {
     enabled: !!semester?.id,
   });
 
-  console.log(allUnitsQuery.data, "all units");
   const getTotalClasses = () => {
     if (allUnitsQuery.data?.data) {
       let total = 0;

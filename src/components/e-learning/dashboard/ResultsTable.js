@@ -8,9 +8,10 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import useExamResults from "@/hooks/useExamResults";
+import { EmptyTableRow } from "../academics/Timetable";
 
 const ResultsTable = () => {
-  const { getExamResults } = useExamResults();
+  const { getExamResults, isFetching } = useExamResults();
 
   return (
     <Table className={""}>
@@ -26,18 +27,22 @@ const ResultsTable = () => {
       </TableHeader>
 
       <TableBody>
-        {getExamResults()?.map((res, ind) => (
-          <TableRow key={ind} className={"border-b border-gray-100"}>
-            {Object.keys(res)?.map((cKey, index) => (
-              <TableCell
-                key={index}
-                className=" text-[13px] text-gray-500 py-5"
-              >
-                {res[cKey]}
-              </TableCell>
-            ))}
-          </TableRow>
-        ))}
+        {!getExamResults()?.length ? (
+          <EmptyTableRow key={"0"} isLoading={isFetching} results={results} />
+        ) : (
+          getExamResults()?.map((res, ind) => (
+            <TableRow key={ind} className={"border-b border-gray-100"}>
+              {Object.keys(res)?.map((cKey, index) => (
+                <TableCell
+                  key={index}
+                  className=" text-[13px] text-gray-500 py-5"
+                >
+                  {res[cKey]}
+                </TableCell>
+              ))}
+            </TableRow>
+          ))
+        )}
       </TableBody>
     </Table>
   );
@@ -69,5 +74,15 @@ const titles = [
   {
     name: "Grade",
     className: "",
+  },
+];
+
+const results = [
+  {
+    code: "SIT 101",
+    unit: "Contextual Exegesis",
+    hours: "22",
+    marks: "68",
+    grade: "C",
   },
 ];

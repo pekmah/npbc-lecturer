@@ -5,12 +5,12 @@ import { Badge } from "@/components/ui/badge";
 import useSemesterDetails from "@/hooks/useSemesterDetails";
 import Spinner from "@/components/general/Spinner";
 import { useSession } from "next-auth/react";
+import { generateCourseName } from "@/lib/utils";
 
 const CourseCard = () => {
   const { data: semester, isPending } = useSemesterDetails();
   const session = useSession();
   const hasYear = !!session?.data?.user?.year;
-  console.log(session?.data?.user);
 
   return (
     <div className={"col-span-1 dashboard_card"}>
@@ -50,13 +50,3 @@ const CourseCard = () => {
 };
 
 export default CourseCard;
-
-const generateCourseName = (course, type = "") => {
-  if (type?.toLowerCase()?.includes("bachelor")) {
-    return `Bachelor of ${course} `;
-  } else if (type?.toLowerCase()?.includes("diploma")) {
-    return `Diploma in ${course} `;
-  } else if (type?.toLowerCase()?.includes("certificate")) {
-    return `Certificate in ${course} `;
-  }
-};

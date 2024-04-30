@@ -47,7 +47,12 @@ const useExamResults = () => {
     return [];
   };
 
-  return { examTypesQuery, examResultsQuery, getExamResults: getResults };
+  return {
+    examTypesQuery,
+    examResultsQuery,
+    isFetching: examResultsQuery.isFetching || examTypesQuery.isFetching,
+    getExamResults: getResults,
+  };
 };
 
 export default useExamResults;
