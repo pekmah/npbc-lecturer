@@ -98,14 +98,15 @@ const MarkAttendance = () => {
 
 export default MarkAttendance;
 
-export const MarkAttendanceActions = ({ isLoading, ...rest }) => (
+export const MarkAttendanceActions = ({ isLoading, disabled, ...rest }) => (
   <div className={"flex_row gap-2"}>
     <Button
-      className={
-        "text-[11px] text-c-blue border border-c-blue font-light p-2 h-8 px-5"
-      }
+      className={`text-[11px] text-c-blue border border-c-blue font-light p-2 h-8 px-5 z-10 ${
+        disabled ? "cursor-not-allowed" : ""
+      }`}
       variant={"outline"}
       {...rest}
+      disabled={disabled}
     >
       {isLoading ? "updating..." : "Mark"}
     </Button>
