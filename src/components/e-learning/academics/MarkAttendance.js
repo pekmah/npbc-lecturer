@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -8,8 +7,33 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  getOpenAttendances,
+  markUnitAsAttended,
+} from "@/services/AttendanceServices";
+import useSemesterDetails from "@/hooks/useSemesterDetails";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { EmptyTableRow } from "./Timetable";
 
 const MarkAttendance = () => {
+  const { data: semester } = useSemesterDetails();
+  /**
+   * Query to fetch open attendances
+   */
+  const { data, isFetching, refetch } = useQuery({
+    queryKey: ["attendance", "open"],
+    queryFn: () => getOpenAttendances(),
+    enabled: !!semester?.id,
+  });
+
+  const markUnitAsAttendedMutation = useMutation({
+    mutationKey: ["mark_attendance"],
+    mutationFn: markUnitAsAttended,
+    onSettled: refetch,
+  });
+
+  const handleMarkUnitAsAttended = async (unit_id) => {};
+
   return (
     <div
       className={
@@ -43,18 +67,29 @@ const MarkAttendance = () => {
         </TableHeader>
 
         <TableBody>
-          {results?.map((res, ind) => (
-            <TableRow key={ind} className={"border-b border-gray-100"}>
-              {Object.keys(res)?.map((cKey, index) => (
-                <TableCell
-                  key={index}
-                  className=" text-[13px] text-gray-600 py-4"
-                >
-                  {res[cKey]}
-                </TableCell>
-              ))}
+          {!data?.length ? (
+            <TableRow className={"border-b border-gray-100"}>
+              <EmptyTableRow isLoading={isFetching} results={results} />
             </TableRow>
-          ))}
+          ) : (
+            data?.map((item, ind) => (
+              <TableRow key={ind} className={"border-b border-gray-100"}>
+                <TableCell className="flex-1 py-4 text-sm text-gray-600 ">
+                  {item?.unit?.name}
+                </TableCell>
+
+                <TableCell className="flex-1 py-4 text-sm text-gray-600">
+                  <MarkAttendanceActions
+                    disabled={
+                      item?.marked || markUnitAsAttendedMutation.isLoading
+                    }
+                    onClick={handleMarkUnitAsAttended}
+                    isLoading={markUnitAsAttendedMutation.isLoading}
+                  />
+                </TableCell>
+              </TableRow>
+            ))
+          )}
         </TableBody>
       </Table>
     </div>
@@ -63,34 +98,26 @@ const MarkAttendance = () => {
 
 export default MarkAttendance;
 
-export const MarkAttendanceActions = () => (
+export const MarkAttendanceActions = ({ isLoading, ...rest }) => (
   <div className={"flex_row gap-2"}>
     <Button
       className={
-        "text-[11px] text-c-blue border border-c-blue font-light p-1 h-6 px-2"
+        "text-[11px] text-c-blue border border-c-blue font-light p-2 h-8 px-5"
       }
       variant={"outline"}
+      {...rest}
     >
-      Present
-    </Button>
-
-    <Button
-      className={
-        "text-xs  text-c-blue border border-c-blue font-light py-0 px-1 h-6 px-2"
-      }
-      variant={"outline"}
-    >
-      Absent
+      {isLoading ? "updating..." : "Mark"}
     </Button>
   </div>
 );
 
 const titles = [
   {
-    name: "Monday",
+    name: "Unit",
   },
   {
-    name: "Mark as",
+    name: "Mark as Attended",
     className: "",
   },
 ];

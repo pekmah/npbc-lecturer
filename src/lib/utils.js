@@ -6,7 +6,7 @@ export function cn(...inputs) {
 }
 
 export function calculatePercentage(amount, total) {
-  return (amount / total) * 100;
+  return Math.floor((amount / total) * 100);
 }
 
 export function formatCurrency(amount = 0) {

@@ -157,7 +157,7 @@ const results = [
 
 export const EmptyTableRow = ({ results = [], isLoading }) => (
   <>
-    <div className={"absolute inset-0 rounded-2xl border-b bg-white  z-20"}>
+    <div className={`absolute inset-0 rounded-2xl bg-white z-20 mt-16 `}>
       <SkeletonWrapper isLoading={isLoading}>
         <div className={"p-10 flex flex-col items-center justify-center"}>
           <div className="mb-3">
