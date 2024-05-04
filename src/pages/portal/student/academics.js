@@ -4,8 +4,11 @@ import {
   AcademicMarkAttendance,
   AcademicStatsCards,
   AcademicTimetable,
+  Button,
   StudentPortalLayout,
 } from "@/components";
+import { CTable } from "@/components/general/Table";
+import { ArrowUpDown } from "lucide-react";
 
 const Academics = () => {
   return (

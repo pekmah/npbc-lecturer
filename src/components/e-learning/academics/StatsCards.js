@@ -10,7 +10,7 @@ const StatsCards = () => {
   /**
    * Query to fetch student's semester units
    */
-  const { data, isFetching } = useQuery({
+  const { data, isPending: isFetching } = useQuery({
     queryKey: ["units", semester?.id],
     queryFn: () => getSemesterUnits(semester?.id),
     enabled: !!semester?.id,

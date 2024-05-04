@@ -10,6 +10,7 @@ import { QueryClient } from "@tanstack/query-core";
 import { QueryClientProvider } from "@tanstack/react-query";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import { Toaster } from "sonner";
 
 export default function App({
   Component,
@@ -33,6 +34,7 @@ export default function App({
         <link rel="icon" href="/images/layout/npbc-logo-2.png" />
       </Head>
 
+      <Toaster richColors position="bottom-right" />
       <SessionProvider session={session}>
         <QueryClientProvider client={queryClient}>
           <Component {...pageProps} />

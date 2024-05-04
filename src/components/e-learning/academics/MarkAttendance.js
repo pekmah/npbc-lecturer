@@ -14,6 +14,8 @@ import {
 import useSemesterDetails from "@/hooks/useSemesterDetails";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { EmptyTableRow } from "./Timetable";
+import { toast } from "sonner";
+import { useEffect } from "react";
 
 const MarkAttendance = () => {
   const { data: semester } = useSemesterDetails();
@@ -30,9 +32,24 @@ const MarkAttendance = () => {
     mutationKey: ["mark_attendance"],
     mutationFn: markUnitAsAttended,
     onSettled: refetch,
+    onSuccess: (_, unit_id) => {
+      toast.success("Unit marked as attended.", {
+        id: `mark-unit_${unit_id}`,
+      });
+    },
+    onError: (_, unit_id) => {
+      toast.error("Unit update error.", {
+        id: `mark-unit_${unit_id}`,
+      });
+    },
   });
 
-  const handleMarkUnitAsAttended = async (unit_id) => {};
+  const handleMarkUnitAsAttended = async (unit_id) => {
+    toast.success("Marking unit as attended...", {
+      id: `mark-unit_${unit_id}`,
+    });
+    // markUnitAsAttendedMutation.mutate(unit_id);
+  };
 
   return (
     <div
@@ -81,10 +98,10 @@ const MarkAttendance = () => {
                 <TableCell className="flex-1 py-4 text-sm text-gray-600">
                   <MarkAttendanceActions
                     disabled={
-                      item?.marked || markUnitAsAttendedMutation.isLoading
+                      item?.marked || markUnitAsAttendedMutation.isPending
                     }
-                    onClick={handleMarkUnitAsAttended}
-                    isLoading={markUnitAsAttendedMutation.isLoading}
+                    onClick={() => handleMarkUnitAsAttended(item?.unit?.id)}
+                    isLoading={markUnitAsAttendedMutation.isPending}
                   />
                 </TableCell>
               </TableRow>

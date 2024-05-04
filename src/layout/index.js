@@ -2,6 +2,7 @@ import { ApplicationModal, LayoutHeader, Navbar } from "@/components";
 import Footer from "@/components/footer";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { Toaster } from "sonner";
 
 const Layout = ({ children, hideApplication }) => {
   const router = useRouter();
