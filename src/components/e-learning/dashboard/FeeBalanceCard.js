@@ -8,7 +8,7 @@ import { formatCurrency } from "@/lib/utils";
 
 const FeeBalanceCard = () => {
   const { data } = useFees();
-  console.log("FEES ARE", data);
+
   return (
     <div className={"col-span-2 dashboard_card px-8 flex_col gap-5"}>
       <div className={"flex gap-3 items-center"}>
