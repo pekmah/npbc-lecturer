@@ -1,6 +1,5 @@
-import React from "react";
 import {
-  LecturerExamsStatCards,
+  AcademicStatsCards,
   LecturerExamTimetable,
   LecturerExamUploadedResults,
   StudentPortalExamResults,
@@ -10,7 +9,8 @@ import {
 const Examination = () => {
   return (
     <StudentPortalLayout>
-      <LecturerExamsStatCards />
+      {/*  stats cards  */}
+      <AcademicStatsCards />
 
       <LecturerExamTimetable />
 
