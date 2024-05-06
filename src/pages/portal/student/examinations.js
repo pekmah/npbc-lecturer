@@ -11,11 +11,7 @@ const Examination = () => {
     <StudentPortalLayout>
       {/*  stats cards  */}
       <AcademicStatsCards />
-
       <LecturerExamTimetable />
-
-      <LecturerExamUploadedResults hideUpload={true} />
-
       <StudentPortalExamResults />
     </StudentPortalLayout>
   );

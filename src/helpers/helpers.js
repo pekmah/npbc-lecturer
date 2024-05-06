@@ -1,3 +1,5 @@
+import { data } from "browserslist";
+
 export const initRequiredProperties = () => {
   //let's set a global document,sessionStorage and localStorage variable to avoid reference errors.
   global.document = undefined;
@@ -89,4 +91,31 @@ export const handleChangeDataFn = (e, setData, number) => {
       dataCopy[name] = value;
       return dataCopy;
     });
+};
+
+/**
+ * extract exam result fields from exam results response
+ * @param {object} data response from exam results endpoint
+ * @param {number} chosenSemesterId semester selected by user under filters
+ * @param {string} chosenExamType chosen exam type under
+ * @returns {Object[]} array of objects containing selected exam result fields
+ */
+export const extractExamResultFields = (
+  data,
+  chosenSemesterId,
+  chosenExamType
+) => {
+  return data?.map((item) => ({
+    unitId: item?.unit?.id,
+    unitName: item?.unit?.name,
+    grade: item?.grade,
+    marks: item?.total,
+    semester: item?.unit?.semesters?.find((sem) => sem.id === chosenSemesterId)
+      ?.number,
+    examType: chosenExamType,
+    yearOfStudy: new Date(
+      item?.unit?.semesters?.find((sem) => sem.id === chosenSemesterId)
+        ?.end_date_with_year || ""
+    ).getFullYear(),
+  }));
 };

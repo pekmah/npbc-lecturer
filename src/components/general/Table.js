@@ -28,6 +28,8 @@ export function CTable({
   isLoading,
   tableClassName: containerTableClassName,
   tableCellClassName,
+  tableHeaderClassName,
+  refresh = () => {},
 }) {
   const [sorting, setSorting] = React.useState([]);
   const [columnFilters, setColumnFilters] = React.useState([]);
@@ -61,7 +63,7 @@ export function CTable({
       {/* table  */}
       <div className={`border rounded-md ${containerTableClassName}`}>
         <Table>
-          <TableHeader>
+          <TableHeader className={tableHeaderClassName}>
             {table?.getHeaderGroups()?.map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
@@ -80,13 +82,14 @@ export function CTable({
             ))}
           </TableHeader>
           <TableBody>
-            {isLoading ? (
-              new Array(3)
-                .fill(0)
-                .map((_, ind) => (
+            {isLoading && (
+              <>
+                {new Array(3).fill(0).map((_, ind) => (
                   <TableLoader columnsLength={columns.length} key={ind} />
-                ))
-            ) : table.getRowModel().rows?.length ? (
+                ))}
+              </>
+            )}
+            {!!table.getRowModel().rows?.length &&
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
@@ -103,8 +106,9 @@ export function CTable({
                     );
                   })}
                 </TableRow>
-              ))
-            ) : (
+              ))}
+
+            {!isLoading && !table.getRowModel().rows?.length && (
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
@@ -113,7 +117,9 @@ export function CTable({
                   <div className="flex flex-col items-center justify-center mx-auto ">
                     <p className="mt-2 mb-4 ">No Results Found</p>
 
-                    <Button variant="default">Refresh</Button>
+                    <Button onClick={refresh} variant="default">
+                      Refresh
+                    </Button>
                   </div>
                 </TableCell>
               </TableRow>

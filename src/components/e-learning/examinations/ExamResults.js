@@ -1,16 +1,69 @@
-import React from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { LiaDownloadSolid } from "react-icons/lia";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useSession } from "next-auth/react";
+import useSemesterDetails from "@/hooks/useSemesterDetails";
+import { ChevronDown } from "lucide-react";
+import { useFilteredExamResults } from "@/hooks/useExamResults";
+import { GET_REQUEST } from "@/configs/Globals";
+import { makeRequest } from "@/services/AxiosServices";
+import endpoints from "@/services/endpoints";
+import { useQuery } from "@tanstack/react-query";
+import { extractExamResultFields } from "@/helpers/helpers";
+import { CTable } from "@/components/general/Table";
 
 const ExamResults = () => {
+  const semester = useSemesterDetails();
+  const years = getYears(semester?.data);
+  const session = useSession();
+
+  const [filters, setFilters] = useState({
+    year: null,
+    semester: null,
+    type: null,
+  });
+
+  /**
+   * Query to fetch student's Exam Results
+   */
+  const {
+    data,
+    isLoading: isFetching,
+    is,
+  } = useQuery({
+    queryKey: [
+      "exam_results",
+      filters?.semester?.value,
+      session?.data?.user?.id,
+      filters?.type?.id,
+    ],
+    queryFn: async () => {
+      const data = await makeRequest(
+        GET_REQUEST,
+        `${endpoints.exam_results}?semester=${filters?.semester?.value}&user=${session?.data?.user?.id}&type=${filters?.type?.id}`
+      );
+
+      return extractExamResultFields(
+        data?.data?.data,
+        filters?.semester?.cKey,
+        filters?.type?.name
+      );
+    },
+    enabled: !!(
+      filters?.semester?.value &&
+      session?.data?.user?.id &&
+      filters?.type?.id
+    ),
+  });
+
   return (
     <div className={"my-3"}>
       <h5 className={" text-c-red mb-1 text-base font-semibold mt-7"}>
@@ -39,39 +92,196 @@ const ExamResults = () => {
           </div>
         </div>
 
-        <Table className={""}>
-          {/*<TableCaption>A list of your recent invoices.</TableCaption>*/}
-          <TableHeader className={"bg-gray-50"}>
-            <TableRow className={"text-red-500"}>
-              {titles?.map(({ className, name }, key) => (
-                <TableHead key={key} className={`text-black py-5 ${className}`}>
-                  {name}
-                </TableHead>
-              ))}
-            </TableRow>
-          </TableHeader>
+        {/* filters */}
+        <div className="flex items-center gap-5 px-5 pb-5">
+          <span className="text-[15px]">Filter By</span>
 
-          <TableBody>
-            {statements?.map((res, ind) => (
-              <TableRow key={ind} className={"border-b border-gray-100"}>
-                {Object.keys(res)?.map((cKey, index) => (
-                  <TableCell
-                    key={index}
-                    className=" text-[13px] text-gray-600 py-5"
-                  >
-                    {res[cKey]}
-                  </TableCell>
-                ))}
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+          <YearFilter
+            handleChange={(val) =>
+              setFilters((prev) => ({ ...prev, year: val }))
+            }
+            value={filters?.year}
+            semester={semester?.data}
+          />
+
+          <SemesterFilter
+            handleChange={(val) =>
+              setFilters((prev) => ({ ...prev, semester: val }))
+            }
+            value={filters?.semester}
+            year={filters?.year}
+          />
+
+          <ExamTypeFilter
+            handleChange={(val) =>
+              setFilters((prev) => ({ ...prev, type: val }))
+            }
+            value={filters?.type}
+            semester={filters?.semester}
+          />
+        </div>
+
+        <CTable
+          columns={examResultColumns}
+          data={data || []}
+          isLoading={isFetching}
+          tableClassName={"border-0"}
+          tableHeaderClassName={"bg-gray-50"}
+        />
       </div>
     </div>
   );
 };
 
 export default ExamResults;
+
+const examResultColumns = [
+  {
+    accessorKey: "unitId",
+    header: "Unit Code",
+  },
+  {
+    accessorKey: "unitName",
+    header: "Unit Name",
+  },
+  {
+    accessorKey: "unitName",
+    header: "Unit Name",
+  },
+  {
+    accessorKey: "examType",
+    header: "Exam Type",
+  },
+  {
+    accessorKey: "yearOfStudy",
+    header: "Year Studied",
+  },
+  {
+    accessorKey: "marks",
+    header: "Marks%",
+  },
+  {
+    accessorKey: "semester",
+    header: "Semester",
+    cell: ({ row, column }) => (
+      <span>Semester {row?.getValue(column?.id)}</span>
+    ),
+  },
+  {
+    accessorKey: "grade",
+    header: "Grade",
+  },
+];
+
+// Year filter Button
+const YearFilter = ({ semester, value, handleChange }) => {
+  const years = getYears(semester);
+
+  return (
+    <DropDownButton
+      preText={"Year"}
+      label={"Year " + (value ? value?.toString() : "")}
+      title="Year"
+      menuOptions={years}
+      value={value}
+      handleChange={handleChange}
+    />
+  );
+};
+const SemesterFilter = ({ year, value = "", handleChange }) => {
+  const { semesterData } = useFilteredExamResults(year);
+
+  return (
+    <DropDownButton
+      preText={"Semester"}
+      label={"Semester " + (value ? value?.cKey?.toString() : "")}
+      title="Semester"
+      menuOptions={semesterData || []}
+      value={value?.cKey}
+      handleChange={(val) =>
+        handleChange(semesterData?.find((sem) => sem.value === val))
+      }
+      disabled={!year}
+    />
+  );
+};
+
+const ExamTypeFilter = ({ semester, value = "", handleChange }) => {
+  // fetch exam types
+  const { data: examTypes, isPending } = useQuery({
+    queryKey: ["exam_types", semester?.id],
+    queryFn: () => makeRequest(GET_REQUEST, `${endpoints.exam_types}`),
+  });
+
+  return (
+    <DropDownButton
+      preText={""}
+      label={"Type: " + (value ? value?.name?.toString() : "")}
+      title="Exam Type"
+      menuOptions={examTypes?.data || []}
+      cKey={"name"}
+      cValue={"id"}
+      value={value?.id}
+      handleChange={handleChange}
+      disabled={!semester}
+      isLoading={isPending}
+    />
+  );
+};
+
+// filter buttons
+const DropDownButton = ({
+  label,
+  title,
+  menuOptions = [],
+  value,
+  preText,
+  handleChange,
+  disabled,
+  isLoading,
+  cKey,
+  cValue,
+}) => {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild disabled={disabled}>
+        <Button
+          className={
+            "border border-gray-200 text-[13px] font-medium flex gap-2 px-5 text-gray-600"
+          }
+          variant="outline"
+        >
+          {label}
+          <span role="img" aria-label="down-arrow">
+            <ChevronDown className="h-5" />
+          </span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-56">
+        <DropdownMenuLabel className={"text-center"}>{title}</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        {isLoading && (
+          // spinner
+          <div className={"flex justify-center items-center p-3"}>
+            <span className={"text-gray-400 text-xs"}>Loading...</span>
+          </div>
+        )}
+        {menuOptions?.map((item, ind) => (
+          <DropdownMenuCheckboxItem
+            key={ind}
+            checked={
+              value === (cValue ? item[cValue] || null : item?.value || item)
+            }
+            onCheckedChange={() => handleChange(item?.value || item)}
+            className={"cursor-pointer"}
+          >
+            {preText} {cKey ? item[cKey] || "" : item?.cKey || item}
+          </DropdownMenuCheckboxItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+};
 
 const titles = [
   {
@@ -200,3 +410,15 @@ const statements = [
     Grade: "B",
   },
 ];
+
+// get years of study
+const getYears = (semester) => {
+  const months = semester?.course?.months;
+  let years = [];
+  if (months != null) {
+    let duration = months / 12;
+
+    for (let i = 0; i < duration; i++) years.push(i + 1);
+  }
+  return years;
+};
