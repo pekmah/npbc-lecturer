@@ -131,7 +131,7 @@ export const MarkAttendanceActions = ({
       {...rest}
       disabled={disabled}
     >
-      {isLoading ? "updating..." : "Mark"}
+      {isLoading ? "updating..." : isSuccess ? "Marked" : "Mark"}
     </Button>
   </div>
 );
