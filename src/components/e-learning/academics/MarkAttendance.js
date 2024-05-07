@@ -102,6 +102,7 @@ const MarkAttendance = () => {
                     }
                     onClick={() => handleMarkUnitAsAttended(item?.unit?.id)}
                     isLoading={markUnitAsAttendedMutation.isPending}
+                    isSuccess={item?.marked}
                   />
                 </TableCell>
               </TableRow>
