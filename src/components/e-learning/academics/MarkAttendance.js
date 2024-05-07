@@ -45,10 +45,10 @@ const MarkAttendance = () => {
   });
 
   const handleMarkUnitAsAttended = async (unit_id) => {
-    toast.success("Marking unit as attended...", {
+    toast.loading("Marking unit as attended...", {
       id: `mark-unit_${unit_id}`,
     });
-    // markUnitAsAttendedMutation.mutate(unit_id);
+    markUnitAsAttendedMutation.mutate(unit_id);
   };
 
   return (
@@ -115,12 +115,17 @@ const MarkAttendance = () => {
 
 export default MarkAttendance;
 
-export const MarkAttendanceActions = ({ isLoading, disabled, ...rest }) => (
+export const MarkAttendanceActions = ({
+  isLoading,
+  disabled,
+  isSuccess,
+  ...rest
+}) => (
   <div className={"flex_row gap-2"}>
     <Button
       className={`text-[11px] text-c-blue border border-c-blue font-light p-2 h-8 px-5 z-10 ${
         disabled ? "cursor-not-allowed" : ""
-      }`}
+      } ${isSuccess ? "bg-emerald-500 border-none text-white" : ""}`}
       variant={"outline"}
       {...rest}
       disabled={disabled}
