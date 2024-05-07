@@ -1,7 +1,5 @@
 import {
   AcademicStatsCards,
-  LecturerExamTimetable,
-  LecturerExamUploadedResults,
   StudentPortalExamResults,
   StudentPortalLayout,
 } from "@/components";

@@ -21,7 +21,7 @@ const Academics = () => {
         <AcademicMarkAttendance />
       </div>
 
-      <AcademicAttendance />
+      {/* <AcademicAttendance /> */}
       <div />
       <div />
       <div />
