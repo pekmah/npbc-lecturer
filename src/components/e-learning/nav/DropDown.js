@@ -21,7 +21,7 @@ const DropDown = () => {
   const logout = () => {
     signOut();
   };
-
+  console.log(session?.data?.user?.image);
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
@@ -31,7 +31,7 @@ const DropDown = () => {
               height={100}
               width={100}
               className={"h-10 w-10 rounded-full"}
-              src={"/images/e-learning/npbc-user.jpeg"}
+              src={session?.data?.user?.image}
               alt={"profile"}
             />
           ) : (
