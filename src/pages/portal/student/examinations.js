@@ -11,7 +11,7 @@ const Examination = () => {
     <StudentPortalLayout>
       {/*  stats cards  */}
       <AcademicStatsCards />
-      <LecturerExamTimetable />
+      {/* <LecturerExamTimetable /> */}
       <StudentPortalExamResults />
     </StudentPortalLayout>
   );
