@@ -1,4 +1,5 @@
-import { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { LiaDownloadSolid } from "react-icons/lia";
 import {
@@ -19,6 +20,7 @@ import endpoints from "@/services/endpoints";
 import { useQuery } from "@tanstack/react-query";
 import { extractExamResultFields } from "@/helpers/helpers";
 import { CTable } from "@/components/general/Table";
+import { data } from "autoprefixer";
 
 const ExamResults = () => {
   const semester = useSemesterDetails();
@@ -176,6 +178,12 @@ const examResultColumns = [
 // Year filter Button
 const YearFilter = ({ semester, value, handleChange }) => {
   const years = getYears(semester);
+  console.log(years);
+
+  useEffect(() => {
+    if (years.length) handleChange(years[0]);
+    console.log("ran");
+  }, [years?.length]);
 
   return (
     <DropDownButton
@@ -190,6 +198,10 @@ const YearFilter = ({ semester, value, handleChange }) => {
 };
 const SemesterFilter = ({ year, value = "", handleChange }) => {
   const { semesterData } = useFilteredExamResults(year);
+
+  useEffect(() => {
+    if (semesterData.length) handleChange(semesterData[0]);
+  }, [semesterData?.length]);
 
   return (
     <DropDownButton
@@ -212,6 +224,10 @@ const ExamTypeFilter = ({ semester, value = "", handleChange }) => {
     queryKey: ["exam_types", semester?.id],
     queryFn: () => makeRequest(GET_REQUEST, `${endpoints.exam_types}`),
   });
+
+  useEffect(() => {
+    if (examTypes?.data.length) handleChange(examTypes?.data[0]);
+  }, [examTypes?.data]);
 
   return (
     <DropDownButton
