@@ -2,6 +2,7 @@ import { TableCell, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { LiaDownloadSolid } from "react-icons/lia";
 import { ImFilesEmpty } from "react-icons/im";
+import { usePDF } from "react-to-pdf";
 
 import SkeletonWrapper from "@/components/general/SkeletonWrapper";
 import useSemesterDetails from "@/hooks/useSemesterDetails";
@@ -12,6 +13,7 @@ import { CTable } from "@/components/general/Table";
 
 const Timetable = () => {
   const { data: semester, isPending } = useSemesterDetails();
+  const { toPDF, targetRef } = usePDF();
 
   /**
    * Query to fetch timetable for the semester
@@ -21,6 +23,11 @@ const Timetable = () => {
     queryFn: () => getSemesterTimetable(semester?.id),
     enabled: !!semester?.id,
   });
+
+  const generatePDF = () => {
+    toPDF();
+  };
+
   // const groupedUnits =
   const groupedUnits = groupUnitsByDay(data || []);
 
@@ -52,13 +59,14 @@ const Timetable = () => {
                 "text-13 text-c-blue border border-c-blue font-light gap-2"
               }
               variant={"outline"}
+              onClick={generatePDF}
             >
-              Download Results
+              Download
               <LiaDownloadSolid className={"text-lg"} />
             </Button>
           </div>
         </div>
-        <div className="p-3">
+        <div className="p-3" ref={targetRef}>
           <CTable
             columns={timeTableColumns}
             data={groupedUnits}

@@ -21,26 +21,16 @@ const DropDown = () => {
   const logout = () => {
     signOut();
   };
-  console.log(session?.data?.user?.image);
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
         <div className={"flex gap-3 py-1.5 items-center"}>
-          {session?.data?.user?.image ? (
-            <img
-              height={100}
-              width={100}
-              className={"h-10 w-10 rounded-full"}
-              src={"https://npbc-be.npbc.co.ke/api/users/image/12"}
-              alt={"profile"}
-            />
-          ) : (
-            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-c-blue">
-              <span className={"text-white text-base tracking-wider font-bold"}>
-                {initials}ßß
-              </span>
-            </div>
-          )}
+          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-c-blue">
+            <span className={"text-white text-base tracking-wider font-bold"}>
+              {initials}
+            </span>
+          </div>
 
           <span className={"text-base font-normal"}>
             {session?.data?.user?.name}
