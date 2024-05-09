@@ -27,17 +27,17 @@ const DropDown = () => {
       <DropdownMenuTrigger>
         <div className={"flex gap-3 py-1.5 items-center"}>
           {session?.data?.user?.image ? (
-            <Image
+            <img
               height={100}
               width={100}
               className={"h-10 w-10 rounded-full"}
-              src={session?.data?.user?.image}
+              src={"https://npbc-be.npbc.co.ke/api/users/image/12"}
               alt={"profile"}
             />
           ) : (
             <div className="flex items-center justify-center w-10 h-10 rounded-full bg-c-blue">
               <span className={"text-white text-base tracking-wider font-bold"}>
-                {initials}
+                {initials}ßß
               </span>
             </div>
           )}
