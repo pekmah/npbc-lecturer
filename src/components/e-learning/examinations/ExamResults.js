@@ -20,19 +20,21 @@ import endpoints from "@/services/endpoints";
 import { useQuery } from "@tanstack/react-query";
 import { extractExamResultFields } from "@/helpers/helpers";
 import { CTable } from "@/components/general/Table";
-import { data } from "autoprefixer";
+import { usePDF } from "react-to-pdf";
 
 const ExamResults = () => {
   const semester = useSemesterDetails();
-  const years = getYears(semester?.data);
   const session = useSession();
-
+  const { targetRef, toPDF } = usePDF();
   const [filters, setFilters] = useState({
     year: null,
     semester: null,
     type: null,
   });
 
+  const generatePDF = () => {
+    toPDF();
+  };
   /**
    * Query to fetch student's Exam Results
    */
@@ -87,8 +89,9 @@ const ExamResults = () => {
                 "text-xs text-c-blue border border-c-blue font-light gap-2"
               }
               variant={"outline"}
+              onClick={generatePDF}
             >
-              Download Statements
+              Download Results
               <LiaDownloadSolid className={"text-lg"} />
             </Button>
           </div>
@@ -123,13 +126,15 @@ const ExamResults = () => {
           />
         </div>
 
-        <CTable
-          columns={examResultColumns}
-          data={data || []}
-          isLoading={isFetching}
-          tableClassName={"border-0"}
-          tableHeaderClassName={"bg-gray-50"}
-        />
+        <div className="" ref={targetRef}>
+          <CTable
+            columns={examResultColumns}
+            data={data || []}
+            isLoading={isFetching}
+            tableClassName={"border-0"}
+            tableHeaderClassName={"bg-gray-50"}
+          />
+        </div>
       </div>
     </div>
   );
