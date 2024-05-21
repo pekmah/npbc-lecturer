@@ -3,7 +3,7 @@ const endpoints = {
   me: "me/",
   login: "login/",
   logout: "logout/",
-  units: "units/",
+  units: "units",
   exam_results: "exam-results/",
   attendance: "attendance/",
   open_attendance: "open-attendance/",

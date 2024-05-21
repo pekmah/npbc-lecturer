@@ -6,8 +6,12 @@ import {
   LecturerDashboardAttendanceStatistics,
   LecturerDashboardTimetable,
 } from "@/components";
+import { getSession, useSession } from "next-auth/react";
+import { useEffect } from "react";
 
 const Dashboard = () => {
+  const session = useSession();
+
   return (
     <LecturerPortalLayout>
       {/*  cards    */}
