@@ -1,15 +1,5 @@
-import React from "react";
 import { Card } from "@/components/e-learning/academics/StatsCards";
-import {
-  BooksSvg,
-  BuildingMarkSvg,
-  CalendarSvg,
-  TrainingClassSvg,
-  TrainingSvg,
-} from "@/assets/icons";
-import { useSession } from "next-auth/react";
-import useSemesterDetails from "@/hooks/useSemesterDetails";
-import { useQuery } from "@tanstack/react-query";
+import { BooksSvg, BuildingMarkSvg, TrainingClassSvg } from "@/assets/icons";
 import useUnit from "@/hooks/lecturer/useUnit";
 
 const StatsCards = () => {

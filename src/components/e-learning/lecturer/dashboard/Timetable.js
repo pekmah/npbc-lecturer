@@ -1,14 +1,5 @@
-import React from "react";
 import { Button } from "@/components/ui/button";
 import { LiaDownloadSolid } from "react-icons/lia";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 import unitServices from "@/services/lecturer/UnitServices";
 import { useSession } from "next-auth/react";
 import { useQuery } from "@tanstack/react-query";

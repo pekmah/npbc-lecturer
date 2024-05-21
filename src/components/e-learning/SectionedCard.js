@@ -10,7 +10,7 @@ const SectionedCard = ({
 }) => {
   return (
     <div
-      className={`rounded-xl flex_row overflow-hidden mt-8 ${containerClassName}`}
+      className={`rounded-xl flex_row overflow-hidden w-full mt-5 ${containerClassName}`}
     >
       <div
         className={`bg-green-600 flex-1 flex_col gap-3 justify-center px-10 text-sm ${cardsClassName}`}
