@@ -18,6 +18,7 @@ const endpoints = {
   exam_types: "exam-types",
   fee_mpesa: "fee-mpesa",
   validate_mpesa: "mpesa/stk-push/validate/",
+  attendance_stats: "attendance-stats/",
 };
 
 export default endpoints;

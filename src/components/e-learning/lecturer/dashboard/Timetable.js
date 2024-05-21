@@ -9,8 +9,31 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import unitServices from "@/services/lecturer/UnitServices";
+import { useSession } from "next-auth/react";
+import { useQuery } from "@tanstack/react-query";
+import { groupUnitsByDay } from "@/lib/utils";
+import { CTable } from "@/components/general/Table";
+import { usePDF } from "react-to-pdf";
 
 const Timetable = () => {
+  const session = useSession();
+  const { toPDF, targetRef } = usePDF();
+  /**
+   * Query to fetch timetable for the semester
+   */
+  const { data: timetable, isPending: isFetching } = useQuery({
+    queryKey: ["timetable", session?.data?.user?.id],
+    queryFn: () => unitServices.getUserTimetable(session?.data?.user?.id),
+    enabled: !!session?.data?.user?.id,
+  });
+
+  // const groupedUnits =
+  const groupedUnits = groupUnitsByDay(timetable || []);
+  const generatePDF = () => {
+    toPDF();
+  };
+
   return (
     <div className={"col-span-2"}>
       <div className={"my-4 border border-gray-200 rounded-xl items-center"}>
@@ -20,7 +43,7 @@ const Timetable = () => {
               <h6 className={"font-medium text-15 mb-3"}>
                 Your Semester Time table
               </h6>
-              <h6 className={"text-sm"}>Timetable for Sep - Dec 2024</h6>
+              {/* <h6 className={"text-sm"}>Timetable for Current </h6> */}
             </div>
 
             <Button
@@ -28,6 +51,7 @@ const Timetable = () => {
                 "text-13 border border-c-blue bg-c-blue text-white font-medium gap-2"
               }
               variant={"outline"}
+              onClick={generatePDF}
             >
               Download Timetable
               <LiaDownloadSolid className={"text-lg text-white"} />
@@ -35,33 +59,13 @@ const Timetable = () => {
           </div>
         </div>
 
-        <Table className={""}>
-          {/*<TableCaption>A list of your recent invoices.</TableCaption>*/}
-          <TableHeader className={"bg-gray-50"}>
-            <TableRow className={"text-red-500"}>
-              {titles?.map(({ className, name }, key) => (
-                <TableHead key={key} className={`text-black py-5 ${className}`}>
-                  {name}
-                </TableHead>
-              ))}
-            </TableRow>
-          </TableHeader>
-
-          <TableBody>
-            {data?.map((res, ind) => (
-              <TableRow key={ind} className={"border-b border-gray-100"}>
-                {Object.keys(res)?.map((cKey, index) => (
-                  <TableCell
-                    key={index}
-                    className=" text-[13px] text-gray-600 py-5 border-r border-gray-100"
-                  >
-                    {res[cKey]}
-                  </TableCell>
-                ))}
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+        <CTable
+          columns={timeTableColumns}
+          data={groupedUnits}
+          isLoading={isFetching}
+          tableCellClassName={"border-r"}
+          tableClassName={"border-0 border-t rounded-none"}
+        />
       </div>
     </div>
   );
@@ -69,30 +73,43 @@ const Timetable = () => {
 
 export default Timetable;
 
-const titles = [
+const renderCell = (props) => {
+  const { row, column } = props;
+
+  return (
+    <div className={"text-gray-600 text-sm text-center font-medium md:text-sm"}>
+      <span>{row?.getValue(column?.id)?.time}</span>
+      <br />
+      <span>{row?.getValue(column?.id)?.unit}</span>
+    </div>
+  );
+};
+
+const timeTableColumns = [
   {
-    name: "Time",
-    className: "",
+    accessorKey: "Monday",
+    header: "Monday",
+    cell: renderCell,
   },
   {
-    name: "Monday",
-    className: "",
+    accessorKey: "Tuesday",
+    header: "Tuesday",
+    cell: renderCell,
   },
   {
-    name: "Tuesday",
-    className: "",
+    accessorKey: "Wednesday",
+    header: "Wednesday",
+    cell: renderCell,
   },
   {
-    name: "Wednesday",
-    className: "",
+    accessorKey: "Thursday",
+    header: "Thursday",
+    cell: renderCell,
   },
   {
-    name: "Thursday",
-    className: "",
-  },
-  {
-    name: "Friday",
-    className: "",
+    accessorKey: "Friday",
+    header: "Friday",
+    cell: renderCell,
   },
 ];
 

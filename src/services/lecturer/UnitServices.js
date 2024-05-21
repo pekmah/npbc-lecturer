@@ -11,6 +11,24 @@ const getUnits = async (userId) => {
   return data;
 };
 
-const unitServices = { getUnits };
+const getUserTimetable = async (userId) => {
+  const { data } = await makeRequest(
+    GET_REQUEST,
+    `${endpoints.timetable}?user=${userId}`
+  );
+
+  return data;
+};
+
+const getAllUnitsAttendance = async () => {
+  const { data } = await makeRequest(
+    GET_REQUEST,
+    `${endpoints.attendance_stats}`
+  );
+
+  return data;
+};
+
+const unitServices = { getUnits, getUserTimetable, getAllUnitsAttendance };
 
 export default unitServices;
