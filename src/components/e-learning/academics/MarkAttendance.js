@@ -120,18 +120,22 @@ export const MarkAttendanceActions = ({
   isLoading,
   disabled,
   isSuccess,
+  className,
+  text,
   ...rest
 }) => (
   <div className={"flex_row gap-2"}>
     <Button
       className={`text-[11px] text-c-blue border border-c-blue font-light p-2 h-8 px-5 z-10 ${
         disabled ? "cursor-not-allowed" : ""
-      } ${isSuccess ? "bg-emerald-500 border-none text-white" : ""}`}
+      } ${
+        isSuccess ? "bg-emerald-500 border-none text-white" : ""
+      } ${className}`}
       variant={"outline"}
       {...rest}
       disabled={disabled}
     >
-      {isLoading ? "updating..." : isSuccess ? "Marked" : "Mark"}
+      {text ? text : isLoading ? "updating..." : isSuccess ? "Marked" : "Mark"}
     </Button>
   </div>
 );

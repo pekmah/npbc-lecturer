@@ -29,6 +29,20 @@ const getAllUnitsAttendance = async () => {
   return data;
 };
 
-const unitServices = { getUnits, getUserTimetable, getAllUnitsAttendance };
+const getUnitsToOpenAttendanceFor = async () => {
+  const { data } = await makeRequest(
+    GET_REQUEST,
+    `${endpoints.open_attendance}`
+  );
+
+  return data;
+};
+
+const unitServices = {
+  getUnits,
+  getUserTimetable,
+  getAllUnitsAttendance,
+  getUnitsToOpenAttendanceFor,
+};
 
 export default unitServices;

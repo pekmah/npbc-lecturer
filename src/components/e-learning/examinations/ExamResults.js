@@ -183,11 +183,9 @@ const examResultColumns = [
 // Year filter Button
 const YearFilter = ({ semester, value, handleChange }) => {
   const years = getYears(semester);
-  console.log(years);
 
   useEffect(() => {
     if (years.length) handleChange(years[0]);
-    console.log("ran");
   }, [years?.length]);
 
   return (

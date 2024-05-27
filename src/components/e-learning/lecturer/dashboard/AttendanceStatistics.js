@@ -13,7 +13,7 @@ const AttendanceStatistics = () => {
     queryKey: ["attendance"],
     queryFn: () => unitServices.getAllUnitsAttendance(),
   });
-  console.log(data);
+
   const percentageAttendance = Math.ceil(
     data?.total_attendance / data?.total_classes
   );
