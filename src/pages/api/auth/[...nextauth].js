@@ -61,7 +61,6 @@ export default NextAuth({
 
           // If no error and we have user data, return it
           if (data?.token && user?.id) {
-            console.log("USER IS::: ", user);
             // Remove semester from user object
             if ("semester" in user) {
               delete user.semester;

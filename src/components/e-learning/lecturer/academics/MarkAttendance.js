@@ -1,38 +1,36 @@
-import React, { useMemo } from "react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { useMemo } from "react";
+import { Table } from "@/components/ui/table";
 import { MarkAttendanceActions } from "@/components/e-learning/academics/MarkAttendance";
 import { useQuery } from "@tanstack/react-query";
 import unitServices from "@/services/lecturer/UnitServices";
-import { Skeleton } from "@/components/ui/skeleton";
 import SkeletonWrapper from "@/components/general/SkeletonWrapper";
 import { CTable } from "@/components/general/Table";
+import { ConfirmPopup } from "../../general";
+import { useSession } from "next-auth/react";
+import useMarkAttendance from "@/hooks/lecturer/useMarkAttendance";
+import AttendanceView from "./AttendanceView";
 
 const MarkAttendance = () => {
+  const session = useSession();
+
   /**
-   * Query to fetch units to open attendance for
+   * Query to fetch units to current lecturer
    */
-  const { data, isPending } = useQuery({
-    queryKey: ["open_attendance"],
-    queryFn: () => unitServices.getUnitsToOpenAttendanceFor(),
+  const { data: lecUnits, isPending } = useQuery({
+    queryKey: ["units", session?.data?.user?.id],
+    queryFn: () => unitServices.getUnits(session?.data?.user?.id),
+    enabled: !!session?.data?.user?.id,
   });
 
   const units = useMemo(
-    () => data?.map(({ id, unit }) => ({ id, unit: unit?.name })),
-    [data]
+    () => lecUnits?.data?.map((unit) => ({ id: unit?.id, unit: unit?.name })),
+    [lecUnits?.data]
   );
-  console.log("OPEN ATTENDANCE: ", data);
-  console.log(units);
+
   return (
     <div
       className={
-        "flex-1 my-4 border border-gray-200 rounded-xl items-center mt-16"
+        "flex-1 my-4 border border-gray-200 rounded-xl items-center mt-16 col-span-2"
       }
     >
       <div className={"px-5 py-3"}>
@@ -53,14 +51,9 @@ const MarkAttendance = () => {
         <CTable
           columns={markUnitsColumns}
           data={units || []}
-          // isLoading={isFetching}
           tableClassName={"border-0"}
           tableHeaderClassName={"bg-gray-50"}
         />
-
-        <Table className={""}>
-          {/*<TableCaption>A list of your recent invoices.</TableCaption>*/}
-        </Table>
       </SkeletonWrapper>
     </div>
   );
@@ -76,12 +69,41 @@ const markUnitsColumns = [
   {
     accessorKey: "openAttendance",
     header: "Open Attendance",
-    cell: ({ row, column }) => {
-      console.log("ROW: ", row);
-      return <MarkAttendanceActions text={"Open"} />;
-    },
+    cell: (props) => <OpenAttendanceAction {...props} />,
   },
 ];
+
+const OpenAttendanceAction = ({ row }) => {
+  const { isUnitOpen, mutate, isFetching } = useMarkAttendance(row);
+
+  return (
+    <div className="flex space-x-5">
+      <ConfirmPopup
+        title={isUnitOpen ? "Close Attendance" : "Open Attendance"}
+        handleContinue={mutate}
+        body={
+          isUnitOpen
+            ? `Are you sure you want to close ${row?.original?.unit} attendance?`
+            : `Are you sure you want to open ${row?.original?.unit} attendance?`
+        }
+      >
+        <MarkAttendanceActions
+          isError={isUnitOpen}
+          text={isUnitOpen ? "Close" : "Open"}
+          disabled={isFetching}
+        />
+      </ConfirmPopup>
+
+      <AttendanceView unitId={row?.original?.id} unitName={row?.original?.unit}>
+        <MarkAttendanceActions
+          className={"bg-c-blue text-white"}
+          text={"View"}
+          disabled={isFetching}
+        />
+      </AttendanceView>
+    </div>
+  );
+};
 
 const titles = [
   {

@@ -15,7 +15,6 @@ import useSemesterDetails from "@/hooks/useSemesterDetails";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { EmptyTableRow } from "./Timetable";
 import { toast } from "sonner";
-import { useEffect } from "react";
 
 const MarkAttendance = () => {
   const { data: semester } = useSemesterDetails();
@@ -120,17 +119,21 @@ export const MarkAttendanceActions = ({
   isLoading,
   disabled,
   isSuccess,
+  isError,
   className,
   text,
   ...rest
 }) => (
   <div className={"flex_row gap-2"}>
     <Button
-      className={`text-[11px] text-c-blue border border-c-blue font-light p-2 h-8 px-5 z-10 ${
+      className={`text-xs text-c-blue border border-c-blue font-light p-2 h-8 px-5 z-10 ${
         disabled ? "cursor-not-allowed" : ""
-      } ${
-        isSuccess ? "bg-emerald-500 border-none text-white" : ""
-      } ${className}`}
+      } 
+      ${isSuccess ? "bg-emerald-500 border-none text-white" : ""} 
+      
+      ${isError ? "bg-red-500 border-none text-white" : ""} 
+      
+      ${className}`}
       variant={"outline"}
       {...rest}
       disabled={disabled}

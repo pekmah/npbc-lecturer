@@ -64,7 +64,7 @@ const Timetable = () => {
 
 export default Timetable;
 
-const renderCell = (props) => {
+export const renderCell = (props) => {
   const { row, column } = props;
 
   return (

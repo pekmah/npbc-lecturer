@@ -10,3 +10,4 @@ export * from "./academics";
 export * from "./finances";
 export * from "./lecturer";
 export * from "./examinations";
+export * from "./general";

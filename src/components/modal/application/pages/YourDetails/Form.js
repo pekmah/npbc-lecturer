@@ -20,7 +20,6 @@ const Form = ({
   handlePassportUpload,
   handleRemoveFile,
 }) => {
-  console.log(data);
   return (
     <div className={`md:flex-[3] text-c-blue flex flex-col gap-4 ${className}`}>
       {/*    Personal Details */}

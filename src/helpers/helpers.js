@@ -119,3 +119,17 @@ export const extractExamResultFields = (
     ).getFullYear(),
   }));
 };
+
+/**
+ * extracts error message from error response.data
+ * @param {object} errorResponse error response data
+ * @returns {string}
+ */
+export function extractErrorMessages(errorResponse) {
+  if (!errorResponse || typeof errorResponse !== "object") {
+    return errorResponse;
+  }
+
+  const errorMessages = Object.values(errorResponse).flat();
+  return errorMessages.join(" ");
+}

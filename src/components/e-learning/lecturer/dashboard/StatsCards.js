@@ -4,7 +4,6 @@ import useUnit from "@/hooks/lecturer/useUnit";
 
 const StatsCards = () => {
   const { data: units, isPending } = useUnit();
-  console.log("UNITS::: ", units?.data?.length);
 
   const statsData = {
     units: units?.data?.length,
