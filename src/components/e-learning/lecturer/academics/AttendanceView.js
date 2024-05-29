@@ -22,13 +22,10 @@ const AttendanceView = ({ children, unitName, unitId }) => {
   /**
    * Query to fetch unit attendees
    */
-  const {
-    data,
-    refetch,
-    isFetching: isPending,
-  } = useQuery({
+  const { data, isPending } = useQuery({
     queryKey: ["unit", "attendees", unitId],
     queryFn: () => unitServices.fetchUnitAttendees(unitId),
+    refetchInterval: 30000,
     enabled: !!unitId,
   });
 
