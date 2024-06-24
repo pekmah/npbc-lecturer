@@ -22,7 +22,7 @@ const Dashboard = () => {
         <LecturerDashboardAttendanceStatistics />
       </div>
 
-      <LecturerDashboardAssignedUnits />
+      {/* <LecturerDashboardAssignedUnits /> */}
     </LecturerPortalLayout>
   );
 };

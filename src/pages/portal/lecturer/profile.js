@@ -5,10 +5,11 @@ import {
   ProfileHeader,
   ProfileUserCard,
 } from "@/components/e-learning/profile";
+import LecturerPortalLayout from "@/components/e-learning/lecturer/LecturerPortalLayout";
 
 const Profile = () => {
   return (
-    <StudentPortalLayout>
+    <LecturerPortalLayout>
       <ProfileHeader />
 
       <div className={"flex_row gap-5 mt-5"}>
@@ -18,7 +19,7 @@ const Profile = () => {
 
         <div className={"p-5 w-44"} />
       </div>
-    </StudentPortalLayout>
+    </LecturerPortalLayout>
   );
 };
 

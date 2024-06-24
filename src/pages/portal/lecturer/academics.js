@@ -24,7 +24,7 @@ const Academics = () => {
         <LecturerAcademicMarkAttendance />
       </div>
 
-      <LecturerAcademicAttendanceHistory />
+      {/* <LecturerAcademicAttendanceHistory /> */}
     </LecturerPortalLayout>
   );
 };
