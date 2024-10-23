@@ -70,7 +70,7 @@ const Layout = ({ children, hideApplication }) => {
       )}
 
       {/* Navbar */}
-      <Navbar />
+      {/* <Navbar /> */}
 
       {/* children */}
       {children}

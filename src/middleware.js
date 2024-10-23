@@ -9,9 +9,9 @@ export default withAuth(
     // check if pathname is of authentication and token exists
     if (req.nextUrl.pathname.includes("auth") && token?.token) {
       if (token.role === "student")
-        return NextResponse.redirect(new URL("/portal/student/", req.url));
+        return NextResponse.redirect(new URL("/", req.url));
       else if (token.role === "lecturer")
-        return NextResponse.redirect(new URL("/portal/lecturer/", req.url));
+        return;
       return Next;
     }
     // check if paths collide
@@ -20,7 +20,7 @@ export default withAuth(
       token?.role === "student" &&
       req.nextUrl.pathname.includes("lecturer")
     ) {
-      return NextResponse.redirect(new URL("/portal/student/", req.url));
+      return NextResponse.redirect(new URL("/", req.url));
     }
 
     // if the user is authenticated, and role is lecturer while designated route is of student, redirect to lecturer dashboard
@@ -28,7 +28,7 @@ export default withAuth(
       token?.role === "lecturer" &&
       req.nextUrl.pathname.includes("student")
     ) {
-      return NextResponse.redirect(new URL("/portal/lecturer/", req.url));
+      return;
     }
   },
   {
@@ -36,12 +36,12 @@ export default withAuth(
       authorized: ({ token }) => !!token?.token,
     },
     pages: {
-      signIn: "/portal/auth/login",
+      signIn: "/auth/login",
       error: "/error",
     },
   }
 );
 
 export const config = {
-  matcher: ["/portal/student/:path*", "/portal/lecturer/:path*"],
+  matcher: ["/:path*"],
 };
