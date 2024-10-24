@@ -58,23 +58,14 @@ const Layout = ({ children, hideApplication }) => {
   }, [query]);
 
   return (
-    <main className="relative overflow-x-hidden overflow-y-hidden bg-white max-w-screen">
+    <main className="relative overflow-x-hidden overflow-y-hidden bg-white h-screen max-w-screen flex flex-col">
       <LayoutHeader showModal={handleOpenModal} />
-
-      {/*  Application Modal    */}
-      {show && (
-        <ApplicationModal
-          isOpen={show}
-          handleCloseModal={handleCloseApplicationModal}
-        />
-      )}
 
       {/* Navbar */}
       {/* <Navbar /> */}
 
       {/* children */}
-      {children}
-
+      <div className="flex-1">{children}</div>
       {/* Footer */}
       <Footer hideApplication={hideApplication} showModal={handleOpenModal} />
     </main>
