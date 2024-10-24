@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import Layout from "@/layout";
+import bgImage from "@/assets/images/carousel-1.webp";
 
 const FormLayout = ({ title, children, formClassName, ...rest }) => {
   return (
@@ -9,7 +10,7 @@ const FormLayout = ({ title, children, formClassName, ...rest }) => {
       {/*hero section */}
       <div className={"relative h-[40vh] bg-white"}>
         <Image
-          src={"/images/e-learning/students.jpeg"}
+          src={bgImage}
           alt={"student-portal"}
           className={"h-full w-full object-cover"}
           width={1000}
