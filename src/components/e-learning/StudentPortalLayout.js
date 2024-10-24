@@ -35,26 +35,26 @@ const navList = [
   {
     icon: <DashboardSvg />,
     name: "Dashboard",
-    path: "/portal/student",
+    path: "/",
   },
   {
     icon: <BookSvg />,
     name: "Academics",
-    path: "/portal/student/academics",
+    path: "/academics",
   },
   {
     icon: <WalletSvg />,
     name: "Finances",
-    path: "/portal/student/finances",
+    path: "/finances",
   },
   {
     icon: <ReceiptSvg />,
     name: "Examinations",
-    path: "/portal/student/examinations",
+    path: "/examinations",
   },
   {
     icon: <ProfileSvg />,
     name: "My Profile",
-    path: "/portal/student/profile",
+    path: "/profile",
   },
 ];

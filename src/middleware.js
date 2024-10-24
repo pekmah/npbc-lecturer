@@ -10,8 +10,7 @@ export default withAuth(
     if (req.nextUrl.pathname.includes("auth") && token?.token) {
       if (token.role === "student")
         return NextResponse.redirect(new URL("/", req.url));
-      else if (token.role === "lecturer")
-        return;
+      else if (token.role === "lecturer") return;
       return Next;
     }
     // check if paths collide
@@ -43,5 +42,5 @@ export default withAuth(
 );
 
 export const config = {
-  matcher: ["/:path*"],
+  matcher: ["/portal/:path*"],
 };
